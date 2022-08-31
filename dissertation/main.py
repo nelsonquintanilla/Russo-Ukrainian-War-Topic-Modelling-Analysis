@@ -3,6 +3,8 @@
 # Press ⌘F8 to toggle the breakpoint.
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
+from TheGuardianRepository import get_the_guardian_articles_list
+
 # Spacy
 import spacy
 spacy.cli.download('en_core_web_sm')
@@ -18,6 +20,7 @@ import gensim.corpora as corpora
 from gensim.utils import simple_preprocess
 from gensim.models import CoherenceModel
 
+# pyLDAvis
 import pyLDAvis.gensim_models
 
 # Misc
@@ -26,7 +29,7 @@ from pprint import pprint
 
 # Enable logging for gensim - optional
 import logging
-logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.DEBUG)
 logging.getLogger('numexpr').setLevel(logging.WARNING)
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
@@ -34,8 +37,8 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 # Pre-processing
 '''Step 0: Number of articles and average length per article'''
 
-
 '''Step 1: Normalisation and tokenization'''
+
 # Convert a document into a list of lowercase tokens, ignoring tokens that are too short or too long, and removing
 # punctuation and numbers.
 def tokenize_documents(documents):
@@ -63,11 +66,11 @@ nlp = spacy.load('en_core_web_sm')
 nlp.get_pipe('lemmatizer')
 
 def lemmatize_articles(list_articles):
-  lemmatized = []
-  for article in list_articles:
-    doc = nlp(' '.join(article))
-    lemmatized.append([token.lemma_ for token in doc])
-  return lemmatized
+    lemmatized = []
+    for article in list_articles:
+        doc = nlp(' '.join(article))
+        lemmatized.append([token.lemma_ for token in doc])
+    return lemmatized
 
 '''Step 4: Bigrams and Trigrams'''
 # docs = list_lemmatized_articles
@@ -84,10 +87,10 @@ def lemmatize_articles(list_articles):
 
 '''Step 5: Removal of rare words and common words based on their document frequency'''
 
-
 '''Step 6: Create the Dictionary and Corpus needed for Topic Modeling (transform the documents to a vectorized form)'''
+
 def create_dictionary(list_lemmatized_documents):
-    return corpora.Dictionary(list_lemmatized_documents) # Combine all elements of array before passing it here
+    return corpora.Dictionary(list_lemmatized_documents)  # Combine all elements of array before passing it here
 
 # Bag-of-words representation of the documents. Term Document Frequency.
 def create_corpus(list_lemmatized_documents, dict_param):
@@ -109,14 +112,33 @@ def generate_readable_corpus(dict_param, corpus_param):
 '''Step 11: Visualize the topics'''
 
 if __name__ == '__main__':
-    articles = [
-        'Ukraine’s president of the united states has made a desperate appeal to the Russian people of the united '
-        'states, and the president of the united states.',
-        'For many Russians of the united states, it was an unfamiliar sight to see the faces of the two leaders in an '
-        'unfamiliar sight.',
-        'The striped bats were hanging on their feet for best corpora alumni and ate best fishes COVID-19 am are is '
-        'were was children that were striped with bands of sunlight and stripped from their things.']
+    # articles = [
+    #     'Ukraine’s president of the united states has made a desperate appeal to the Russian people of the united '
+    #     'states, and the president of the united states.',
+    #     'For many Russians of the united states, it was an unfamiliar sight to see the faces of the two leaders in
+    #     an '
+    #     'unfamiliar sight.',
+    #     'The striped bats were hanging on their feet for best corpora alumni and ate best fishes COVID-19 am are is '
+    #     'were was children that were striped with bands of sunlight and stripped from their things.',
+    #     'First of all, the elephant in the room: how many topics do I need? There is really no easy answer for this, '
+    #     'it will depend on both your data and your application. I have used 10 topics here because I wanted to have
+    #     a '
+    #     'few topics that I could interpret and “label”, and because that turned out to give me reasonably good '
+    #     'results. You might not need to interpret all your topics, so you could use a large number of topics, '
+    #     'for example 100.'
+    # ]
 
+    articles = get_the_guardian_articles_list(
+        number_of_articles=100,
+        q="ukraine",
+        section="world",
+        from_date="2022-02-24",
+        to_date="2022-08-31",
+        show_blocks="body",
+        page_size=100,
+        order_by="oldest"
+    )
+    print(articles)
     print('number of articles:' + str(len(articles)))
 
     # Tokenize articles
@@ -148,26 +170,45 @@ if __name__ == '__main__':
     print('Number of documents: %d' % len(corpus))
 
     # Tune lda params
+    num_topics = 10
+    distributed = False
+    chunksize = 10  # number of documents that are processed at a time in the training algorithm
+    passes = 10  # epochs (set the number of “passes” high enough)
+    update_every = 1
+    alpha = 'auto'
+    eta = 'auto'
+    decay = 0.5
+    offset = 1.0
+    eval_every = 1
+    iterations = 50  # set the number of “iterations” high enough
+    gamma_threshold = 0.001
+    minimum_probability = 0.01
+    random_state = 100
+    ns_conf = None
+    minimum_phi_value = 0.01
+    per_word_topics = True
+    dtype = np.float32
+
     lda_model = gensim.models.ldamodel.LdaModel(
         corpus=corpus,
-        num_topics=5,
+        num_topics=num_topics,
         id2word=dictionary,
-        distributed=False,
-        chunksize=10,  # number of documents that are processed at a time in the training algorithm
-        passes=10,  ########## epochs, set the number of “passes” high enough.
-        update_every=1,
-        alpha='auto',
-        eta='auto',
-        decay=0.5,
-        offset=1.0,
-        eval_every=1,
-        iterations=50,  ########## set the number of “iterations” high enough.
-        gamma_threshold=0.001,
-        minimum_probability=0.01,
-        random_state=100,
-        ns_conf=None,
-        minimum_phi_value=0.01,
-        per_word_topics=True,
+        distributed=distributed,
+        chunksize=chunksize,
+        passes=passes,
+        update_every=update_every,
+        alpha=alpha,
+        eta=eta,
+        decay=decay,
+        offset=offset,
+        eval_every=eval_every,
+        iterations=iterations,
+        gamma_threshold=gamma_threshold,
+        minimum_probability=minimum_probability,
+        random_state=random_state,
+        ns_conf=ns_conf,
+        minimum_phi_value=minimum_phi_value,
+        per_word_topics=per_word_topics,
         dtype=np.float32
     )
 
