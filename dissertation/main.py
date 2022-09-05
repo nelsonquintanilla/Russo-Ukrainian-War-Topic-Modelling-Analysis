@@ -97,6 +97,14 @@ def compute_average_document_length(list_documents):
     mean = sum_words/len(list_documents)
     return mean
 
+# Merge lists of dictionaries containing articles from a specific query search
+def merge_dict_lists_2(list1, list2):
+    for dict_list_2 in list2:
+        dict_list_2_id = dict_list_2.get('id')
+        if not any(dict_list_2_id == dict_list_1.get('id') for dict_list_1 in list1):
+            list1.append(dict_list_2)
+    return list1
+
 if __name__ == '__main__':
     # articles = [
     #     'Ukraine’s president of the United States has made a desperate appeal to the Russian people of the united '
@@ -112,126 +120,124 @@ if __name__ == '__main__':
     #     'for example 100.'
     # ]
 
-    # articles = get_the_guardian_articles_list(
-    #     number_of_articles=6,
-    #     q="ukraine",
-    #     section="world",
-    #     from_date="2022-02-24",
-    #     to_date="2022-08-31",
-    #     show_blocks="body",
-    #     page_size=6,
-    #     order_by="oldest"
+    articles = get_the_guardian_articles_list(
+        number_of_articles=6,
+        q="ukraine",
+        section="world",
+        from_date="2022-02-24",
+        to_date="2022-08-31",
+        show_blocks="body",
+        page_size=6,
+        order_by="oldest"
+    )
+    print(str(articles))
+
+    # '''Step 0: Number of articles and average article length'''
+    # print('\nNumber of articles: %d' % len(articles))
+    # average_article_length = compute_average_document_length(articles)
+    # print('Average article length: %d' % round(average_article_length, 2))
+    #
+    # '''Step 1: Normalisation and tokenization'''
+    # # Tokenize articles
+    # list_tokenized_articles = list(tokenize_documents(articles))
+    # print("\nlist_tokenized_articles: " + str(list_tokenized_articles))
+    # print("first element length: " + str(len(list_tokenized_articles[0])))
+    #
+    # '''Step 2: Stop Words Removal'''
+    # # Stop words
+    # print("\nstop_words: " + str(stop_words))
+    # print("stops words length: " + str(len(stop_words)))
+    #
+    # # Remove stop words from tokenized articles
+    # list_tokenized_articles_nostops = remove_stopwords_many_articles(list_tokenized_articles)
+    # print("\nlist_tokenized_articles_nostops: " + str(list_tokenized_articles_nostops))
+    # print("first element nostops length: " + str(len(list_tokenized_articles_nostops[0])))
+    #
+    # '''Step 3: Lemmatisation'''
+    # list_lemmatized_articles = lemmatize_articles(list_tokenized_articles_nostops)
+    # print("\nlist_lemmatized_articles: " + str(list_lemmatized_articles))
+    # print("first element length: " + str(len(list_lemmatized_articles[0])))
+    #
+    # '''Step 4: Bigrams and Trigrams'''
+    #
+    # '''Step 5: Removal of rare words and common words based on their document frequency'''
+    #
+    # '''Step 6: Transform the documents to a vectorized form (dictionary and corpus)'''
+    # # Create dictionary and corpus
+    # dictionary = create_dictionary(list_lemmatized_articles)
+    # corpus = create_corpus(list_lemmatized_articles, dictionary)
+    # generate_readable_corpus(dictionary, corpus)
+    # print("\ndictionary: " + str(dictionary))
+    # print("corpus:" + str(corpus))
+    # print('Number of unique tokens: %d' % len(dictionary))
+    # print('Number of documents: %d' % len(corpus))
+    #
+    # '''Step 7: Number of tokens and documents to train'''
+    #
+    # '''Step 8: Building the Topic Model'''
+    # # Tune lda params
+    # num_topics = 10
+    # distributed = False
+    # chunksize = 10  # number of documents that are processed at a time in the training algorithm
+    # passes = 10  # epochs (set the number of “passes” high enough)
+    # update_every = 1
+    # alpha = 'auto'
+    # eta = 'auto'
+    # decay = 0.5
+    # offset = 1.0
+    # eval_every = 1
+    # iterations = 50  # set the number of “iterations” high enough
+    # gamma_threshold = 0.001
+    # minimum_probability = 0.01
+    # random_state = 100
+    # ns_conf = None
+    # minimum_phi_value = 0.01
+    # per_word_topics = True
+    # dtype = np.float32
+    #
+    # lda_model = gensim.models.ldamodel.LdaModel(
+    #     corpus=corpus,
+    #     num_topics=num_topics,
+    #     id2word=dictionary,
+    #     distributed=distributed,
+    #     chunksize=chunksize,
+    #     passes=passes,
+    #     update_every=update_every,
+    #     alpha=alpha,
+    #     eta=eta,
+    #     decay=decay,
+    #     offset=offset,
+    #     eval_every=eval_every,
+    #     iterations=iterations,
+    #     gamma_threshold=gamma_threshold,
+    #     minimum_probability=minimum_probability,
+    #     random_state=random_state,
+    #     ns_conf=ns_conf,
+    #     minimum_phi_value=minimum_phi_value,
+    #     per_word_topics=per_word_topics,
+    #     dtype=np.float32
     # )
-    # print(articles)
-
-    articles = GenerateTheGuardianDataset.articles_dataset
-
-    '''Step 0: Number of articles and average article length'''
-    print('\nNumber of articles: %d' % len(articles))
-    average_article_length = compute_average_document_length(articles)
-    print('Average article length: %d' % round(average_article_length, 2))
-
-    '''Step 1: Normalisation and tokenization'''
-    # Tokenize articles
-    list_tokenized_articles = list(tokenize_documents(articles))
-    print("\nlist_tokenized_articles: " + str(list_tokenized_articles))
-    print("first element length: " + str(len(list_tokenized_articles[0])))
-
-    '''Step 2: Stop Words Removal'''
-    # Stop words
-    print("\nstop_words: " + str(stop_words))
-    print("stops words length: " + str(len(stop_words)))
-
-    # Remove stop words from tokenized articles
-    list_tokenized_articles_nostops = remove_stopwords_many_articles(list_tokenized_articles)
-    print("\nlist_tokenized_articles_nostops: " + str(list_tokenized_articles_nostops))
-    print("first element nostops length: " + str(len(list_tokenized_articles_nostops[0])))
-
-    '''Step 3: Lemmatisation'''
-    list_lemmatized_articles = lemmatize_articles(list_tokenized_articles_nostops)
-    print("\nlist_lemmatized_articles: " + str(list_lemmatized_articles))
-    print("first element length: " + str(len(list_lemmatized_articles[0])))
-
-    '''Step 4: Bigrams and Trigrams'''
-
-    '''Step 5: Removal of rare words and common words based on their document frequency'''
-
-    '''Step 6: Transform the documents to a vectorized form (dictionary and corpus)'''
-    # Create dictionary and corpus
-    dictionary = create_dictionary(list_lemmatized_articles)
-    corpus = create_corpus(list_lemmatized_articles, dictionary)
-    generate_readable_corpus(dictionary, corpus)
-    print("\ndictionary: " + str(dictionary))
-    print("corpus:" + str(corpus))
-    print('Number of unique tokens: %d' % len(dictionary))
-    print('Number of documents: %d' % len(corpus))
-
-    '''Step 7: Number of tokens and documents to train'''
-
-    '''Step 8: Building the Topic Model'''
-    # Tune lda params
-    num_topics = 10
-    distributed = False
-    chunksize = 10  # number of documents that are processed at a time in the training algorithm
-    passes = 10  # epochs (set the number of “passes” high enough)
-    update_every = 1
-    alpha = 'auto'
-    eta = 'auto'
-    decay = 0.5
-    offset = 1.0
-    eval_every = 1
-    iterations = 50  # set the number of “iterations” high enough
-    gamma_threshold = 0.001
-    minimum_probability = 0.01
-    random_state = 100
-    ns_conf = None
-    minimum_phi_value = 0.01
-    per_word_topics = True
-    dtype = np.float32
-
-    lda_model = gensim.models.ldamodel.LdaModel(
-        corpus=corpus,
-        num_topics=num_topics,
-        id2word=dictionary,
-        distributed=distributed,
-        chunksize=chunksize,
-        passes=passes,
-        update_every=update_every,
-        alpha=alpha,
-        eta=eta,
-        decay=decay,
-        offset=offset,
-        eval_every=eval_every,
-        iterations=iterations,
-        gamma_threshold=gamma_threshold,
-        minimum_probability=minimum_probability,
-        random_state=random_state,
-        ns_conf=ns_conf,
-        minimum_phi_value=minimum_phi_value,
-        per_word_topics=per_word_topics,
-        dtype=np.float32
-    )
-
-    '''Step 9: View the topics in LDA model'''
-    # Print the Keyword in the topics
-    pprint(lda_model.print_topics())
-    doc_lda = lda_model[corpus]
-
-    '''Step 10: Compute Model Perplexity and Topic Coherence Score'''
-    # Compute Perplexity
-    print('\nPerplexity: ', lda_model.log_perplexity(corpus))  # A measure of how good the model is. Lower the better.
-
-    # Compute Coherence Score
-    coherence_model_lda = CoherenceModel(
-        model=lda_model,
-        texts=list_lemmatized_articles,
-        dictionary=dictionary,
-        coherence='c_v'
-    )
-    coherence_lda = coherence_model_lda.get_coherence()
-    print('\nCoherence score: ', coherence_lda)
-
-    '''Step 11: Visualize the topics'''
-    # Visualize the topics
-    vis_data = pyLDAvis.gensim_models.prepare(lda_model, corpus, dictionary)
-    pyLDAvis.save_html(vis_data, 'lda.html')
+    #
+    # '''Step 9: View the topics in LDA model'''
+    # # Print the Keyword in the topics
+    # pprint(lda_model.print_topics())
+    # doc_lda = lda_model[corpus]
+    #
+    # '''Step 10: Compute Model Perplexity and Topic Coherence Score'''
+    # # Compute Perplexity
+    # print('\nPerplexity: ', lda_model.log_perplexity(corpus))  # A measure of how good the model is. Lower the better.
+    #
+    # # Compute Coherence Score
+    # coherence_model_lda = CoherenceModel(
+    #     model=lda_model,
+    #     texts=list_lemmatized_articles,
+    #     dictionary=dictionary,
+    #     coherence='c_v'
+    # )
+    # coherence_lda = coherence_model_lda.get_coherence()
+    # print('\nCoherence score: ', coherence_lda)
+    #
+    # '''Step 11: Visualize the topics'''
+    # # Visualize the topics
+    # vis_data = pyLDAvis.gensim_models.prepare(lda_model, corpus, dictionary)
+    # pyLDAvis.save_html(vis_data, 'lda.html')

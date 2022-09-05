@@ -63,8 +63,9 @@ def get_the_guardian_articles_list(
 				order_by
 			)
 			for result in response['response']['results']:
+				article_id = result['id']
 				for body in result['blocks']['body']:
-					bodyTextSummaryList.append(body['bodyTextSummary'])
+					bodyTextSummaryList.append({"id": article_id, "body": body['bodyTextSummary']})
 		except:
 			break
 	return bodyTextSummaryList
