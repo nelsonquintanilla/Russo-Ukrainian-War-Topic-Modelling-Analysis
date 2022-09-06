@@ -76,3 +76,9 @@ def get_the_guardian_articles_list(
 		except:
 			break
 	return bodyTextSummaryList
+
+def get_list_articles_from_list_of_dicts(list_dicts):
+	bodyTextSummaryList = []
+	for dictionary in list_dicts:
+		bodyTextSummaryList.append(dictionary['body'])
+	return bodyTextSummaryList

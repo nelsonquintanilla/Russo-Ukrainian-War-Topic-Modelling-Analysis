@@ -30,6 +30,15 @@ def remove_briefing_articles(list_of_dicts):
     list_of_dicts = [dictionary for dictionary in list_of_dicts if 'briefing' not in dictionary['id']]
     return list_of_dicts
 
+# def get_number_non_pertinent_articles(list_of_dicts):
+#     counter1 = 0
+#     url1 = 'We would like to hear from people'
+#     for dictionary in list_of_dicts:
+#         if url1 in dictionary['body']:
+#             counter1 += 1
+#             print(dictionary)
+#     print(counter1)
+
 if __name__ == '__main__':
     # Read files containing list of dicts
     dataset1 = read_list_of_dicts_from_file('UkraineDataset')

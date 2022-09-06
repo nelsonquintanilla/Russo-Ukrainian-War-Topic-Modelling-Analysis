@@ -2,7 +2,8 @@
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 # Press ⌘F8 to toggle the breakpoint.
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
-from TheGuardianRepository import get_the_guardian_articles_list
+from AssembleDatasets import read_list_of_dicts_from_file
+from TheGuardianRepository import get_the_guardian_articles_list, get_list_articles_from_list_of_dicts
 import GenerateTheGuardianDataset
 # Spacy
 import spacy
@@ -112,17 +113,21 @@ if __name__ == '__main__':
     #     'for example 100.'
     # ]
 
-    articles = get_the_guardian_articles_list(
-        number_of_articles=6,
-        q="ukraine",
-        section="world",
-        from_date="2022-02-24",
-        to_date="2022-08-31",
-        show_blocks="body",
-        page_size=6,
-        order_by="oldest"
-    )
-    print(str(articles))
+    # articles = get_the_guardian_articles_list(
+    #     number_of_articles=6,
+    #     q="ukraine",
+    #     section="world",
+    #     from_date="2022-02-24",
+    #     to_date="2022-08-31",
+    #     show_blocks="body",
+    #     page_size=6,
+    #     order_by="oldest"
+    # )
+    # print(str(articles))
+
+    articles_list_of_dicts = read_list_of_dicts_from_file('2DatasetsMerged')
+    articles_list = get_list_articles_from_list_of_dicts(articles_list_of_dicts)
+    print(articles_list[:30])
 
     # '''Step 0: Number of articles and average article length'''
     # print('\nNumber of articles: %d' % len(articles))
