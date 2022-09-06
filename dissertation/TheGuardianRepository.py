@@ -64,8 +64,15 @@ def get_the_guardian_articles_list(
 			)
 			for result in response['response']['results']:
 				article_id = result['id']
+				webTitle = result['webTitle']
+				webUrl = result['webUrl']
 				for body in result['blocks']['body']:
-					bodyTextSummaryList.append({"id": article_id, "body": body['bodyTextSummary']})
+					bodyTextSummaryList.append({
+						"id": article_id,
+						"title": webTitle,
+						"url": webUrl,
+						"body": body['bodyTextSummary']
+					})
 		except:
 			break
 	return bodyTextSummaryList

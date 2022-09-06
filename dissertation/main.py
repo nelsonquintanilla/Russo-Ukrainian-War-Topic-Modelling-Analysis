@@ -97,14 +97,6 @@ def compute_average_document_length(list_documents):
     mean = sum_words/len(list_documents)
     return mean
 
-# Merge lists of dictionaries containing articles from a specific query search
-def merge_dict_lists_2(list1, list2):
-    for dict_list_2 in list2:
-        dict_list_2_id = dict_list_2.get('id')
-        if not any(dict_list_2_id == dict_list_1.get('id') for dict_list_1 in list1):
-            list1.append(dict_list_2)
-    return list1
-
 if __name__ == '__main__':
     # articles = [
     #     'Ukraine’s president of the United States has made a desperate appeal to the Russian people of the united '

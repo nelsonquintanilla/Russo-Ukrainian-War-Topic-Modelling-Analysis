@@ -1,44 +1,42 @@
 """
 Retrieve TheGuardian articles and save them in a .txt file.
 """
-def merge_dict_lists_2(list1, list2):
-        for dict_list_2 in list2:
-                dict_list_2_id = dict_list_2.get('id')
-                if not any(dict_list_2_id == dict_list_1.get('id') for dict_list_1 in list1):
-                        list1.append(dict_list_2)
-        return list1
+from TheGuardianRepository import get_the_guardian_articles_list
+import json
+
+SECTION = "world"
+FROM_DATE = "2022-02-24"
+TO_DATE = "2022-08-31"
+SHOW_BLOCKS = "body"
+PAGE_SIZE = 200
+ORDER_BY = "oldest"
+
+def save_list_of_dicts_to_file(list_of_dicts, file_name):
+    with open(file=file_name, mode='w') as fout:
+        json.dump(list_of_dicts, fout, ensure_ascii=False)
 
 if __name__ == '__main__':
-
-    articles_list_1 = [
-            {'id': 'world/2022/feb/23/ukraine-urges-its-citizens-to-leave-russia-immediately',
-             'body': 'Body text of articles number 1'},
-            {'id': 'world/2022/feb/24/denis-pushilin-leonid-pasechnik-donetsk-luhansk-ukraine-crisis',
-             'body': 'Body text of articles number 2'},
-            {'id': 'world/2022/feb/24/qa-could-putin-use-russian-gas-supplies-to-hurt-europe',
-             'body': 'Body text of articles number 3'},
-            {'id': 'world/2022/feb/24/western-leaders-decry-vladimir-putin-as-russia-launches-attacks-on-ukraine',
-             'body': 'Body text of articles number 4'},
-            {'id': 'world/2022/feb/24/thursday-briefing-russia-invades-ukraine',
-             'body': 'Body text of articles number 5'},
-            {'id': 'world/2022/feb/24/moment-that-putin-thundered-to-war-drowning-out-last-entreaties-for-peace',
-             'body': 'Body text of articles number 6'}
-    ]
-
-    articles_list_2 = [
-            {'id': 'world/2022/feb/24/australia-condemns-russias-brutal-and-unprovoked-invasion-of-ukraine',
-             'body': 'Body text of articles number 7'},
-            {'id': 'world/2022/jan/26/living-in-ukraine-how-have-you-been-affected-by-the-current-situation',
-             'body': 'Body text of articles number 8'},
-            {'id': 'world/2022/feb/12/leaving-ukraine-have-you-fled-the-country',
-             'body': 'Body text of articles number 9'},
-            {'id': 'world/2022/feb/24/kyiv-ukraine-russia-invasion',
-             'body': 'Body text of articles number 10'},
-            {'id': 'world/2022/feb/24/thursday-briefing-russia-invades-ukraine',
-             'body': 'Body text of articles number 11'},
-            {'id': 'world/2022/feb/24/moment-that-putin-thundered-to-war-drowning-out-last-entreaties-for-peace',
-             'body': 'Body text of articles number 12'}
-    ]
-
-    merged_lists = merge_dict_lists_2(articles_list_1, articles_list_2)
-    print(merged_lists)
+    articles_query_ukraine = get_the_guardian_articles_list(
+        number_of_articles=2267, # 2267 results are available if we use this query
+        q="ukraine",
+        section=SECTION,
+        from_date=FROM_DATE,
+        to_date=TO_DATE,
+        show_blocks=SHOW_BLOCKS,
+        page_size=PAGE_SIZE,
+        order_by=ORDER_BY
+    )
+    articles_query_russia = get_the_guardian_articles_list(
+        number_of_articles=2044, # 2044 results are available if we use this query
+        q="russia",
+        section=SECTION,
+        from_date=FROM_DATE,
+        to_date=TO_DATE,
+        show_blocks=SHOW_BLOCKS,
+        page_size=PAGE_SIZE,
+        order_by=ORDER_BY
+    )
+    # print(articles_query_ukraine)
+    # print(articles_query_russia)
+    save_list_of_dicts_to_file(articles_query_ukraine, 'UkraineDataset')
+    save_list_of_dicts_to_file(articles_query_russia, 'RussiaDataset')
