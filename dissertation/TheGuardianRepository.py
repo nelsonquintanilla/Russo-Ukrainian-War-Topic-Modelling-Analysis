@@ -1,6 +1,6 @@
-# Data Extraction
-# Hit https://content.guardianapis.com/search endpoint to retrieve filtered articles
-# from a single page from TheGuardian API
+"""
+Data Extraction.
+"""
 import requests
 import math
 
@@ -8,6 +8,8 @@ API_KEY = 'f360f7e8-033e-4a24-b25c-81bab8512d58'
 FORMAT = 'json'
 TYPE = 'article'
 
+# Hit https://content.guardianapis.com/search endpoint to retrieve filtered articles
+# from a single page from TheGuardian API
 def get_the_guardian_articles(
 		q,
 		section,
@@ -77,6 +79,7 @@ def get_the_guardian_articles_list(
 			break
 	return bodyTextSummaryList
 
+# Extract list of article's bodies from list of dictionaries.
 def get_list_articles_from_list_of_dicts(list_dicts):
 	bodyTextSummaryList = []
 	for dictionary in list_dicts:
