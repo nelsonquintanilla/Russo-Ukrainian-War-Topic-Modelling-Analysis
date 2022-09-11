@@ -5,6 +5,7 @@
 """
 Pre-processing.
 """
+import importlib.util as util
 from AssembleDatasets import read_list_of_dicts_from_file
 from TheGuardianRepository import get_list_articles_from_list_of_dicts, get_the_guardian_articles_list
 # Spacy
@@ -29,8 +30,8 @@ import numpy as np
 from pprint import pprint
 # Enable logging for gensim - optional
 import logging
-logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.DEBUG)
-logging.getLogger('numexpr').setLevel(logging.WARNING)
+# logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.DEBUG)
+# logging.getLogger('numexpr').setLevel(logging.WARNING)
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -41,17 +42,17 @@ def tokenize_documents(documents):
         yield simple_preprocess(str(document), deacc=True)  # deacc=True removes accent marks from tokens.
 
 # Initialise list of stopwords.
-# stop_words = stopwords.words('english')
+stop_words = stopwords.words('english')
 
 #stop_words = list(_stop_words.ENGLISH_STOP_WORDS)
 
-en = spacy.load('en_core_web_sm')
+# en = spacy.load('en_core_web_sm')
 # stop_words = list(en.Defaults.stop_words)
 
-nltk_stop_words = stopwords.words('english')
-sklearn_stopwords = list(_stop_words.ENGLISH_STOP_WORDS)
-spacy_stopwords = list(en.Defaults.stop_words)
-stop_words = set(nltk_stop_words).union(sklearn_stopwords, spacy_stopwords)
+# stop_wordsnltk_stop_words = stopwords.words('english')
+# sklearn_stopwords = list(_stop_words.ENGLISH_STOP_WORDS)
+# spacy_stopwords = list(en.Defaults.stop_words)
+# stop_words = set(nltk_stop_words).union(sklearn_stopwords, spacy_stopwords)
 
 # Remove stop words from each tokenized article.
 def remove_stopwords_single_article(data_words):
@@ -71,7 +72,6 @@ def remove_stopwords_many_articles(list_tokenized_documents):
 # Remove inflectional endings from tokens to return the base or dictionary form of a word.
 # E.g., am, are, is -> be
 nlp = spacy.load('en_core_web_sm', disable=['parser', 'ner'])
-
 def lemmatize_articles(list_articles):
     lemmatized = []
     for article in list_articles:
@@ -113,20 +113,133 @@ def compute_average_document_length(list_documents):
     mean = sum_words/len(list_documents)
     return mean
 
+U_MASS = 'u_mass'
+C_V = 'c_v'
+
+def train_lda_models(
+        num_topics_list_,
+        corpus_,
+        dictionary_,
+        list_lemmatized_articles_
+):
+    lda_models_list_ = []
+    u_mas_coherence_list = []
+    c_v_coherence_list = []
+    k_list = []
+    index_list = []
+    for index, current_num_topics in enumerate(num_topics_list_):
+        index_list.append(index+1)
+        k_list.append(current_num_topics)
+        current_lda_model = train_single_model(corpus_=corpus_, id2word_=dictionary_, num_topics_=current_num_topics)
+        lda_models_list_.append(current_lda_model)
+        u_mas_coherence_list.append(compute_u_mass_coherence(
+            model_=current_lda_model,
+            corpus_=corpus_,
+            dictionary_=dictionary_,
+            coherence_=U_MASS
+        ))
+        c_v_coherence_list.append(compute_c_v_coherence(
+            model_=current_lda_model,
+            texts_=list_lemmatized_articles_,
+            dictionary_=dictionary_,
+            coherence_=C_V
+        ))
+    # generate_pyldavis_html_files(
+    #     lda_models_list_=lda_models_list_,
+    #     k_list_=k_list,
+    #     corpus_=corpus_,
+    #     dictionary_=dictionary_)
+    view_topics_models_list(lda_models_list_= lda_models_list_, num_topics_list_=num_topics_list, num_words_=10)
+    return concatenate_models_values(index_list, k_list, u_mas_coherence_list, c_v_coherence_list)
+
+def train_single_model(
+        corpus_,
+        id2word_,
+        num_topics_ = 10,
+        distributed = False,
+        chunksize = 2000, # number of documents that are processed at a time in the training algorithm
+        passes = 20, # epochs (set the number of “passes” high enough) - controls how often we train the model on the entire corpus
+        update_every = 0,
+        alpha = 'symmetric',
+        eta = 'symmetric',
+        decay = 0.5,
+        offset = 1.0,
+        eval_every = 1,
+        iterations = 400, # set the number of “iterations” high enough - it controls how often we repeat a particular loop over each document
+        gamma_threshold = 0.001,
+        minimum_probability = 0.01,
+        random_state = 100,
+        ns_conf = None,
+        minimum_phi_value = 0.01,
+        per_word_topics = True,
+        dtype = np.float32
+):
+    lda_model_ = gensim.models.ldamodel.LdaModel(
+        corpus=corpus_,
+        num_topics=num_topics_,
+        id2word=id2word_,
+        distributed=distributed,
+        chunksize=chunksize,
+        passes=passes,
+        update_every=update_every,
+        alpha=alpha,
+        eta=eta,
+        decay=decay,
+        offset=offset,
+        eval_every=eval_every,
+        iterations=iterations,
+        gamma_threshold=gamma_threshold,
+        minimum_probability=minimum_probability,
+        random_state=random_state,
+        ns_conf=ns_conf,
+        minimum_phi_value=minimum_phi_value,
+        per_word_topics=per_word_topics,
+        dtype=dtype
+    )
+    return lda_model_
+
+def compute_u_mass_coherence(model_, corpus_, dictionary_, coherence_=U_MASS):
+    return CoherenceModel(model=model_, corpus=corpus_, dictionary=dictionary_, coherence=coherence_).get_coherence()
+
+def compute_c_v_coherence(model_, texts_, dictionary_, coherence_='c_v'):
+    return CoherenceModel(model=model_, texts=texts_, dictionary=dictionary_, coherence=coherence_).get_coherence()
+
+def concatenate_models_values(list1, list2, list3, list4):
+    new_list=[]
+    for index, (item1, item2, item3, item4) in enumerate(zip(list1, list2, list3, list4)):
+        new_list.append((item1, item2, item3, item4))
+    return new_list
+
+GENERAL_FILE_NAME = 'lda_k_'
+FILE_EXTENSION = '.html'
+
+def generate_pyldavis_html_files(lda_models_list_, k_list_, corpus_, dictionary_):
+    for index, (current_lda_model, k) in enumerate(zip(lda_models_list_, k_list_)):
+        vis_data = pyLDAvis.gensim_models.prepare(current_lda_model, corpus_, dictionary_)
+        file_name = GENERAL_FILE_NAME + str(k) + FILE_EXTENSION
+        pyLDAvis.save_html(vis_data, file_name)
+
+def generate_num_topics_list(start = 2, limit = 22, step = 2):
+    return range(start, limit, step)
+
+def view_topics_models_list(lda_models_list_, num_topics_list_, num_words_=10):
+    for index, (current_lda_model, current_num_topics) in enumerate(zip(lda_models_list_, num_topics_list_)):
+        pprint(current_lda_model.print_topics(num_topics=current_num_topics, num_words=num_words_))
+
 if __name__ == '__main__':
-    # articles = [
-    #     'Ukraine’s president of the United States has made 33 desperate appeals to the Russian people of the united '
-    #     'states, and the president of the United States.',
-    #     'For many Russians of the United States, it was an unfamiliar sight to see the faces of the two leaders in an '
-    #     'unfamiliar sight.',
-    #     'The striped bats were hanging on their feet for best corpora alumni and ate best fishes COVID-19 am are is '
-    #     'were was children that were striped with bands of sunlight and stripped from their things.',
-    #     'First of all, the elephant in the room: how many topics do I need? There is really no easy answer for this, '
-    #     'it will depend on both your data and your application. I have used 10 topics here because I wanted to have a '
-    #     'few topics that I could interpret and “label”, and because that turned out to give me reasonably good '
-    #     'results. You might not need to interpret all your topics, so you wouldn’t use a large number of topics, '
-    #     'for example 100.'
-    # ]
+    articles = [
+        'Ukraine’s president of the United States has made 33 desperate appeals to the Russian people of the united '
+        'states, and the president of the United States.',
+        'For many Russians of the United States, it was an unfamiliar sight to see the faces of the two leaders in an '
+        'unfamiliar sight.',
+        'The striped bats were hanging on their feet for best corpora alumni and ate best fishes COVID-19 am are is '
+        'were was children that were striped with bands of sunlight and stripped from their things.',
+        'First of all, the elephant in the room: how many topics do I need? There is really no easy answer for this, '
+        'it will depend on both your data and your application. I have used 10 topics here because I wanted to have a '
+        'few topics that I could interpret and “label”, and because that turned out to give me reasonably good '
+        'results. You might not need to interpret all your topics, so you wouldn’t use a large number of topics, '
+        'for example 100.'
+    ]
 
     # articles_list_of_dicts = get_the_guardian_articles_list(
     #     number_of_articles=2,
@@ -141,8 +254,8 @@ if __name__ == '__main__':
     # articles = get_list_articles_from_list_of_dicts(articles_list_of_dicts)
     # print(str(articles))
 
-    articles_list_of_dicts = read_list_of_dicts_from_file('2DatasetsMerged')
-    articles = get_list_articles_from_list_of_dicts(articles_list_of_dicts)
+    # articles_list_of_dicts = read_list_of_dicts_from_file('2DatasetsMerged')
+    # articles = get_list_articles_from_list_of_dicts(articles_list_of_dicts)
 
     '''Step 0: Number of articles and average article length'''
     print('\nStep 0: Data before pre-processing')
@@ -195,81 +308,57 @@ if __name__ == '__main__':
     '''Step 8: Building the Topic Model'''
     print('\nStep 8: Building the Topic Model')
     # Tune lda params
-    num_topics = 10
-    distributed = False
-    chunksize = 200  # number of documents that are processed at a time in the training algorithm
-    passes = 20  # epochs (set the number of “passes” high enough) - controls how often we train the model on the entire corpus
-    update_every = 1
-    alpha = 'symmetric'
-    eta = 'symmetric'
-    decay = 0.5
-    offset = 1.0
-    eval_every = 10
-    iterations = 50  # set the number of “iterations” high enough - it controls how often we repeat a particular loop over each document
-    gamma_threshold = 0.001
-    minimum_probability = 0.01
-    random_state = 100 #***
-    ns_conf = None
-    minimum_phi_value = 0.01
-    per_word_topics = True #***
-    dtype = np.float32
-
-    lda_model = gensim.models.ldamodel.LdaModel(
-        corpus=corpus,
-        num_topics=num_topics,
-        id2word=dictionary,
-        distributed=distributed,
-        chunksize=chunksize,
-        passes=passes,
-        update_every=update_every,
-        alpha=alpha,
-        eta=eta,
-        decay=decay,
-        offset=offset,
-        eval_every=eval_every,
-        iterations=iterations,
-        gamma_threshold=gamma_threshold,
-        minimum_probability=minimum_probability,
-        random_state=random_state,
-        ns_conf=ns_conf,
-        minimum_phi_value=minimum_phi_value,
-        per_word_topics=per_word_topics,
-        dtype=np.float32
+    num_topics_list = generate_num_topics_list(start=2, limit=30, step=3)
+    lda_models_list_values = train_lda_models(
+        num_topics_list_=num_topics_list,
+        corpus_=corpus,
+        dictionary_=dictionary,
+        list_lemmatized_articles_=list_lemmatized_articles
     )
+    print('(model_number, number_topics, u_mass_coherence_, c_v_coherence)')
+    pprint(lda_models_list_values)
+    # lda_model = lda_models[0]
+    # num_topics = 10
+    # lda_model = train_single_model(corpus_=corpus, id2word_=dictionary, num_topics_=num_topics)
 
     '''Step 9: View the topics in LDA model'''
     print('\nStep 9: View the topics in LDA mode')
     # Print the keywords in the topics
-    pprint(lda_model.print_topics(num_topics=20, num_words=10))
-    doc_lda = lda_model[corpus]
+    # pprint(lda_model.print_topics(num_topics=num_topics, num_words=10))
 
-    '''Step 10: Compute Model Perplexity'''
+    # '''Step 10: Compute Model Perplexity'''
     # Compute Perplexity
     # print('\nStep 10: Compute Model Perplexity')
     # print('Perplexity: ', lda_model.log_perplexity(corpus))  # A measure of how good the model is. Lower the better.
 
-    '''Step 11: Compute Topic Coherence Score'''
-    print('\nStep 11: Compute Topic Coherence Score')
-    # Compute Coherence Score - “AKSW” topic coherence measure (http://rare-technologies.com/what-is-topic-coherence/)
-    coherence_model_lda = CoherenceModel(
-        model=lda_model,
-        texts=list_lemmatized_articles,
-        dictionary=dictionary,
-        coherence='c_v'
-    )
-    coherence_lda = coherence_model_lda.get_coherence()
-    print('Coherence score (“AKSW” topic coherence measure): ', coherence_lda)
+    # '''Step 11: Compute Topic Coherence Score'''
+    # print('\nStep 11: Compute Topic Coherence Score')
+    # # Compute Coherence Score - “AKSW” topic coherence measure (http://rare-technologies.com/what-is-topic-coherence/)
+    # c_v_coherence_model_lda = CoherenceModel(
+    #     model=lda_model,
+    #     texts=list_lemmatized_articles,
+    #     dictionary=dictionary,
+    #     coherence='c_v'
+    # )
+    # u_mass_coherence_model_lda = CoherenceModel(
+    #     model=lda_model,
+    #     corpus=corpus,
+    #     dictionary=dictionary,
+    #     coherence='u_mass'
+    # )
+    # u_mass_coherence_lda = u_mass_coherence_model_lda.get_coherence()
+    # print('U_Mass Coherence score (“AKSW” topic coherence measure): ', u_mass_coherence_lda)
+    # c_v_coherence_lda = c_v_coherence_model_lda.get_coherence()
+    # print('C_V Coherence score (“AKSW” topic coherence measure): ', c_v_coherence_lda)
 
-    # Compute Coherence Score - “Umass” topic coherence measure
-    top_topics = lda_model.top_topics(corpus)
+    # # Compute Average Coherence Score - “Umass” topic coherence measure
+    # top_topics = lda_model.top_topics(corpus)
+    # pprint(top_topics)
+    # # Average topic coherence is the sum of topic coherences of all topics, divided by the number of topics.
+    # avg_topic_coherence = sum([t[1] for t in top_topics]) / num_topics
+    # print('Average topic coherence: %.4f.' % avg_topic_coherence)
 
-    # Average topic coherence is the sum of topic coherences of all topics, divided by the number of topics.
-    avg_topic_coherence = sum([t[1] for t in top_topics]) / num_topics
-    print('Average topic coherence: %.4f.' % avg_topic_coherence)
-    pprint(top_topics)
-
-    # TODO: change name of html depending on the iteration for the model depending on k value
     # '''Step 12: Visualize the topics'''
-    print('\nStep 12: Visualize the topics')
-    vis_data = pyLDAvis.gensim_models.prepare(lda_model, corpus, dictionary)
-    pyLDAvis.save_html(vis_data, 'lda.html')
+    # print('\nStep 12: Visualize the topics')
+    # vis_data = pyLDAvis.gensim_models.prepare(lda_model, corpus, dictionary)
+    # pyLDAvis.save_html(vis_data, 'lda.html')
