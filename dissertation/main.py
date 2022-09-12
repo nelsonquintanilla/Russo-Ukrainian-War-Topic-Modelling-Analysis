@@ -49,7 +49,7 @@ stop_words = stopwords.words('english')
 # en = spacy.load('en_core_web_sm')
 # stop_words = list(en.Defaults.stop_words)
 
-# stop_wordsnltk_stop_words = stopwords.words('english')
+# nltk_stop_words = stopwords.words('english')
 # sklearn_stopwords = list(_stop_words.ENGLISH_STOP_WORDS)
 # spacy_stopwords = list(en.Defaults.stop_words)
 # stop_words = set(nltk_stop_words).union(sklearn_stopwords, spacy_stopwords)
@@ -119,38 +119,36 @@ C_V = 'c_v'
 def train_lda_models(
         num_topics_list_,
         corpus_,
-        dictionary_,
-        list_lemmatized_articles_
+        dictionary_
 ):
     lda_models_list_ = []
-    u_mas_coherence_list = []
-    c_v_coherence_list = []
-    k_list = []
-    index_list = []
-    for index, current_num_topics in enumerate(num_topics_list_):
-        index_list.append(index+1)
-        k_list.append(current_num_topics)
+    k_list_ = []
+    # u_mas_coherence_list = []
+    # c_v_coherence_list = []
+    for current_num_topics in num_topics_list_:
+        k_list_.append(current_num_topics)
         current_lda_model = train_single_model(corpus_=corpus_, id2word_=dictionary_, num_topics_=current_num_topics)
         lda_models_list_.append(current_lda_model)
-        u_mas_coherence_list.append(compute_u_mass_coherence(
-            model_=current_lda_model,
-            corpus_=corpus_,
-            dictionary_=dictionary_,
-            coherence_=U_MASS
-        ))
-        c_v_coherence_list.append(compute_c_v_coherence(
-            model_=current_lda_model,
-            texts_=list_lemmatized_articles_,
-            dictionary_=dictionary_,
-            coherence_=C_V
-        ))
+        # u_mas_coherence_list.append(compute_u_mass_coherence(
+        #     model_=current_lda_model,
+        #     corpus_=corpus_,
+        #     dictionary_=dictionary_,
+        #     coherence_=U_MASS
+        # ))
+        # c_v_coherence_list.append(compute_c_v_coherence(
+        #     model_=current_lda_model,
+        #     texts_=list_lemmatized_articles_,
+        #     dictionary_=dictionary_,
+        #     coherence_=C_V
+        # ))
+    # view_topics_models_list(lda_models_list_= lda_models_list_, k_list_=k_list, num_words_=10)
     # generate_pyldavis_html_files(
     #     lda_models_list_=lda_models_list_,
     #     k_list_=k_list,
     #     corpus_=corpus_,
     #     dictionary_=dictionary_)
-    view_topics_models_list(lda_models_list_= lda_models_list_, num_topics_list_=num_topics_list, num_words_=10)
-    return concatenate_models_values(index_list, k_list, u_mas_coherence_list, c_v_coherence_list)
+    # return concatenate_models_values(index_list, k_list, u_mas_coherence_list, c_v_coherence_list)
+    return lda_models_list_, k_list_
 
 def train_single_model(
         corpus_,
@@ -198,11 +196,27 @@ def train_single_model(
     )
     return lda_model_
 
-def compute_u_mass_coherence(model_, corpus_, dictionary_, coherence_=U_MASS):
-    return CoherenceModel(model=model_, corpus=corpus_, dictionary=dictionary_, coherence=coherence_).get_coherence()
+def compute_u_mass_coherence_values(lda_models_list_, corpus_, dictionary_, coherence_):
+    u_mas_coherence_list = []
+    for current_model in lda_models_list_:
+        u_mas_coherence_list.append(CoherenceModel(
+            model=current_model,
+            corpus=corpus_,
+            dictionary=dictionary_,
+            coherence=coherence_
+        ).get_coherence())
+    return u_mas_coherence_list
 
-def compute_c_v_coherence(model_, texts_, dictionary_, coherence_='c_v'):
-    return CoherenceModel(model=model_, texts=texts_, dictionary=dictionary_, coherence=coherence_).get_coherence()
+def compute_c_v_coherence_values(lda_models_list_, texts_, dictionary_, coherence_='c_v'):
+    c_v_coherence_list = []
+    for current_model in lda_models_list_:
+        c_v_coherence_list.append(CoherenceModel(
+            model=current_model,
+            texts=texts_,
+            dictionary=dictionary_,
+            coherence=coherence_
+        ).get_coherence())
+    return c_v_coherence_list
 
 def concatenate_models_values(list1, list2, list3, list4):
     new_list=[]
@@ -215,7 +229,7 @@ FILE_EXTENSION = '.html'
 
 def generate_pyldavis_html_files(lda_models_list_, k_list_, corpus_, dictionary_):
     for index, (current_lda_model, k) in enumerate(zip(lda_models_list_, k_list_)):
-        vis_data = pyLDAvis.gensim_models.prepare(current_lda_model, corpus_, dictionary_)
+        vis_data = pyLDAvis.gensim_models.prepare(current_lda_model, corpus_, dictionary_, mds='mmds')
         file_name = GENERAL_FILE_NAME + str(k) + FILE_EXTENSION
         pyLDAvis.save_html(vis_data, file_name)
 
@@ -224,6 +238,7 @@ def generate_num_topics_list(start = 2, limit = 22, step = 2):
 
 def view_topics_models_list(lda_models_list_, num_topics_list_, num_words_=10):
     for index, (current_lda_model, current_num_topics) in enumerate(zip(lda_models_list_, num_topics_list_)):
+        print('\nTopics for a model trained for ' + str(current_num_topics) + ' number of topics')
         pprint(current_lda_model.print_topics(num_topics=current_num_topics, num_words=num_words_))
 
 if __name__ == '__main__':
@@ -308,15 +323,12 @@ if __name__ == '__main__':
     '''Step 8: Building the Topic Model'''
     print('\nStep 8: Building the Topic Model')
     # Tune lda params
-    num_topics_list = generate_num_topics_list(start=2, limit=30, step=3)
-    lda_models_list_values = train_lda_models(
-        num_topics_list_=num_topics_list,
+    range_topics_list = generate_num_topics_list(start=2, limit=30, step=3)
+    lda_models_list, k_list = train_lda_models(
+        num_topics_list_=range_topics_list,
         corpus_=corpus,
-        dictionary_=dictionary,
-        list_lemmatized_articles_=list_lemmatized_articles
+        dictionary_=dictionary
     )
-    print('(model_number, number_topics, u_mass_coherence_, c_v_coherence)')
-    pprint(lda_models_list_values)
     # lda_model = lda_models[0]
     # num_topics = 10
     # lda_model = train_single_model(corpus_=corpus, id2word_=dictionary, num_topics_=num_topics)
@@ -325,14 +337,15 @@ if __name__ == '__main__':
     print('\nStep 9: View the topics in LDA mode')
     # Print the keywords in the topics
     # pprint(lda_model.print_topics(num_topics=num_topics, num_words=10))
+    view_topics_models_list(lda_models_list_= lda_models_list, num_topics_list_=k_list, num_words_=10)
 
     # '''Step 10: Compute Model Perplexity'''
     # Compute Perplexity
     # print('\nStep 10: Compute Model Perplexity')
     # print('Perplexity: ', lda_model.log_perplexity(corpus))  # A measure of how good the model is. Lower the better.
 
-    # '''Step 11: Compute Topic Coherence Score'''
-    # print('\nStep 11: Compute Topic Coherence Score')
+    '''Step 11: Compute Topic Coherence Score'''
+    print('\nStep 11: Compute Topic Coherence Score')
     # # Compute Coherence Score - “AKSW” topic coherence measure (http://rare-technologies.com/what-is-topic-coherence/)
     # c_v_coherence_model_lda = CoherenceModel(
     #     model=lda_model,
@@ -357,8 +370,35 @@ if __name__ == '__main__':
     # # Average topic coherence is the sum of topic coherences of all topics, divided by the number of topics.
     # avg_topic_coherence = sum([t[1] for t in top_topics]) / num_topics
     # print('Average topic coherence: %.4f.' % avg_topic_coherence)
+    u_mas_coherence_values = compute_u_mass_coherence_values(
+        lda_models_list_=lda_models_list,
+        corpus_=corpus,
+        dictionary_=dictionary,
+        coherence_=U_MASS
+    )
+    c_v_coherence_values = compute_c_v_coherence_values(
+        lda_models_list_=lda_models_list,
+        texts_=list_lemmatized_articles,
+        dictionary_=dictionary,
+        coherence_=C_V
+    )
 
-    # '''Step 12: Visualize the topics'''
-    # print('\nStep 12: Visualize the topics')
+    lda_models_list_values = concatenate_models_values(
+        list1=[(index + 1) for index, _ in enumerate(k_list)],
+        list2=k_list,
+        list3=u_mas_coherence_values,
+        list4=c_v_coherence_values
+    )
+    print('(list_index, number_topics, u_mass_coherence_, c_v_coherence)')
+    pprint(lda_models_list_values)
+
+    '''Step 12: Visualize the topics'''
+    print('\nStep 12: Visualize the topics')
     # vis_data = pyLDAvis.gensim_models.prepare(lda_model, corpus, dictionary)
     # pyLDAvis.save_html(vis_data, 'lda.html')
+    generate_pyldavis_html_files(
+        lda_models_list_=lda_models_list,
+        k_list_=k_list,
+        corpus_=corpus,
+        dictionary_=dictionary
+    )
