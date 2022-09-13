@@ -127,6 +127,7 @@ def train_lda_models(
     # c_v_coherence_list = []
     for current_num_topics in num_topics_list_:
         k_list_.append(current_num_topics)
+        print('\nTraining model for ' + str(current_num_topics))
         current_lda_model = train_single_model(corpus_=corpus_, id2word_=dictionary_, num_topics_=current_num_topics)
         lda_models_list_.append(current_lda_model)
         # u_mas_coherence_list.append(compute_u_mass_coherence(
@@ -233,8 +234,8 @@ def generate_pyldavis_html_files(lda_models_list_, k_list_, corpus_, dictionary_
         file_name = GENERAL_FILE_NAME + str(k) + FILE_EXTENSION
         pyLDAvis.save_html(vis_data, file_name)
 
-def generate_num_topics_list(start = 2, limit = 22, step = 2):
-    return range(start, limit, step)
+def generate_num_topics_list(start_ = 2, limit_ = 22, step_ = 2):
+    return range(start_, limit_, step_)
 
 def view_topics_models_list(lda_models_list_, num_topics_list_, num_words_=10):
     for index, (current_lda_model, current_num_topics) in enumerate(zip(lda_models_list_, num_topics_list_)):
@@ -242,19 +243,19 @@ def view_topics_models_list(lda_models_list_, num_topics_list_, num_words_=10):
         pprint(current_lda_model.print_topics(num_topics=current_num_topics, num_words=num_words_))
 
 if __name__ == '__main__':
-    articles = [
-        'Ukraine’s president of the United States has made 33 desperate appeals to the Russian people of the united '
-        'states, and the president of the United States.',
-        'For many Russians of the United States, it was an unfamiliar sight to see the faces of the two leaders in an '
-        'unfamiliar sight.',
-        'The striped bats were hanging on their feet for best corpora alumni and ate best fishes COVID-19 am are is '
-        'were was children that were striped with bands of sunlight and stripped from their things.',
-        'First of all, the elephant in the room: how many topics do I need? There is really no easy answer for this, '
-        'it will depend on both your data and your application. I have used 10 topics here because I wanted to have a '
-        'few topics that I could interpret and “label”, and because that turned out to give me reasonably good '
-        'results. You might not need to interpret all your topics, so you wouldn’t use a large number of topics, '
-        'for example 100.'
-    ]
+    # articles = [
+    #     'Ukraine’s president of the United States has made 33 desperate appeals to the Russian people of the united '
+    #     'states, and the president of the United States.',
+    #     'For many Russians of the United States, it was an unfamiliar sight to see the faces of the two leaders in an '
+    #     'unfamiliar sight.',
+    #     'The striped bats were hanging on their feet for best corpora alumni and ate best fishes COVID-19 am are is '
+    #     'were was children that were striped with bands of sunlight and stripped from their things.',
+    #     'First of all, the elephant in the room: how many topics do I need? There is really no easy answer for this, '
+    #     'it will depend on both your data and your application. I have used 10 topics here because I wanted to have a '
+    #     'few topics that I could interpret and “label”, and because that turned out to give me reasonably good '
+    #     'results. You might not need to interpret all your topics, so you wouldn’t use a large number of topics, '
+    #     'for example 100.'
+    # ]
 
     # articles_list_of_dicts = get_the_guardian_articles_list(
     #     number_of_articles=2,
@@ -269,8 +270,8 @@ if __name__ == '__main__':
     # articles = get_list_articles_from_list_of_dicts(articles_list_of_dicts)
     # print(str(articles))
 
-    # articles_list_of_dicts = read_list_of_dicts_from_file('2DatasetsMerged')
-    # articles = get_list_articles_from_list_of_dicts(articles_list_of_dicts)
+    articles_list_of_dicts = read_list_of_dicts_from_file('2DatasetsMerged')
+    articles = get_list_articles_from_list_of_dicts(articles_list_of_dicts)
 
     '''Step 0: Number of articles and average article length'''
     print('\nStep 0: Data before pre-processing')
@@ -323,7 +324,7 @@ if __name__ == '__main__':
     '''Step 8: Building the Topic Model'''
     print('\nStep 8: Building the Topic Model')
     # Tune lda params
-    range_topics_list = generate_num_topics_list(start=2, limit=30, step=3)
+    range_topics_list = generate_num_topics_list(start_=5, limit_=30, step_=3)
     lda_models_list, k_list = train_lda_models(
         num_topics_list_=range_topics_list,
         corpus_=corpus,
