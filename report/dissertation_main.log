@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.5)  15 SEP 2022 18:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.5)  15 SEP 2022 18:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -662,10 +662,10 @@ l.153 \clearpage
 
 ] [7
 
-]
-No file dissertation_main.bbl.
+] (./dissertation_main.bbl)
 [8
 
+] [9
 
 ] 
 AED: lastpage setting LastPage
@@ -674,11 +674,11 @@ Package rerunfilecheck Info: File `dissertation_main.out' has not changed.
 (rerunfilecheck)             Checksum: 74067D878F76F76889B4F44D2B4A29A6;2977.
  ) 
 Here is how much of TeX's memory you used:
- 14399 strings out of 478268
- 222889 string characters out of 5846348
- 529308 words of memory out of 5000000
- 32349 multiletter control sequences out of 15000+600000
- 480715 words of font info for 71 fonts, out of 8000000 for 9000
+ 14408 strings out of 478268
+ 223088 string characters out of 5846348
+ 529375 words of memory out of 5000000
+ 32353 multiletter control sequences out of 15000+600000
+ 481061 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,11n,75p,488b,343s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
@@ -690,11 +690,12 @@ r/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
 local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
 cal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/
-texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on dissertation_main.pdf (12 pages, 485345 bytes).
+texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/t
+exlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on dissertation_main.pdf (13 pages, 505081 bytes).
 PDF statistics:
- 235 PDF objects out of 1000 (max. 8388607)
- 199 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
+ 250 PDF objects out of 1000 (max. 8388607)
+ 210 compressed objects within 3 object streams
+ 35 named destinations out of 1000 (max. 500000)
  195 words of extra memory for PDF output out of 10000 (max. 10000000)
 
