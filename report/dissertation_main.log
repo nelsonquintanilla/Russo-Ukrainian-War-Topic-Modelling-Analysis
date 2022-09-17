@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.5)  15 SEP 2022 18:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.5)  17 SEP 2022 13:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -671,16 +671,16 @@ l.153 \clearpage
 AED: lastpage setting LastPage
 (./dissertation_main.aux)
 Package rerunfilecheck Info: File `dissertation_main.out' has not changed.
-(rerunfilecheck)             Checksum: 74067D878F76F76889B4F44D2B4A29A6;2977.
+(rerunfilecheck)             Checksum: 38BBA2E5BD6D458600EA7DB28FFC2CB2;2938.
  ) 
 Here is how much of TeX's memory you used:
- 14408 strings out of 478268
- 223088 string characters out of 5846348
- 529375 words of memory out of 5000000
- 32353 multiletter control sequences out of 15000+600000
+ 14424 strings out of 478268
+ 223536 string characters out of 5846348
+ 531507 words of memory out of 5000000
+ 32365 multiletter control sequences out of 15000+600000
  481061 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,11n,75p,488b,343s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 61i,11n,75p,927b,343s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -692,10 +692,10 @@ cal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/t
 exlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on dissertation_main.pdf (13 pages, 505081 bytes).
+Output written on dissertation_main.pdf (13 pages, 513227 bytes).
 PDF statistics:
- 250 PDF objects out of 1000 (max. 8388607)
- 210 compressed objects within 3 object streams
- 35 named destinations out of 1000 (max. 500000)
+ 264 PDF objects out of 1000 (max. 8388607)
+ 224 compressed objects within 3 object streams
+ 39 named destinations out of 1000 (max. 500000)
  195 words of extra memory for PDF output out of 10000 (max. 10000000)
 
