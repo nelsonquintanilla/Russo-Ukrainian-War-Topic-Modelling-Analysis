@@ -113,36 +113,40 @@ def train_lda_models(
         lda_models_list_.append(current_lda_model)
     return lda_models_list_, k_list_
 
+# mallet_path = '/Users/nelsonquintanilla/Documents/repos/nfq160/dissertation/mallet-2.0.8/bin/mallet'
+# lda_mallet = gensim.models.wrappers.LdaMallet(mallet_path, corpus=corpus, num_topics=20, id2word=id2word)
+
 def train_single_model(
         corpus_,
         id2word_,
         num_topics_ = 10,
-        distributed = False,
+        # distributed = False,
         chunksize = 2000, # number of documents that are processed at a time in the training algorithm
         passes = 20, # epochs (set the number of “passes” high enough) - controls how often we train the model on the entire corpus
-        update_every = 0,
+        # update_every = 0,
         alpha = 'symmetric',
         eta = 'symmetric',
         decay = 0.5,
         offset = 1.0,
-        eval_every = 1,
+        eval_every = 0,
         iterations = 400, # set the number of “iterations” high enough - it controls how often we repeat a particular loop over each document
         gamma_threshold = 0.001,
         minimum_probability = 0.01,
         random_state = 100,
-        ns_conf = None,
+        # ns_conf = None,
         minimum_phi_value = 0.01,
         per_word_topics = True,
         dtype = np.float32
 ):
-    lda_model_ = gensim.models.ldamodel.LdaModel(
+    lda_model_ = gensim.models.ldamulticore.LdaMulticore(
         corpus=corpus_,
         num_topics=num_topics_,
         id2word=id2word_,
-        distributed=distributed,
+        workers=None,
+        # distributed=distributed,
         chunksize=chunksize,
         passes=passes,
-        update_every=update_every,
+        # update_every=update_every,
         alpha=alpha,
         eta=eta,
         decay=decay,
@@ -152,12 +156,18 @@ def train_single_model(
         gamma_threshold=gamma_threshold,
         minimum_probability=minimum_probability,
         random_state=random_state,
-        ns_conf=ns_conf,
+        # ns_conf=ns_conf,
         minimum_phi_value=minimum_phi_value,
         per_word_topics=per_word_topics,
         dtype=dtype
     )
     return lda_model_
+
+def compute_perplexity_values(lda_models_list_, corpus_):
+    perplexity_list = []
+    for current_model in lda_models_list_:
+        perplexity_list.append(current_model.log_perplexity(corpus_))
+    return perplexity_list
 
 def compute_u_mass_coherence_values(lda_models_list_, corpus_, dictionary_, coherence_):
     u_mas_coherence_list = []
@@ -187,7 +197,13 @@ def concatenate_models_values(list1, list2, list3, list4):
         new_list.append((item1, item2, item3, item4))
     return new_list
 
-GENERAL_FILE_NAME = 'testing_lda_k_'
+# def concatenate_models_values(list1, list2, list3):
+#     new_list=[]
+#     for index, (item1, item2, item3) in enumerate(zip(list1, list2, list3)):
+#         new_list.append((item1, item2, item3))
+#     return new_list
+
+GENERAL_FILE_NAME = 'lda_2_k_'
 FILE_EXTENSION = '.html'
 
 def generate_pyldavis_html_files(lda_models_list_, k_list_, corpus_, dictionary_):
@@ -211,7 +227,7 @@ def length_sum_lists(articles_list):
     return acc
 
 if __name__ == '__main__':
-    articles_list_of_dicts = read_list_of_dicts_from_file('TestingDataset')
+    articles_list_of_dicts = read_list_of_dicts_from_file('2DatasetsMerged')
     articles = get_list_articles_from_list_of_dicts(articles_list_of_dicts)
 
     # articles = ['Ukraine’s president has made a desperate appeal to the Russian people asking them to “listen to the voice of reason” and stop a war he said the Kremlin has already ordered. Saying Ukraine Ukrainian Russia Russian We us they them I me he him she her could would say many we also one first use go get see come want know like live need call make kill leave take flee']
@@ -266,7 +282,7 @@ if __name__ == '__main__':
     '''Building the Topic Model'''
     print('\nBuilding the Topic Model')
     # Tune lda params
-    range_topics_list = generate_num_topics_list(start_=5, limit_=15, step_=3)
+    range_topics_list = generate_num_topics_list(start_=2, limit_=40, step_=6)
     lda_models_list, k_list = train_lda_models(
         num_topics_list_=range_topics_list,
         corpus_=corpus,
@@ -277,14 +293,22 @@ if __name__ == '__main__':
     print('\nView the topics in LDA mode')
     view_topics_models_list(lda_models_list_= lda_models_list, num_topics_list_=k_list, num_words_=10)
 
+    '''Compute Perplexity'''
+    print('\nCompute Perplexity')
+    # a measure of how good the model is. lower the better.
+    perplexity_values = compute_perplexity_values(
+        lda_models_list_=lda_models_list,
+        corpus_=corpus
+    )
+
     '''Compute Topic Coherence Score'''
     print('\nCompute Topic Coherence Score')
-    u_mas_coherence_values = compute_u_mass_coherence_values(
-        lda_models_list_=lda_models_list,
-        corpus_=corpus,
-        dictionary_=dictionary,
-        coherence_=U_MASS
-    )
+    # u_mas_coherence_values = compute_u_mass_coherence_values(
+    #     lda_models_list_=lda_models_list,
+    #     corpus_=corpus,
+    #     dictionary_=dictionary,
+    #     coherence_=U_MASS
+    # )
     c_v_coherence_values = compute_c_v_coherence_values(
         lda_models_list_=lda_models_list,
         texts_=list_lemmatized_articles_nostops,
@@ -295,10 +319,11 @@ if __name__ == '__main__':
     lda_models_list_values = concatenate_models_values(
         list1=[(index + 1) for index, _ in enumerate(k_list)],
         list2=k_list,
-        list3=u_mas_coherence_values,
-        list4=c_v_coherence_values
+        list3=c_v_coherence_values,
+        list4=perplexity_values
     )
-    print('(list_index, number_topics, u_mass_coherence_, c_v_coherence)')
+    # print('(list_index, number_topics, c_v_coherence, u_mass_coherence_)')
+    print('(list_index, number_topics, c_v_coherence, perplexity)')
     pprint(lda_models_list_values)
 
     '''Visualize the topics'''
