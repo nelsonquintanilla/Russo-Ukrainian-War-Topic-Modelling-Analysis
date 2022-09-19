@@ -11,7 +11,7 @@ if __name__ == '__main__':
     print("nltk stopwords: " + str(nltk_stop_words))
     print("nltk stopswords length: " + str(len(nltk_stop_words)))
 
-    print('\n scikit learn stop words')
+    print('\n scikit-learn learn stop words')
     sklearn_stopwords = list(_stop_words.ENGLISH_STOP_WORDS)
     print("sklearn stopwords: " + str(sklearn_stopwords))
     print("sklearn stopswords length: " + str(len(sklearn_stopwords)))
