@@ -204,9 +204,17 @@ def view_topics_models_list(lda_models_list_, num_topics_list_, num_words_=10):
         print('\nTopics for a model trained for ' + str(current_num_topics) + ' number of topics')
         pprint(current_lda_model.print_topics(num_topics=current_num_topics, num_words=num_words_))
 
+def length_sum_lists(articles_list):
+    acc = 0
+    for article in articles_list:
+        acc = acc + len(article)
+    return acc
+
 if __name__ == '__main__':
-    articles_list_of_dicts = read_list_of_dicts_from_file('2DatasetsMerged')
+    articles_list_of_dicts = read_list_of_dicts_from_file('TestingDataset')
     articles = get_list_articles_from_list_of_dicts(articles_list_of_dicts)
+
+    # articles = ['Ukraine’s president has made a desperate appeal to the Russian people asking them to “listen to the voice of reason” and stop a war he said the Kremlin has already ordered. We us they them I me he him she her could would say many we also one first']
 
     '''Number of articles and average article length'''
     print('\nData before pre-processing')
@@ -216,10 +224,10 @@ if __name__ == '__main__':
 
     '''Normalisation and tokenization'''
     print('\nNormalisation and tokenization')
-    list_tokenized_articles = list(tokenize_documents(articles))
+    list_tokenized_articles = list(tokenize_documents(articles[:2]))
     # print('list_tokenized_articles: ' + str(list_tokenized_articles))
 
-    '''Stop Words Removal'''
+    '''Stop Words Removal 1'''
     print('\nStop Words Removal')
     # print("\nstop_words: " + str(stop_words))
     # print("stops words length: " + str(len(stop_words)))
@@ -227,69 +235,76 @@ if __name__ == '__main__':
     # Remove stop words from tokenized articles
     list_tokenized_articles_nostops = remove_stopwords_many_articles(list_tokenized_articles)
     # print('list_tokenized_articles_nostops: ' + str(list_tokenized_articles_nostops))
+    print('total of words, stop words removal 1: %d' %length_sum_lists(list_tokenized_articles_nostops))
 
     '''Lemmatisation'''
     print('\nLemmatisation')
     list_lemmatized_articles = lemmatize_articles(list_tokenized_articles_nostops)
     # print('list_lemmatized_articles: ' + str(list_lemmatized_articles))
+    print('total of words, lemmatisation: %d' %length_sum_lists(list_lemmatized_articles))
 
-    '''Transform the documents to a vectorized form (dictionary and corpus)'''
-    print('\nTransform the documents to a vectorized form')
-    dictionary = create_dictionary(list_lemmatized_articles)
-    corpus = create_corpus(list_lemmatized_articles, dictionary)
-    readable_corpus = generate_readable_corpus(dictionary, corpus)
-    # print('dictionary: ' + str(dictionary.token2id))
-    # print('corpus:' + str(corpus))
-    # print('readable corpus:' + str(readable_corpus))
+    '''Stop Words Removal 2'''
+    list_tokenized_articles_nostops_2 = remove_stopwords_many_articles(list_lemmatized_articles)
+    # print('list_lemmatized_articles 2: ' + str(list_tokenized_articles_nostops_2))
+    print('total of words, stop words removal 2: %d' %length_sum_lists(list_tokenized_articles_nostops_2))
 
-    '''Number of tokens and documents to train'''
-    print('\nNumber of tokens and documents to train')
-    print('Number of unique tokens: %d' % len(dictionary))
-    print('Number of documents: %d' % len(corpus))
-
-    '''Building the Topic Model'''
-    print('\nBuilding the Topic Model')
-    # Tune lda params
-    range_topics_list = generate_num_topics_list(start_=5, limit_=30, step_=3)
-    lda_models_list, k_list = train_lda_models(
-        num_topics_list_=range_topics_list,
-        corpus_=corpus,
-        dictionary_=dictionary
-    )
-
-    '''View the topics in LDA model'''
-    print('\nView the topics in LDA mode')
-    view_topics_models_list(lda_models_list_= lda_models_list, num_topics_list_=k_list, num_words_=10)
-
-    '''Compute Topic Coherence Score'''
-    print('\nCompute Topic Coherence Score')
-    u_mas_coherence_values = compute_u_mass_coherence_values(
-        lda_models_list_=lda_models_list,
-        corpus_=corpus,
-        dictionary_=dictionary,
-        coherence_=U_MASS
-    )
-    c_v_coherence_values = compute_c_v_coherence_values(
-        lda_models_list_=lda_models_list,
-        texts_=list_lemmatized_articles,
-        dictionary_=dictionary,
-        coherence_=C_V
-    )
-
-    lda_models_list_values = concatenate_models_values(
-        list1=[(index + 1) for index, _ in enumerate(k_list)],
-        list2=k_list,
-        list3=u_mas_coherence_values,
-        list4=c_v_coherence_values
-    )
-    print('(list_index, number_topics, u_mass_coherence_, c_v_coherence)')
-    pprint(lda_models_list_values)
-
-    '''Visualize the topics'''
-    print('\nVisualize the topics')
-    generate_pyldavis_html_files(
-        lda_models_list_=lda_models_list,
-        k_list_=k_list,
-        corpus_=corpus,
-        dictionary_=dictionary
-    )
+    # '''Transform the documents to a vectorized form (dictionary and corpus)'''
+    # print('\nTransform the documents to a vectorized form')
+    # dictionary = create_dictionary(list_lemmatized_articles)
+    # corpus = create_corpus(list_lemmatized_articles, dictionary)
+    # readable_corpus = generate_readable_corpus(dictionary, corpus)
+    # # print('dictionary: ' + str(dictionary.token2id))
+    # # print('corpus:' + str(corpus))
+    # # print('readable corpus:' + str(readable_corpus))
+    #
+    # '''Number of tokens and documents to train'''
+    # print('\nNumber of tokens and documents to train')
+    # print('Number of unique tokens: %d' % len(dictionary))
+    # print('Number of documents: %d' % len(corpus))
+    #
+    # '''Building the Topic Model'''
+    # print('\nBuilding the Topic Model')
+    # # Tune lda params
+    # range_topics_list = generate_num_topics_list(start_=5, limit_=30, step_=3)
+    # lda_models_list, k_list = train_lda_models(
+    #     num_topics_list_=range_topics_list,
+    #     corpus_=corpus,
+    #     dictionary_=dictionary
+    # )
+    #
+    # '''View the topics in LDA model'''
+    # print('\nView the topics in LDA mode')
+    # view_topics_models_list(lda_models_list_= lda_models_list, num_topics_list_=k_list, num_words_=10)
+    #
+    # '''Compute Topic Coherence Score'''
+    # print('\nCompute Topic Coherence Score')
+    # u_mas_coherence_values = compute_u_mass_coherence_values(
+    #     lda_models_list_=lda_models_list,
+    #     corpus_=corpus,
+    #     dictionary_=dictionary,
+    #     coherence_=U_MASS
+    # )
+    # c_v_coherence_values = compute_c_v_coherence_values(
+    #     lda_models_list_=lda_models_list,
+    #     texts_=list_lemmatized_articles,
+    #     dictionary_=dictionary,
+    #     coherence_=C_V
+    # )
+    #
+    # lda_models_list_values = concatenate_models_values(
+    #     list1=[(index + 1) for index, _ in enumerate(k_list)],
+    #     list2=k_list,
+    #     list3=u_mas_coherence_values,
+    #     list4=c_v_coherence_values
+    # )
+    # print('(list_index, number_topics, u_mass_coherence_, c_v_coherence)')
+    # pprint(lda_models_list_values)
+    #
+    # '''Visualize the topics'''
+    # print('\nVisualize the topics')
+    # generate_pyldavis_html_files(
+    #     lda_models_list_=lda_models_list,
+    #     k_list_=k_list,
+    #     corpus_=corpus,
+    #     dictionary_=dictionary
+    # )
