@@ -16,13 +16,12 @@ Blei, D.~M.  \harvardyearleft 2012\harvardyearright , `Probabilistic topic
 Blei, D.~M.  \harvardyearleft n.d.\harvardyearright , `Latent {Dirichlet}
   {Allocation}',  p.~30.
 
-\harvarditem[Curiskis et~al.]{Curiskis, Drake, Osborn \harvardand\
-  Kennedy}{2020}{curiskis_evaluation_2020}
-Curiskis, S.~A., Drake, B., Osborn, T.~R. \harvardand\ Kennedy, P.~J.
-  \harvardyearleft 2020\harvardyearright , `An evaluation of document
-  clustering and topic modelling in two online social networks: {Twitter} and
-  {Reddit}', {\em Information Processing \& Management} {\bf 57}(2),~102034.
-\newline\harvardurl{https://linkinghub.elsevier.com/retrieve/pii/S0306457318307805}
+\harvarditem[Caldara et~al.]{Caldara, Conlisk, Iacoviello \harvardand\
+  Penn}{2022}{caldara_effect_2022}
+Caldara, D., Conlisk, S., Iacoviello, M. \harvardand\ Penn, M.
+  \harvardyearleft 2022\harvardyearright , `The {Effect} of the {War} in
+  {Ukraine} on {Global} {Activity} and {Inflation}'.
+\newline\harvardurl{https://www.federalreserve.gov/econres/notes/feds-notes/the-effect-of-the-war-in-ukraine-on-global-activity-and-inflation-20220527.html}
 
 \harvarditem{Sievert \harvardand\ Shirley}{2014}{sievert_ldavis_2014}
 Sievert, C. \harvardand\ Shirley, K.  \harvardyearleft 2014\harvardyearright ,

@@ -5,42 +5,42 @@ The style file: agsm.bst
 Database file #1: mybib.bib
 You've used 5 entries,
             2909 wiz_defined-function locations,
-            675 strings with 5787 characters,
-and the built_in function-call counts, 17820 in all, are:
-= -- 2840
+            672 strings with 5771 characters,
+and the built_in function-call counts, 17327 in all, are:
+= -- 2757
 > -- 256
 < -- 0
-+ -- 1326
++ -- 1288
 - -- 77
-* -- 1521
-:= -- 3632
+* -- 1467
+:= -- 3548
 add.period$ -- 6
 call.type$ -- 5
 change.case$ -- 70
 chr.to.int$ -- 5
 cite$ -- 5
-duplicate$ -- 91
-empty$ -- 178
+duplicate$ -- 90
+empty$ -- 169
 format.name$ -- 93
-if$ -- 3199
+if$ -- 3107
 int.to.chr$ -- 5
 int.to.str$ -- 0
 missing$ -- 5
 newline$ -- 22
 num.names$ -- 52
-pop$ -- 23
+pop$ -- 27
 preamble$ -- 1
 purify$ -- 75
 quote$ -- 0
 skip$ -- 75
 stack$ -- 0
-substring$ -- 3959
-swap$ -- 21
+substring$ -- 3827
+swap$ -- 19
 text.length$ -- 70
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 20
 warning$ -- 0
-while$ -- 114
+while$ -- 113
 width$ -- 0
-write$ -- 74
+write$ -- 73
