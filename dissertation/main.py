@@ -49,7 +49,10 @@ def tokenize_documents(documents):
 en = spacy.load('en_core_web_sm')
 # stop_words = list(en.Defaults.stop_words)
 
+custom_stopwords = ['ukraine','ukrainian', 'russia', 'russian']
+
 nltk_stop_words = stopwords.words('english')
+nltk_stop_words.extend(custom_stopwords)
 sklearn_stopwords = list(_stop_words.ENGLISH_STOP_WORDS)
 spacy_stopwords = list(en.Defaults.stop_words)
 stop_words = set(nltk_stop_words).union(sklearn_stopwords, spacy_stopwords)
@@ -230,8 +233,6 @@ if __name__ == '__main__':
     articles_list_of_dicts = read_list_of_dicts_from_file('2DatasetsMerged')
     articles = get_list_articles_from_list_of_dicts(articles_list_of_dicts)
 
-    # articles = ['Ukraine’s president has made a desperate appeal to the Russian people asking them to “listen to the voice of reason” and stop a war he said the Kremlin has already ordered. Saying Ukraine Ukrainian Russia Russian We us they them I me he him she her could would say many we also one first use go get see come want know like live need call make kill leave take flee']
-
     '''Number of articles and average article length'''
     print('\nData before pre-processing')
     average_article_length = compute_average_document_length(articles)
@@ -268,6 +269,7 @@ if __name__ == '__main__':
     '''Transform the documents to a vectorized form (dictionary and corpus)'''
     print('\nTransform the documents to a vectorized form')
     dictionary = create_dictionary(list_lemmatized_articles_nostops)
+    # dictionary.filter_extremes(no_below=50, no_above=0.60)
     corpus = create_corpus(list_lemmatized_articles_nostops, dictionary)
     readable_corpus = generate_readable_corpus(dictionary, corpus)
     # print('dictionary: ' + str(dictionary.token2id))
