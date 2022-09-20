@@ -203,7 +203,7 @@ def concatenate_models_values(list1, list2, list3, list4):
 #         new_list.append((item1, item2, item3))
 #     return new_list
 
-GENERAL_FILE_NAME = 'lda_2_k_'
+GENERAL_FILE_NAME = 'lda_4_k_'
 FILE_EXTENSION = '.html'
 
 def generate_pyldavis_html_files(lda_models_list_, k_list_, corpus_, dictionary_):
@@ -212,7 +212,7 @@ def generate_pyldavis_html_files(lda_models_list_, k_list_, corpus_, dictionary_
         file_name = GENERAL_FILE_NAME + str(k) + FILE_EXTENSION
         pyLDAvis.save_html(vis_data, file_name)
 
-def generate_num_topics_list(start_ = 2, limit_ = 22, step_ = 2):
+def generate_num_topics_list(start_ = 2, limit_ = 14, step_ = 2):
     return range(start_, limit_, step_)
 
 def view_topics_models_list(lda_models_list_, num_topics_list_, num_words_=10):
@@ -282,7 +282,7 @@ if __name__ == '__main__':
     '''Building the Topic Model'''
     print('\nBuilding the Topic Model')
     # Tune lda params
-    range_topics_list = generate_num_topics_list(start_=2, limit_=40, step_=6)
+    range_topics_list = generate_num_topics_list(start_=8, limit_=9, step_=1)
     lda_models_list, k_list = train_lda_models(
         num_topics_list_=range_topics_list,
         corpus_=corpus,
