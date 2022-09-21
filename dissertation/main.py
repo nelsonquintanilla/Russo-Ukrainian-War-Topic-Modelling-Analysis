@@ -49,7 +49,7 @@ def tokenize_documents(documents):
 en = spacy.load('en_core_web_sm')
 # stop_words = list(en.Defaults.stop_words)
 
-custom_stopwords = ['ukraine','ukrainian', 'russia', 'russian', 'people', 'city', 'war']
+custom_stopwords = ['ukraine','ukrainian', 'russia', 'russian', 'people', 'city', 'war', 'country', 'year', 'day']
 
 nltk_stop_words = stopwords.words('english')
 nltk_stop_words.extend(custom_stopwords)
@@ -206,7 +206,7 @@ def concatenate_models_values(list1, list2, list3, list4):
 #         new_list.append((item1, item2, item3))
 #     return new_list
 
-GENERAL_FILE_NAME = 'lda_6_k_'
+GENERAL_FILE_NAME = 'lda_7_k_'
 FILE_EXTENSION = '.html'
 
 def generate_pyldavis_html_files(lda_models_list_, k_list_, corpus_, dictionary_):
@@ -218,10 +218,14 @@ def generate_pyldavis_html_files(lda_models_list_, k_list_, corpus_, dictionary_
 def generate_num_topics_list(start_ = 2, limit_ = 14, step_ = 2):
     return range(start_, limit_, step_)
 
-def view_topics_models_list(lda_models_list_, num_topics_list_, num_words_=10):
+def view_topics_models_list(lda_models_list_, num_topics_list_, num_words_, documents_ids_list_, corpus_):
     for index, (current_lda_model, current_num_topics) in enumerate(zip(lda_models_list_, num_topics_list_)):
         print('\nTopics for a model trained for ' + str(current_num_topics) + ' number of topics')
         pprint(current_lda_model.print_topics(num_topics=current_num_topics, num_words=num_words_))
+        print('\nFor model with k = ' + str(current_num_topics))
+        for document_id in documents_ids_list_:
+            doc_topics = current_lda_model.get_document_topics(bow=corpus_[document_id])
+            print('Document Topics for document # ' + str(document_id) + ' = ' + str(doc_topics))
 
 def length_sum_lists(articles_list):
     acc = 0
@@ -246,8 +250,8 @@ if __name__ == '__main__':
 
     '''Stop Words Removal 1'''
     print('\nStop Words Removal 1')
-    print("\nstop_words: " + str(stop_words))
-    print("stops words length: " + str(len(stop_words)))
+    # print("\nstop_words: " + str(stop_words))
+    # print("stops words length: " + str(len(stop_words)))
 
     # Remove stop words from tokenized articles
     list_tokenized_articles_nostops = remove_stopwords_many_articles(list_tokenized_articles)
@@ -291,9 +295,18 @@ if __name__ == '__main__':
         dictionary_=dictionary
     )
 
+    # Randomly generated id's on testing.py file
+    random_ids = [2187, 272, 1107, 947, 525]
+
     '''View the topics in LDA model'''
     print('\nView the topics in LDA mode')
-    view_topics_models_list(lda_models_list_= lda_models_list, num_topics_list_=k_list, num_words_=10)
+    view_topics_models_list(
+        lda_models_list_= lda_models_list,
+        num_topics_list_=k_list,
+        num_words_=10,
+        documents_ids_list_=random_ids,
+        corpus_=corpus
+    )
 
     '''Compute Perplexity'''
     print('\nCompute Perplexity')
