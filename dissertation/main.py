@@ -49,7 +49,7 @@ def tokenize_documents(documents):
 en = spacy.load('en_core_web_sm')
 # stop_words = list(en.Defaults.stop_words)
 
-custom_stopwords = ['ukraine','ukrainian', 'russia', 'russian']
+custom_stopwords = ['ukraine','ukrainian', 'russia', 'russian', 'people', 'city', 'war']
 
 nltk_stop_words = stopwords.words('english')
 nltk_stop_words.extend(custom_stopwords)
@@ -206,7 +206,7 @@ def concatenate_models_values(list1, list2, list3, list4):
 #         new_list.append((item1, item2, item3))
 #     return new_list
 
-GENERAL_FILE_NAME = 'lda_4_k_'
+GENERAL_FILE_NAME = 'lda_6_k_'
 FILE_EXTENSION = '.html'
 
 def generate_pyldavis_html_files(lda_models_list_, k_list_, corpus_, dictionary_):
@@ -246,8 +246,8 @@ if __name__ == '__main__':
 
     '''Stop Words Removal 1'''
     print('\nStop Words Removal 1')
-    # print("\nstop_words: " + str(stop_words))
-    # print("stops words length: " + str(len(stop_words)))
+    print("\nstop_words: " + str(stop_words))
+    print("stops words length: " + str(len(stop_words)))
 
     # Remove stop words from tokenized articles
     list_tokenized_articles_nostops = remove_stopwords_many_articles(list_tokenized_articles)
@@ -284,7 +284,7 @@ if __name__ == '__main__':
     '''Building the Topic Model'''
     print('\nBuilding the Topic Model')
     # Tune lda params
-    range_topics_list = generate_num_topics_list(start_=8, limit_=9, step_=1)
+    range_topics_list = generate_num_topics_list(start_=2, limit_=15, step_=2)
     lda_models_list, k_list = train_lda_models(
         num_topics_list_=range_topics_list,
         corpus_=corpus,
