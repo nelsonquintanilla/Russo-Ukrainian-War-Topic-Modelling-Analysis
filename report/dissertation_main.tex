@@ -152,6 +152,11 @@ Supervisor: \bhamsupervisor
 \addcontentsline{toc}{section}{Table of Abbreviations}
 
 \clearpage
+% List of Figures
+\listoffigures
+\addcontentsline{toc}{section}{List of Figures}
+
+\clearpage
 % set up the page numbering and counter - Table of Abbreviations has no page number
 % also set up the footers and headers appropriately.
 \pagenumbering{arabic}
@@ -199,17 +204,86 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 \clearpage
 \section{Methodology}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In this section we explain the steps we took in order to build and prepare our dataset, the model generation and parameter tuning process, methods of evaluation for our model, and lastly visualisation and interpretation of our resulting topics. The Figure \ref{fig:method_1} summarises the method we just mentioned.\\
 
-\subsection{Subsection}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{method_1.png}
+\caption{\textit{Diagram that summarises steps taken during the development of our work.}}
+\label{fig:method_1}
+\end{figure}
+
+\subsection{Data Extraction}
+For the Data
+
+\clearpage
+\subsection{Data Pre-Processing}
+
+\subsubsection{Dataset Relevant Features}
+
+\subsubsection{Normalisation and Tokenisation}
+
+\subsubsection{Stop Word Removal}
+
+\subsubsection{Lemmatisation}
+
+\subsubsection{Transforming the documents in a vectorised form (Bag of Words Representation)}
+
+\subsubsection{Pre-Processed Data information}
+
+
+
+\clearpage
+\subsection{Model Training and Parameter Tunning}
+
+\subsubsection{Training Multiple Models for different values of 'Number of Topics' Parameter}
+
+\subsubsection{Choice of Stop Word List}
+
+\subsubsection{Addition of Custom Words to the Stop Word List}
+
+\subsubsection{Change of function to train the model}
+
+
+
+\clearpage
+\subsection{Model Evaluation and Selection}
+
+\subsubsection{Visualising topic models}
+
+\subsubsection{Using trained models on sample of documents}
+
+\subsubsection{Model Perplexity and Coherence}
+
+\subsubsection{Coherence}
+
+\subsubsection{Perplexity}
+
+\subsubsection{Human Judgement}
+
+\subsubsection{Word intrusion}
+
+\subsubsection{Topic intrusion}
+
+
+
+\clearpage
+\subsection{Topics Interpretation and Visualisation}
 
 \clearpage
 \section{Results}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\subsection{Subsection}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\subsection{Dataset}
+
+
+\subsection{LDA model parameters}
+
+\subsection{Experimental comparison between coherence and perplexity}
+\subsubsection{Coherence}
+\subsubsection{Dataset}
+
+\subsection{Experimental comparison using human judgement}
 
 \clearpage
 \section{Discussion}

@@ -1,4 +1,5 @@
 \contentsline {section}{Table of Abbreviations}{}{section*.1}%
+\contentsline {section}{List of Figures}{}{section*.1}%
 \contentsline {section}{\numberline {1}Overview}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Abstract}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Acknowledgements}{1}{subsection.1.2}%
@@ -7,17 +8,44 @@
 \contentsline {subsection}{\numberline {3.1}Subsection}{3}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Subsection}{3}{subsection.3.2}%
 \contentsline {section}{\numberline {4}Methodology}{4}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Subsection}{4}{subsection.4.1}%
-\contentsline {section}{\numberline {5}Experimentation/Results}{5}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Subsection}{5}{subsection.5.1}%
-\contentsline {section}{\numberline {6}Discussion}{6}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Subsection}{6}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Subsubsection}{6}{subsubsection.6.1.1}%
-\contentsline {section}{\numberline {7}Conclusions}{7}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Subsection}{7}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Subsection}{7}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}Subsubsection}{7}{subsubsection.7.2.1}%
-\contentsline {section}{References}{8}{section*.2}%
-\contentsline {section}{\numberline {8}Appendix One: Accompanying Archive and Instructions}{9}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Directory Structure}{9}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Running the Provided Code}{9}{subsection.8.2}%
+\contentsline {subsection}{\numberline {4.1}Data Extraction}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Data Pre-Processing}{5}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Dataset Relevant Features}{5}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Normalisation and Tokenisation}{5}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Stop Word Removal}{5}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Lemmatisation}{5}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.5}Transforming the documents in a vectorised form (Bag of Words Representation)}{5}{subsubsection.4.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.6}Pre-Processed Data information}{5}{subsubsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.3}Model Training and Parameter Tunning}{6}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Training Multiple Models for different values of 'Number of Topics' Parameter}{6}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Choice of Stop Word List}{6}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Addition of Custom Words to the Stop Word List}{6}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Change of function to train the model}{6}{subsubsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.4}Model Evaluation and Selection}{7}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Visualising topic models}{7}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Using trained models on sample of documents}{7}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Model Perplexity and Coherence}{7}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Coherence}{7}{subsubsection.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.5}Perplexity}{7}{subsubsection.4.4.5}%
+\contentsline {subsubsection}{\numberline {4.4.6}Human Judgement}{7}{subsubsection.4.4.6}%
+\contentsline {subsubsection}{\numberline {4.4.7}Word intrusion}{7}{subsubsection.4.4.7}%
+\contentsline {subsubsection}{\numberline {4.4.8}Topic intrusion}{7}{subsubsection.4.4.8}%
+\contentsline {subsection}{\numberline {4.5}Topics Interpretation and Visualisation}{8}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Results}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Dataset}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}LDA model parameters}{9}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Experimental comparison between coherence and perplexity}{9}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Coherence}{9}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Dataset}{9}{subsubsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.4}Experimental comparison using human judgement}{9}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Discussion}{10}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Subsection}{10}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Subsubsection}{10}{subsubsection.6.1.1}%
+\contentsline {section}{\numberline {7}Conclusion}{11}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Subsection}{11}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Subsection}{11}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Subsubsection}{11}{subsubsection.7.2.1}%
+\contentsline {section}{References}{12}{section*.2}%
+\contentsline {section}{\numberline {8}Appendix One: Accompanying Archive and Instructions}{13}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Directory Structure}{13}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Running the Provided Code}{13}{subsection.8.2}%
