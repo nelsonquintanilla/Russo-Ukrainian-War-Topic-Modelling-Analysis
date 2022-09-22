@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.5)  22 SEP 2022 13:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.5)  22 SEP 2022 17:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -598,12 +598,12 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 93.
 \c@lstlisting=\count326
-<crest.jpg, id=208, 501.875pt x 600.2425pt>
+<crest.jpg, id=211, 501.875pt x 600.2425pt>
 File: crest.jpg Graphic file (type jpg)
 <use crest.jpg>
 Package pdftex.def Info: crest.jpg  used on input line 102.
 (pdftex.def)             Requested size: 90.3375pt x 108.03899pt.
-<uni.jpg, id=209, 2007.5pt x 473.77pt>
+<uni.jpg, id=212, 2007.5pt x 473.77pt>
 File: uni.jpg Graphic file (type jpg)
 <use uni.jpg>
 Package pdftex.def Info: uni.jpg  used on input line 104.
@@ -645,8 +645,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
+l.144 \clearpage
+                 [4]
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
 l.154 \clearpage
-                 [4
+                 [5
 
 ] (./dissertation_main.lof)
 \tf@lof=\write6
@@ -658,7 +664,19 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.159 \clearpage
-                 [5
+                 [6
+
+] (./dissertation_main.lot)
+\tf@lot=\write7
+\openout7 = `dissertation_main.lot'.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.164 \clearpage
+                 [7
 
 ] [1
 
@@ -667,14 +685,14 @@ l.159 \clearpage
 ] [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 207--208
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
 
  []
 
-<method_1.png, id=324, 641.39626pt x 95.30606pt>
+<method_1.png, id=337, 641.39626pt x 95.30606pt>
 File: method_1.png Graphic file (type png)
 <use method_1.png>
-Package pdftex.def Info: method_1.png  used on input line 211.
+Package pdftex.def Info: method_1.png  used on input line 216.
 (pdftex.def)             Requested size: 448.97432pt x 66.71378pt.
 [4
 
@@ -683,21 +701,31 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.239 \clearpage
+l.244 \clearpage
                  <./method_1.png>] [5
 
 ] [6
 
 ] [7
 
-] [8
+]
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
 
-] [9
+ []
+
+[8
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.316 \clearpage
+                ] [9
 
 ] [10
 
-]
-(./dissertation_main.bbl
+] (./dissertation_main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 21--25
 \OT1/cmr/bx/n/10.95 URL: \OT1/cmr/m/it/10.95 https://www.federalreserve.gov/eco
 nres/notes/feds-notes/the-effect-of-the-war-in-ukraine-
@@ -716,39 +744,32 @@ lism/2018/10/30/western-europeans-under-30-view-
 ] 
 AED: lastpage setting LastPage
 (./dissertation_main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `dissertation_main.out' has not changed.
-(rerunfilecheck)             Checksum: AE4FC469D79751D5B90A347748B8D882;8995.
+(rerunfilecheck)             Checksum: 3B8F73BA864CDBECCCDC83DA801A033C;9116.
  ) 
 Here is how much of TeX's memory you used:
- 14508 strings out of 478268
- 225067 string characters out of 5846348
- 541756 words of memory out of 5000000
- 32410 multiletter control sequences out of 15000+600000
+ 14517 strings out of 478268
+ 225228 string characters out of 5846348
+ 541910 words of memory out of 5000000
+ 32416 multiletter control sequences out of 15000+600000
  481061 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,11n,75p,927b,343s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{page.13} has been referenced but does not exist, re
-placed by a fixed one
-
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
-usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></us
-r/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></us
-r/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
-cal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
-l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/t
-exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/te
-xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
-live/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on dissertation_main.pdf (17 pages, 541439 bytes).
+ 61i,11n,75p,928b,343s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
+r/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
+cal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
+/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/
+texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/t
+exlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on dissertation_main.pdf (19 pages, 542830 bytes).
 PDF statistics:
- 444 PDF objects out of 1000 (max. 8388607)
- 397 compressed objects within 4 object streams
+ 458 PDF objects out of 1000 (max. 8388607)
+ 408 compressed objects within 5 object streams
  73 named destinations out of 1000 (max. 500000)
- 424 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 432 words of extra memory for PDF output out of 10000 (max. 10000000)
 

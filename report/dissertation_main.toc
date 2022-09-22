@@ -1,5 +1,6 @@
 \contentsline {section}{Table of Abbreviations}{}{section*.1}%
 \contentsline {section}{List of Figures}{}{section*.1}%
+\contentsline {section}{List of Tables}{}{section*.1}%
 \contentsline {section}{\numberline {1}Overview}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Abstract}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Acknowledgements}{1}{subsection.1.2}%
