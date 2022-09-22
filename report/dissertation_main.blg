@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: dissertation_main.aux
+The style file: agsm.bst
+Database file #1: mybib.bib
+Repeated entry---line 160 of file mybib.bib
+ : @article{jacobi_quantitative_2016
+ :                                  ,
+I'm skipping whatever remains of this entry
+You've used 12 entries,
+            2909 wiz_defined-function locations,
+            707 strings with 7343 characters,
+and the built_in function-call counts, 60040 in all, are:
+= -- 9882
+> -- 815
+< -- 0
++ -- 4801
+- -- 252
+* -- 5272
+:= -- 11850
+add.period$ -- 14
+call.type$ -- 12
+change.case$ -- 161
+chr.to.int$ -- 12
+cite$ -- 12
+duplicate$ -- 195
+empty$ -- 363
+format.name$ -- 291
+if$ -- 10818
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 10
+newline$ -- 47
+num.names$ -- 115
+pop$ -- 73
+preamble$ -- 1
+purify$ -- 175
+quote$ -- 0
+skip$ -- 163
+stack$ -- 0
+substring$ -- 14043
+swap$ -- 42
+text.length$ -- 158
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 46
+warning$ -- 0
+while$ -- 247
+width$ -- 0
+write$ -- 165
+(There was 1 error message)

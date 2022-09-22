@@ -147,7 +147,7 @@ Supervisor: \bhamsupervisor
 \begin{itemize}[nolistsep]
 \item LDA -- Latent Dirichlet Allocation
 \item API -- Application Programming Interface
-\item IEEE -- Institute of Electrical and Electronics Engineers
+\item NLTK -- Natural Language Toolkit
 \end{itemize}
 \addcontentsline{toc}{section}{Table of Abbreviations}
 
@@ -219,21 +219,34 @@ In this section we explain the steps we took in order to build and prepare our d
 \end{figure}
 
 \subsection{Data Extraction}
-To obtain a significantly large dataset of reliable news articles related to the Russian invasion of Ukraine we decided to use The Guardian digital newspaper. The reasoning behind this decision is because The Guardian is one of the most trusted newspapers in the UK and Europe in terms of objective journalism \citep{matsa_western_2018}. Additionally, they provide The Guardian – Open Platform, which is their public web service or application programming interface (API) that provides free access to all of the content that the Guardian produces, organised by tags and sections \citep{noauthor_theguardian_nodate}. This is specially useful in our case because we need to filter the news to reduce noise in our data and have articles relevant to the ongoing conflict between Russia and Ukraine. 
+To obtain a significantly large dataset of reliable news articles related to the Russian invasion of Ukraine we decided to use The Guardian digital newspaper. The reasoning behind this decision is because The Guardian is one of the most trusted newspapers in the UK and Europe in terms of objective journalism \citep{matsa_western_2018}. Additionally, they provide The Guardian – Open Platform, which is their public web service or application programming interface (API) that provides free access to all of the content that the Guardian produces, organised by tags and sections \citep{noauthor_theguardian_nodate}. This is specially useful in our case because we need to filter the news to reduce noise in our data and have articles relevant to the ongoing conflict between Russia and Ukraine.
 
 To narrow-down the retrieval of the articles, we requested published data between the 2nd of February of 2022 (day in which Russia invaded Ukraine) and the 31st of August of 2022. Additionally, we created a function to interact with the API and retrieve news articles filtered by search term and section. This is to avoid obtaining non relevant news; for instance, we used the section "world" to point to data classified in this category and not other categories such as "sports" or "lifestyle". Furthermore, we used 2 search terms: Ukraine and Russia. We obtained 2 different datasets corresponding to the mentioned search terms. After that, we merged both datasets and removed duplicates that could have existed in both to avoid redundancy. We also removed non pertinent articles that contained information about topics not related the conflict.
 
 The resulting dataset is a json containing a list of 2275 news articles with their id, title of the article, body of the article, and url to read the article on the web. Such dataset is available in the repository included in Section~\ref{section:appendix} so it can be used for future research or work.
 
 \subsection{Data Pre-Processing}
+Before feeding the data to our model it is required to prepare the data \citep{jacobi_quantitative_2016}.
+
+Following is a detailed description of the processes we took when completing the analysis for our case study. 
 
 \subsubsection{Dataset Relevant Features}
+Before starting pre-processing the data we display important features from our dataset, such as the number of articles to be used and the average word count per article. This is just to have a rough idea of the length of each document we are using for the purposes of training our model. In our case, we have a total of 2275 news articles and an average of 864 words per article.
 
 \subsubsection{Normalisation and Tokenisation}
+A topic model does not analyse documents directly; rather, it employs a so-called document–term matrix that is derived from the documents. This matrix displays the frequency for each term (word) in each document \citep{jacobi_quantitative_2016}. The initial step in the creation of this matrix is normalisation and tokenisation, for which each page is converted into a list of lowercase words, ignoring short and long words.
 
 \subsubsection{Stop Word Removal}
+Stop words are the words in a stop list that are filtered out prior to processing natural language data (text) due to their insignificance \citep{rajaraman_mining_2011}.
+
+We compared three standard lists of stop words from extensively used libraries for machine learning applications: Natural Language Toolkit (NLTK) \citep{bird_natural_nodate}, scikit-learn \citep{pedregosa_scikit-learn_nodate}, and spaCy \citep{spacy2}. There is a file dedicated to do this comparison on our repository included in Section~\ref{section:appendix}. However, it is worth mentioning that our final decision was to merge the lists of stop words since this leads to better results in terms of removing words that are not adding any meaning, for instance "but", "end", and "the".
 
 \subsubsection{Lemmatisation}
+Lemmatisation is an important part of the preprocessing of the data. It reduces all words to their "lemma" by the use of a lexicon and regular conjugation rules. Thus, lemmatization reduces "is" and "were" to their respective lemma (to be) "be" \citep{jacobi_quantitative_2016}. There is also another technique called stemming which removes the endings of the words leaving just the "stems". Using the commonly employed Porter stemming algorithm, for instance, "weaknesses" becomes "weak" while "failures" and "failure" both become "failur" \citep{jacobi_quantitative_2016}. 
+
+In our case lemmatisation was preferred over stemming because it produced better results as compared to stemming which sometimes returned words that were missing letters at the end and therefore did not exist in the English dictionary.
+
+For the analysis presented here we used the lemmatiser from spaCy \citep{spacy2} which which assigns tokens' base forms using criteria derived from part-of-speech tags (POS).
 
 \subsubsection{Transforming the documents in a vectorised form (Bag of Words Representation)}
 
