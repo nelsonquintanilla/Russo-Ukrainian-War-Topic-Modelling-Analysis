@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.5)  22 SEP 2022 17:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.5)  22 SEP 2022 17:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -689,7 +689,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 212--213
 
  []
 
-<method_1.png, id=337, 641.39626pt x 95.30606pt>
+<method_1.png, id=341, 641.39626pt x 95.30606pt>
 File: method_1.png Graphic file (type png)
 <use method_1.png>
 Package pdftex.def Info: method_1.png  used on input line 216.
@@ -713,6 +713,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 283--284
 
  []
 
+<forms_results.png, id=372, 1157.32375pt x 604.2575pt>
+File: forms_results.png Graphic file (type png)
+<use forms_results.png>
+Package pdftex.def Info: forms_results.png  used on input line 306.
+(pdftex.def)             Requested size: 462.9213pt x 241.69872pt.
+<charts_models.png, id=374, 516.84pt x 1096.095pt>
+File: charts_models.png Graphic file (type png)
+<use charts_models.png>
+Package pdftex.def Info: charts_models.png  used on input line 313.
+(pdftex.def)             Requested size: 258.41936pt x 548.04616pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [8
 
 
@@ -720,10 +733,22 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.316 \clearpage
-                ] [9
+l.328 \clearpage
+                
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.328 \clearpage
+                 <./forms_results.png>] [9
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.328 \clearpage
+                 <./charts_models.png>] [10
 
-] [10
+] [11
 
 ] (./dissertation_main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 21--25
@@ -737,9 +762,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--33
 lism/2018/10/30/western-europeans-under-30-view-
  []
 
-) [11
+) [12
 
-] [12
+] [13
 
 ] 
 AED: lastpage setting LastPage
@@ -748,10 +773,10 @@ Package rerunfilecheck Info: File `dissertation_main.out' has not changed.
 (rerunfilecheck)             Checksum: 3B8F73BA864CDBECCCDC83DA801A033C;9116.
  ) 
 Here is how much of TeX's memory you used:
- 14517 strings out of 478268
- 225228 string characters out of 5846348
- 541910 words of memory out of 5000000
- 32416 multiletter control sequences out of 15000+600000
+ 14536 strings out of 478268
+ 225589 string characters out of 5846348
+ 541973 words of memory out of 5000000
+ 32430 multiletter control sequences out of 15000+600000
  481061 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,11n,75p,928b,343s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -766,10 +791,10 @@ cal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/t
 exlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on dissertation_main.pdf (19 pages, 542830 bytes).
+Output written on dissertation_main.pdf (20 pages, 1704460 bytes).
 PDF statistics:
- 458 PDF objects out of 1000 (max. 8388607)
- 408 compressed objects within 5 object streams
- 73 named destinations out of 1000 (max. 500000)
- 432 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 472 PDF objects out of 1000 (max. 8388607)
+ 417 compressed objects within 5 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 442 words of extra memory for PDF output out of 10000 (max. 10000000)
 
