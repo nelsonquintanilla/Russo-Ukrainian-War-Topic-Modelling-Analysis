@@ -145,8 +145,8 @@ Supervisor: \bhamsupervisor
 \phantomsection
 \section*{Table of Abbreviations}
 \begin{itemize}[nolistsep]
-\item IEEE -- Institute of Electrical and Electronics Engineers
-\item IEEE -- Institute of Electrical and Electronics Engineers
+\item LDA -- Latent Dirichlet Allocation
+\item API -- Application Programming Interface
 \item IEEE -- Institute of Electrical and Electronics Engineers
 \end{itemize}
 \addcontentsline{toc}{section}{Table of Abbreviations}
@@ -214,9 +214,12 @@ In this section we explain the steps we took in order to build and prepare our d
 \end{figure}
 
 \subsection{Data Extraction}
-For the Data
+To obtain a significantly large dataset of reliable news articles related to the Russian invasion of Ukraine we decided to use The Guardian digital newspaper. The reasoning behind this decision is because The Guardian is one of the most trusted newspapers in the UK and Europe in terms of objective journalism \cite{matsa_western_2018}. Additionally, they provide The Guardian – Open Platform, which is their public web service or application programming interface (API) that provides free access to all of the content that the Guardian produces, organised by tags and sections \cite{noauthor_theguardian_nodate}. This is specially useful in our case because we need to filter the news to reduce noise in our data and have articles relevant to the ongoing conflict between Russia and Ukraine. 
 
-\clearpage
+To narrow-down the retrieval of the articles, we requested published data between the 2nd of February of 2022 (day in which Russia invaded Ukraine) and the 31st of August of 2022. Additionally, we created a function to interact with the API and retrieve news articles filtered by search term and section. This is to avoid obtaining non relevant news; for instance, we used the section "world" to point to data classified in this category and not other categories such as "sports" or "lifestyle". Furthermore, we used 2 search terms: Ukraine and Russia. We obtained 2 different datasets corresponding to the mentioned search terms. After that, we merged both datasets and removed duplicates that could have existed in both to avoid redundancy. We also removed non pertinent articles that contained information about topics not related the conflict.
+
+The resulting dataset is a json containing a list of 2275 news articles with their id, title of the article, body of the article, and url to read the article on the web. Such dataset is available in [INSERT APPENDIX] so it can be used for future research or work.
+
 \subsection{Data Pre-Processing}
 
 \subsubsection{Dataset Relevant Features}

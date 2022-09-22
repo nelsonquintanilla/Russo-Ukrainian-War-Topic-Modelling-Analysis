@@ -23,6 +23,14 @@ Caldara, D., Conlisk, S., Iacoviello, M. \harvardand\ Penn, M.
   {Ukraine} on {Global} {Activity} and {Inflation}'.
 \newline\harvardurl{https://www.federalreserve.gov/econres/notes/feds-notes/the-effect-of-the-war-in-ukraine-on-global-activity-and-inflation-20220527.html}
 
+\harvarditem[Matsa et~al.]{Matsa, Silver, Shearer \harvardand\
+  Walker}{2018}{matsa_western_2018}
+Matsa, K.~E., Silver, L., Shearer, E. \harvardand\ Walker, M.  \harvardyearleft
+  2018\harvardyearright , `Western {Europeans} {Under} 30 {View} {News} {Media}
+  {Less} {Positively}, {Rely} {More} on {Digital} {Platforms} {Than} {Older}
+  {Adults}'.
+\newline\harvardurl{https://www.pewresearch.org/journalism/2018/10/30/western-europeans-under-30-view-news-media-less-positively-rely-more-on-digital-platforms-than-older-adults/}
+
 \harvarditem{Sievert \harvardand\ Shirley}{2014}{sievert_ldavis_2014}
 Sievert, C. \harvardand\ Shirley, K.  \harvardyearleft 2014\harvardyearright ,
   {LDAvis}: {A} method for visualizing and interpreting topics, {\em in}
@@ -30,5 +38,11 @@ Sievert, C. \harvardand\ Shirley, K.  \harvardyearleft 2014\harvardyearright ,
   {Visualization}, and {Interfaces}', Association for Computational
   Linguistics, Baltimore, Maryland, USA, pp.~63--70.
 \newline\harvardurl{http://aclweb.org/anthology/W14-3110}
+
+\harvarditem{{\em theguardian / open platform - documentation /
+  overview}}{n.d.}{noauthor_theguardian_nodate}
+{\em theguardian / open platform - documentation / overview}  \harvardyearleft
+  n.d.\harvardyearright .
+\newline\harvardurl{https://open-platform.theguardian.com/documentation/}
 
 \end{thebibliography}
