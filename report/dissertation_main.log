@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.5)  22 SEP 2022 20:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.5)  22 SEP 2022 23:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -598,12 +598,12 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 93.
 \c@lstlisting=\count326
-<crest.jpg, id=211, 501.875pt x 600.2425pt>
+<crest.jpg, id=207, 501.875pt x 600.2425pt>
 File: crest.jpg Graphic file (type jpg)
 <use crest.jpg>
 Package pdftex.def Info: crest.jpg  used on input line 102.
 (pdftex.def)             Requested size: 90.3375pt x 108.03899pt.
-<uni.jpg, id=212, 2007.5pt x 473.77pt>
+<uni.jpg, id=208, 2007.5pt x 473.77pt>
 File: uni.jpg Graphic file (type jpg)
 <use uni.jpg>
 Package pdftex.def Info: uni.jpg  used on input line 104.
@@ -645,14 +645,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.144 \clearpage
-                 [4]
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.154 \clearpage
-                 [5
+l.155 \clearpage
+                 [4
 
 ] (./dissertation_main.lof)
 \tf@lof=\write6
@@ -663,8 +657,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.159 \clearpage
-                 [6
+l.160 \clearpage
+                 [5
 
 ] (./dissertation_main.lot)
 \tf@lot=\write7
@@ -675,8 +669,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.164 \clearpage
-                 [7
+l.165 \clearpage
+                 [6
 
 ] [1
 
@@ -685,14 +679,14 @@ l.164 \clearpage
 ] [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 212--213
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
 
  []
 
-<method_1.png, id=341, 641.39626pt x 95.30606pt>
+<method_1.png, id=333, 641.39626pt x 95.30606pt>
 File: method_1.png Graphic file (type png)
 <use method_1.png>
-Package pdftex.def Info: method_1.png  used on input line 216.
+Package pdftex.def Info: method_1.png  used on input line 217.
 (pdftex.def)             Requested size: 448.97432pt x 66.71378pt.
 [4
 
@@ -701,55 +695,53 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.242 W
+l.243 W
        e compared three standard lists of stop words from extensively used l...
  <./method_1.png>] [5] [6
 
 ] [7
 
-] [8
-
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
 
  []
 
-<forms_results.png, id=401, 1157.32375pt x 604.2575pt>
+<forms_results.png, id=405, 1157.32375pt x 604.2575pt>
 File: forms_results.png Graphic file (type png)
 <use forms_results.png>
-Package pdftex.def Info: forms_results.png  used on input line 319.
+Package pdftex.def Info: forms_results.png  used on input line 325.
 (pdftex.def)             Requested size: 462.9213pt x 241.69872pt.
-<charts_models.png, id=403, 516.84pt x 1096.095pt>
+<charts_models.png, id=407, 516.84pt x 1096.095pt>
 File: charts_models.png Graphic file (type png)
 <use charts_models.png>
-Package pdftex.def Info: charts_models.png  used on input line 326.
+Package pdftex.def Info: charts_models.png  used on input line 332.
 (pdftex.def)             Requested size: 258.41936pt x 548.04616pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9
+[8
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.341 \clearpage
+l.347 \clearpage
                 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.341 \clearpage
-                 <./forms_results.png>] [10
+l.347 \clearpage
+                 <./forms_results.png>] [9
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.341 \clearpage
-                 <./charts_models.png>] [11
+l.347 \clearpage
+                 <./charts_models.png>] [10
 
-] [12
+] [11
 
 ] (./dissertation_main.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 25--29
@@ -758,26 +750,32 @@ nres/notes/feds-notes/the-effect-of-the-war-in-ukraine-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--51
+Underfull \hbox (badness 10000) in paragraph at lines 54--59
 \OT1/cmr/bx/n/10.95 URL: \OT1/cmr/m/it/10.95 https://www.pewresearch.org/journa
 lism/2018/10/30/western-europeans-under-30-view-
  []
 
-) [13
 
-] [14
+Underfull \hbox (badness 10000) in paragraph at lines 61--64
+[]\OT1/cmr/m/n/10.95 McCallum, A. K. (2002), Mal-let: A ma-chine learn-ing for 
+lan-guage toolkit.
+ []
+
+) [12
+
+] [13
 
 ] 
 AED: lastpage setting LastPage
 (./dissertation_main.aux)
 Package rerunfilecheck Info: File `dissertation_main.out' has not changed.
-(rerunfilecheck)             Checksum: 3B8F73BA864CDBECCCDC83DA801A033C;9116.
+(rerunfilecheck)             Checksum: B9D0421CC756EF1EAEDA33F9C7652D86;8892.
  ) 
 Here is how much of TeX's memory you used:
- 14557 strings out of 478268
- 226137 string characters out of 5846348
- 542299 words of memory out of 5000000
- 32445 multiletter control sequences out of 15000+600000
+ 14575 strings out of 478268
+ 226747 string characters out of 5846348
+ 542551 words of memory out of 5000000
+ 32460 multiletter control sequences out of 15000+600000
  481061 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,12n,75p,928b,343s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -792,10 +790,10 @@ cal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/t
 exlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on dissertation_main.pdf (21 pages, 1711751 bytes).
+Output written on dissertation_main.pdf (19 pages, 1714791 bytes).
 PDF statistics:
- 502 PDF objects out of 1000 (max. 8388607)
- 446 compressed objects within 5 object streams
- 82 named destinations out of 1000 (max. 500000)
- 442 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 507 PDF objects out of 1000 (max. 8388607)
+ 453 compressed objects within 5 object streams
+ 85 named destinations out of 1000 (max. 500000)
+ 434 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -41,6 +41,14 @@ Jacobi, C., van Atteveldt, W. \harvardand\ Welbers, K.  \harvardyearleft
   4}(1),~89--106.
 \newline\harvardurl{http://www.tandfonline.com/doi/full/10.1080/21670811.2015.1093271}
 
+\harvarditem[Jelodar et~al.]{Jelodar, Wang, Yuan, Feng, Jiang, Li \harvardand\
+  Zhao}{2019}{jelodar_latent_2019}
+Jelodar, H., Wang, Y., Yuan, C., Feng, X., Jiang, X., Li, Y. \harvardand\ Zhao,
+  L.  \harvardyearleft 2019\harvardyearright , `Latent {Dirichlet} allocation
+  ({LDA}) and topic modeling: models, applications, a survey', {\em Multimedia
+  Tools and Applications} {\bf 78}(11),~15169--15211.
+\newline\harvardurl{http://link.springer.com/10.1007/s11042-018-6894-4}
+
 \harvarditem[Matsa et~al.]{Matsa, Silver, Shearer \harvardand\
   Walker}{2018}{matsa_western_2018}
 Matsa, K.~E., Silver, L., Shearer, E. \harvardand\ Walker, M.  \harvardyearleft
@@ -48,6 +56,11 @@ Matsa, K.~E., Silver, L., Shearer, E. \harvardand\ Walker, M.  \harvardyearleft
   {Less} {Positively}, {Rely} {More} on {Digital} {Platforms} {Than} {Older}
   {Adults}'.
 \newline\harvardurl{https://www.pewresearch.org/journalism/2018/10/30/western-europeans-under-30-view-news-media-less-positively-rely-more-on-digital-platforms-than-older-adults/}
+
+\harvarditem{McCallum}{2002}{McCallumMALLET}
+McCallum, A.~K.  \harvardyearleft 2002\harvardyearright , Mallet: A machine
+  learning for language toolkit.
+\newblock http://www.cs.umass.edu/~mccallum/mallet.
 
 \harvarditem[Pedregosa et~al.]{Pedregosa, Varoquaux, Gramfort, Michel, Thirion,
   Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos
@@ -63,6 +76,19 @@ Rajaraman, A. \harvardand\ Ullman, J.~D.  \harvardyearleft
   2011\harvardyearright , {\em Mining of {Massive} {Datasets}}, Cambridge
   University Press, USA.
 
+\harvarditem[Ramage et~al.]{Ramage, Rosen, Chuang, Manning \harvardand\
+  McFarland}{2009}{2009-topic-modeling-social-sciences}
+Ramage, D., Rosen, E., Chuang, J., Manning, C.~D. \harvardand\ McFarland, D.~A.
+   \harvardyearleft 2009\harvardyearright , Topic modeling for the social
+  sciences, {\em in} `Workshop on Applications for Topic Models, NIPS'.
+\newline\harvardurl{http://vis.stanford.edu/papers/topic-modeling-social-sciences}
+
+\harvarditem{Rehurek \harvardand\ Sojka}{2010}{Rehurek10softwareframework}
+Rehurek, R. \harvardand\ Sojka, P.  \harvardyearleft 2010\harvardyearright ,
+  Software framework for topic modelling with large corpora, {\em in} `IN
+  PROCEEDINGS OF THE LREC 2010 WORKSHOP ON NEW CHALLENGES FOR NLP FRAMEWORKS',
+  pp.~45--50.
+
 \harvarditem{Sievert \harvardand\ Shirley}{2014}{sievert_ldavis_2014}
 Sievert, C. \harvardand\ Shirley, K.  \harvardyearleft 2014\harvardyearright ,
   {LDAvis}: {A} method for visualizing and interpreting topics, {\em in}
@@ -76,5 +102,10 @@ Sievert, C. \harvardand\ Shirley, K.  \harvardyearleft 2014\harvardyearright ,
 {\em theguardian / open platform - documentation / overview}  \harvardyearleft
   n.d.\harvardyearright .
 \newline\harvardurl{https://open-platform.theguardian.com/documentation/}
+
+\harvarditem{Řehůřek \harvardand\
+  Sojka}{n.d.}{rehurek_gensimstatistical_nodate}
+Řehůřek, R. \harvardand\ Sojka, P.  \harvardyearleft n.d.\harvardyearright ,
+  `Gensim—{Statistical} {Semantics} in {Python}',  p.~1.
 
 \end{thebibliography}

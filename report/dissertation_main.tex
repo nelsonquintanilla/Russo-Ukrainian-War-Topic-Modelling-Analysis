@@ -148,6 +148,7 @@ Supervisor: \bhamsupervisor
 \item LDA -- Latent Dirichlet Allocation
 \item API -- Application Programming Interface
 \item NLTK -- Natural Language Toolkit
+\item BOW -- Bag of Words
 \end{itemize}
 \addcontentsline{toc}{section}{Table of Abbreviations}
 
@@ -249,15 +250,23 @@ In our case lemmatisation was preferred over stemming because it produced better
 For the analysis presented here we used the lemmatiser from spaCy \citep{spacy2} which which assigns tokens' base forms using criteria derived from part-of-speech tags (POS).
 
 \subsubsection{Transforming the documents in a vectorised form (Bag of Words Representation)}
+As we mentioned earlier, before we feed the data to the model we need to transform the documents into a document-term matrix. This way of expressing our dataset is known as Bag of Words (BOW) representation. BOW represents the content of the documents by showing the frequency of the word on every document. Once we have this, we are ready to start training our model.
 
-\subsubsection{Pre-Processed Data information}
+After using the aforementioned strategies, we have removed a number of terms from our initial tokenised dataset and adjusted the remaining words' structure to make them more effective for training our model. In the following section, we are going to delve into the model training and tunning.
 
-
-
-\clearpage
 \subsection{Model Training and Parameter Tunning}
+There are numerous tools available for Topic modelling and analysis, including professional and amateur software, commercial and open-source software. Some examples of these well known tools that have been used by a large number of scholars in the past are Mallet \citep{McCallumMALLET}, TMT \citep{2009-topic-modeling-social-sciences}, and Gensim \citep{jelodar_latent_2019}.
+
+For the training of our model we used Gensim, which is a Python package that provides algorithms for Latent Dirichlet Allocation that are memory-efficient, scalable, and quick \citep{rehurek_gensimstatistical_nodate, Rehurek10softwareframework}.
+
+To train our LDA model we need to provide our model with different parameters, from which, one of the most important ones is the number of topics we want to extract from our dataset. 
+
+Although we can use LDA to successfully learn themes from a collection of documents, LDA analysis requires the number of topics to be predetermined. Furthermore, choosing the number of topics in LDA is typically determined by assessing the perplexity of numerous models built with varying values of number of topics as a parameter \citep{blei_probabilistic_2010}.
+
+We then proceed to describe how we did this and how we tuned the rest of the parameter for our model.
 
 \subsubsection{Training Multiple Models for different values of 'Number of Topics' Parameter}
+
 
 \subsubsection{Choice of Stop Word List}
 

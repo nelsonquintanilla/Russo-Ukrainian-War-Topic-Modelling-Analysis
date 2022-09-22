@@ -7,45 +7,49 @@ Repeated entry---line 160 of file mybib.bib
  : @article{jacobi_quantitative_2016
  :                                  ,
 I'm skipping whatever remains of this entry
-You've used 12 entries,
+Repeated entry---line 245 of file mybib.bib
+ : @article{blei_probabilistic_2010
+ :                                 ,
+I'm skipping whatever remains of this entry
+You've used 17 entries,
             2909 wiz_defined-function locations,
-            707 strings with 7343 characters,
-and the built_in function-call counts, 60040 in all, are:
-= -- 9882
-> -- 815
+            737 strings with 8417 characters,
+and the built_in function-call counts, 85150 in all, are:
+= -- 13972
+> -- 1199
 < -- 0
-+ -- 4801
-- -- 252
-* -- 5272
-:= -- 11850
-add.period$ -- 14
-call.type$ -- 12
-change.case$ -- 161
-chr.to.int$ -- 12
-cite$ -- 12
-duplicate$ -- 195
-empty$ -- 363
-format.name$ -- 291
-if$ -- 10818
++ -- 6794
+- -- 371
+* -- 7475
+:= -- 16834
+add.period$ -- 20
+call.type$ -- 17
+change.case$ -- 231
+chr.to.int$ -- 17
+cite$ -- 17
+duplicate$ -- 278
+empty$ -- 527
+format.name$ -- 430
+if$ -- 15338
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 10
-newline$ -- 47
-num.names$ -- 115
-pop$ -- 73
+missing$ -- 14
+newline$ -- 65
+num.names$ -- 167
+pop$ -- 103
 preamble$ -- 1
-purify$ -- 175
+purify$ -- 250
 quote$ -- 0
-skip$ -- 163
+skip$ -- 229
 stack$ -- 0
-substring$ -- 14043
-swap$ -- 42
-text.length$ -- 158
+substring$ -- 19855
+swap$ -- 56
+text.length$ -- 228
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 46
+type$ -- 66
 warning$ -- 0
-while$ -- 247
+while$ -- 358
 width$ -- 0
-write$ -- 165
-(There was 1 error message)
+write$ -- 233
+(There were 2 error messages)

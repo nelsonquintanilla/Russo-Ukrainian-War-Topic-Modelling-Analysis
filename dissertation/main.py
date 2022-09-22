@@ -146,10 +146,8 @@ def train_single_model(
         num_topics=num_topics_,
         id2word=id2word_,
         workers=None,
-        # distributed=distributed,
         chunksize=chunksize,
         passes=passes,
-        # update_every=update_every,
         alpha=alpha,
         eta=eta,
         decay=decay,
@@ -159,7 +157,6 @@ def train_single_model(
         gamma_threshold=gamma_threshold,
         minimum_probability=minimum_probability,
         random_state=random_state,
-        # ns_conf=ns_conf,
         minimum_phi_value=minimum_phi_value,
         per_word_topics=per_word_topics,
         dtype=dtype
@@ -234,7 +231,7 @@ def length_sum_lists(articles_list):
     return acc
 
 if __name__ == '__main__':
-    articles_list_of_dicts = read_list_of_dicts_from_file('2DatasetsMerged')
+    articles_list_of_dicts = read_list_of_dicts_from_file('TestingDataset')
     articles = get_list_articles_from_list_of_dicts(articles_list_of_dicts)
 
     '''Number of articles and average article length'''
@@ -285,67 +282,67 @@ if __name__ == '__main__':
     print('Number of unique tokens: %d' % len(dictionary))
     print('Number of documents: %d' % len(corpus))
 
-    '''Building the Topic Model'''
-    print('\nBuilding the Topic Model')
-    # Tune lda params
-    range_topics_list = generate_num_topics_list(start_=6, limit_=11, step_=2)
-    lda_models_list, k_list = train_lda_models(
-        num_topics_list_=range_topics_list,
-        corpus_=corpus,
-        dictionary_=dictionary
-    )
-
-    # Randomly generated id's on testing.py file
-    random_ids = [1104, 1211, 1487, 1439, 876]
-
-    '''View the topics in LDA model'''
-    print('\nView the topics in LDA mode')
-    view_topics_models_list(
-        lda_models_list_= lda_models_list,
-        num_topics_list_=k_list,
-        num_words_=10,
-        documents_ids_list_=random_ids,
-        corpus_=corpus
-    )
-
-    '''Compute Perplexity'''
-    print('\nCompute Perplexity')
-    # a measure of how good the model is. lower the better.
-    perplexity_values = compute_perplexity_values(
-        lda_models_list_=lda_models_list,
-        corpus_=corpus
-    )
-
-    '''Compute Topic Coherence Score'''
-    print('\nCompute Topic Coherence Score')
-    # u_mas_coherence_values = compute_u_mass_coherence_values(
-    #     lda_models_list_=lda_models_list,
+    # '''Building the Topic Model'''
+    # print('\nBuilding the Topic Model')
+    # # Tune lda params
+    # range_topics_list = generate_num_topics_list(start_=6, limit_=11, step_=2)
+    # lda_models_list, k_list = train_lda_models(
+    #     num_topics_list_=range_topics_list,
     #     corpus_=corpus,
-    #     dictionary_=dictionary,
-    #     coherence_=U_MASS
+    #     dictionary_=dictionary
     # )
-    c_v_coherence_values = compute_c_v_coherence_values(
-        lda_models_list_=lda_models_list,
-        texts_=list_lemmatized_articles_nostops,
-        dictionary_=dictionary,
-        coherence_=C_V
-    )
-
-    lda_models_list_values = concatenate_models_values(
-        list1=[(index + 1) for index, _ in enumerate(k_list)],
-        list2=k_list,
-        list3=c_v_coherence_values,
-        list4=perplexity_values
-    )
-    # print('(list_index, number_topics, c_v_coherence, u_mass_coherence_)')
-    print('(list_index, number_topics, c_v_coherence, perplexity)')
-    pprint(lda_models_list_values)
-
-    '''Visualize the topics'''
-    print('\nVisualize the topics')
-    generate_pyldavis_html_files(
-        lda_models_list_=lda_models_list,
-        k_list_=k_list,
-        corpus_=corpus,
-        dictionary_=dictionary
-    )
+    #
+    # # Randomly generated id's on testing.py file
+    # random_ids = [1104, 1211, 1487, 1439, 876]
+    #
+    # '''View the topics in LDA model'''
+    # print('\nView the topics in LDA mode')
+    # view_topics_models_list(
+    #     lda_models_list_= lda_models_list,
+    #     num_topics_list_=k_list,
+    #     num_words_=10,
+    #     documents_ids_list_=random_ids,
+    #     corpus_=corpus
+    # )
+    #
+    # '''Compute Perplexity'''
+    # print('\nCompute Perplexity')
+    # # a measure of how good the model is. lower the better.
+    # perplexity_values = compute_perplexity_values(
+    #     lda_models_list_=lda_models_list,
+    #     corpus_=corpus
+    # )
+    #
+    # '''Compute Topic Coherence Score'''
+    # print('\nCompute Topic Coherence Score')
+    # # u_mas_coherence_values = compute_u_mass_coherence_values(
+    # #     lda_models_list_=lda_models_list,
+    # #     corpus_=corpus,
+    # #     dictionary_=dictionary,
+    # #     coherence_=U_MASS
+    # # )
+    # c_v_coherence_values = compute_c_v_coherence_values(
+    #     lda_models_list_=lda_models_list,
+    #     texts_=list_lemmatized_articles_nostops,
+    #     dictionary_=dictionary,
+    #     coherence_=C_V
+    # )
+    #
+    # lda_models_list_values = concatenate_models_values(
+    #     list1=[(index + 1) for index, _ in enumerate(k_list)],
+    #     list2=k_list,
+    #     list3=c_v_coherence_values,
+    #     list4=perplexity_values
+    # )
+    # # print('(list_index, number_topics, c_v_coherence, u_mass_coherence_)')
+    # print('(list_index, number_topics, c_v_coherence, perplexity)')
+    # pprint(lda_models_list_values)
+    #
+    # '''Visualize the topics'''
+    # print('\nVisualize the topics')
+    # generate_pyldavis_html_files(
+    #     lda_models_list_=lda_models_list,
+    #     k_list_=k_list,
+    #     corpus_=corpus,
+    #     dictionary_=dictionary
+    # )
