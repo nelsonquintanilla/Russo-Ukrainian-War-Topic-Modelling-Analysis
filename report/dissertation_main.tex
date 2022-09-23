@@ -172,14 +172,27 @@ Supervisor: \bhamsupervisor
 \section{Overview}
 
 \subsection{Abstract}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+what? background/context of research:
+Topic Modelling is one of the most effective techniques used in the field of natural language processing for the discovery of latent information within a given corpus. The main focus of this work is aimed at using Latent Dirichlet Allocation, which is one of the most popular topic modelling methods.
+
+why? purpose of the research:
+The purpose of this work is to use an LDA based topic modelling approach to capture the main themes or topics that can be found on news articles from The Guardian digital newspaper that are exclusively related to the ongoing Russian invasion of Ukraine. Furthermore, an interpretation of the topics obtained and its latent significance for the current state of the situation and its future is desired.
+
+HOw,The research design:
+We would be using Gensim, which is a well known Python library that provides fast, efficient, and a scalable implementation of the LDA algorithm. In order to train our model first we are going to extract our data, and manipulate it in a pre-processing step needed before feeding the data to our model. Then we are going to train multiple models with different values of number of topics and further parameter tuning. Subsequently, we will evaluate and decide what model is best for our purpose and we will interpret the results.
+
+What? major analysis and findings:
+
+
+what? conclusion and recommendations:
+This work shows that LDA 
 
 \subsection{Acknowledgements}
 This work could not have been possible without the academic support from Dr Mohammed Bahja and Dr Felipe Orihuela-Espina.
 
-Dr Mohammed Bahja always motivated me and academically advised me how to approach many challenges during the dissertation process.
+Dr Mohammed Bahja always motivated me and academically advised me how to approach many challenges that I faced during the dissertation process.
 
-Dr Felipe Orihuela, who also was my tutor during the academic year of my Master's degree, was fundamental for me to get a better sense of how the UK education system works and how to better approach challenges but most importantly how to always strive for excellence even during hard times or in adversity.
+Dr Felipe Orihuela, who also was my tutor during the academic year of my Master's degree, was fundamental for me to get a better sense of how the UK education system works and how to better approach challenges but most importantly how to always strive for excellence even during hard times or in adversity. During the dissertation process his advice was invaluable and has only enriched my academic experience.
 
 \clearpage
 \section{Introduction}
@@ -206,8 +219,22 @@ The structure of this paper is as follows. In section 3 we examine the most rece
 \subsection{Subsection}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\subsection{Subsection}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\subsection{Background}
+\subsubsection{Topic Modelling}
+Topic models are computer algorithms that uncover hidden patterns of word occurrence by analysing the distribution of words in a corpus of documents. The output is a list of themes composed of clusters of words that co-occur in these documents in accordance with specific patterns \citep{jacobi_quantitative_2016}. 
+
+\subsubsection{Latent Dirichlet Allocation}
+Latent Dirichlet Allocation is 
+
+The Figure~\ref{fig:lda} represents the intuition behind the LDA algorithm. We suppose that some number of "themes," or word distributions, exist for the entire corpus (far left).
+It is believed that each document is generated as follows. First, select a distribution over the subjects (the histogram on the right). Then, for each word, select a topic assignment (the coloured coins) and the matching topic word. These subjects and topic allocations are illustrative; they are not based on actual data \citep{blei_probabilistic_2012}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{lda.png}
+\caption{\textit{Intuition behind LDA. Taken from \citep{blei_probabilistic_2012}.}}
+\label{fig:lda}
+\end{figure}
 
 \clearpage
 \section{Methodology}
@@ -308,7 +335,7 @@ Both experiments were made in a similar fashion to \citep{nikolenko_topic_2017, 
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{forms_results.png}
+\includegraphics[scale=0.35]{forms_results.png}
 \caption{\textit{Word intrusion task (left): the users are asked to select what of the words do not belong with the rest of the words. Topic intrusion task (right): the users are asked to read a news article and later is presented with 3 topics represented with their highest probable words, of which 1 of the topics does not belong to the document.}}
 \label{fig:forms_results}
 \end{figure}
@@ -412,7 +439,11 @@ Considering the pipeline we followed to train an LDA and then the analysis over 
 
 \clearpage
 \section{Conclusion}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Firstly, it is worth mentioning that the pre-processing step, although is not part of the training of the model, it is essential to get good results. As such, it should be given its deserved importance when implementing an LDA algorithm. During our experimentation we observed that our results varied on quality if we applied some steps of the preprocessing stage on a slightly different way. For instance, using a different list of standardised stop words, removing the most common words that were generating noise in our results; or filtering news that did not share any similarities with the main topics of the rest of the dataset. Some additional steps for future research we recommend to try are generating bigrams and trigrams from the tokenised dataset, change the approach for lemmatisation of the tokenised dataset, or increase the size of the dataset. 
+
+In relation to the training of our model, as we observed during our experimentation, increasing the number of topics also increases the amount of time the model requires to be trained. For future research, it would be helpful to rely on sufficient computational resources if a more extensive analysis needs to be done in order to be able to speed up the entire pipeline to obtain the best results.
+
+After tuning our model and choosing the best one in terms of topic interpretability, it is possible to infer general information about the main themes contained within our dataset. In our experiment, we obtained 8 topics from which we interpreted the main ideas behind each of the topics in relation to the current state of the conflict between Russia and Ukraine but also the consequences that this situation could have for the UK and Europe in general.
 
 \clearpage
 \lhead{}\chead{MSc. Project Report :: \nouppercase{\leftmark}}\rhead{}

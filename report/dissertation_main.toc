@@ -7,22 +7,23 @@
 \contentsline {section}{\numberline {2}Introduction}{2}{section.2}%
 \contentsline {section}{\numberline {3}Literature Review}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Subsection}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Subsection}{4}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Methodology}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Data Extraction}{5}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Data Pre-Processing}{6}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Dataset Relevant Features}{6}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Normalisation and Tokenisation}{6}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Stop Word Removal}{6}{subsubsection.4.2.3}%
-\contentsline {subsubsection}{\numberline {4.2.4}Lemmatisation}{6}{subsubsection.4.2.4}%
-\contentsline {subsubsection}{\numberline {4.2.5}Transforming the documents in a vectorised form (Bag of Words Representation)}{7}{subsubsection.4.2.5}%
-\contentsline {subsection}{\numberline {4.3}Model Training and Parameter Tunning}{7}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Model Evaluation and Selection}{8}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Results}{12}{section.5}%
-\contentsline {section}{\numberline {6}Discussion}{17}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Topics Interpretation}{17}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Challenges}{18}{subsubsection.6.1.1}%
-\contentsline {section}{\numberline {7}Conclusion}{19}{section.7}%
-\contentsline {section}{References}{20}{section*.2}%
-\contentsline {section}{\numberline {8}Appendix One: Accompanying Archive and Instructions}{23}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Directory Structure}{23}{subsection.8.1}%
+\contentsline {subsection}{\numberline {3.2}Background}{4}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Topic Modelling}{4}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Latent Dirichlet Allocation}{4}{subsubsection.3.2.2}%
+\contentsline {section}{\numberline {4}Methodology}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Data Extraction}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Data Pre-Processing}{7}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Dataset Relevant Features}{7}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Normalisation and Tokenisation}{7}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Stop Word Removal}{7}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Lemmatisation}{7}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.5}Transforming the documents in a vectorised form (Bag of Words Representation)}{8}{subsubsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.3}Model Training and Parameter Tunning}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Model Evaluation and Selection}{9}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Results}{13}{section.5}%
+\contentsline {section}{\numberline {6}Discussion}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Topics Interpretation}{18}{subsection.6.1}%
+\contentsline {section}{\numberline {7}Conclusion}{20}{section.7}%
+\contentsline {section}{References}{21}{section*.2}%
+\contentsline {section}{\numberline {8}Appendix One: Accompanying Archive and Instructions}{24}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Directory Structure}{24}{subsection.8.1}%
