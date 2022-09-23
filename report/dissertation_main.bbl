@@ -1,5 +1,13 @@
 \begin{thebibliography}{xx}
 
+\harvarditem{Asmussen \harvardand\ Møller}{2019}{asmussen_smart_2019}
+Asmussen, C.~B. \harvardand\ Møller, C.  \harvardyearleft
+  2019\harvardyearright , `Smart literature review: a practical topic modelling
+  approach to exploratory literature review', {\em Journal of Big Data} {\bf
+  6}(1),~1--18.
+\newblock Number: 1 Publisher: SpringerOpen.
+\newline\harvardurl{https://journalofbigdata.springeropen.com/articles/10.1186/s40537-019-0255-7}
+
 \harvarditem{Bird}{n.d.}{bird_natural_nodate}
 Bird, S.  \harvardyearleft n.d.\harvardyearright , `Natural {Language}
   {Processing} with {Python}',  p.~504.
@@ -19,6 +27,13 @@ Blei, D.~M.  \harvardyearleft 2012\harvardyearright , `Probabilistic topic
 \harvarditem{Blei}{n.d.}{blei_latent_nodate}
 Blei, D.~M.  \harvardyearleft n.d.\harvardyearright , `Latent {Dirichlet}
   {Allocation}',  p.~30.
+
+\harvarditem{Blei \harvardand\ Lafferty}{2007}{blei_correlated_2007}
+Blei, D.~M. \harvardand\ Lafferty, J.~D.  \harvardyearleft
+  2007\harvardyearright , `A correlated topic model of {Science}', {\em The
+  Annals of Applied Statistics} {\bf 1}(1),~17--35.
+\newblock Publisher: Institute of Mathematical Statistics.
+\newline\harvardurl{https://projecteuclid.org/journals/annals-of-applied-statistics/volume-1/issue-1/A-correlated-topic-model-of-Science/10.1214/07-AOAS114.full}
 
 \harvarditem[Caldara et~al.]{Caldara, Conlisk, Iacoviello \harvardand\
   Penn}{2022}{caldara_effect_2022}
@@ -102,6 +117,24 @@ Sievert, C. \harvardand\ Shirley, K.  \harvardyearleft 2014\harvardyearright ,
 {\em theguardian / open platform - documentation / overview}  \harvardyearleft
   n.d.\harvardyearright .
 \newline\harvardurl{https://open-platform.theguardian.com/documentation/}
+
+\harvarditem{Xu \harvardand\ Raschid}{2016}{xu_probabilistic_2016}
+Xu, Z. \harvardand\ Raschid, L.  \harvardyearleft 2016\harvardyearright ,
+  Probabilistic {Financial} {Community} {Models} with {Latent} {Dirichlet}
+  {Allocation} for {Financial} {Supply} {Chains}, {\em in} `Proceedings of the
+  {Second} {International} {Workshop} on {Data} {Science} for
+  {Macro}-{Modeling}', {DSMM}'16, Association for Computing Machinery, New
+  York, NY, USA, pp.~1--6.
+\newline\harvardurl{https://doi.org/10.1145/2951894.2951900}
+
+\harvarditem[Zhao et~al.]{Zhao, Chen, Perkins, Liu, Ge, Ding \harvardand\
+  Zou}{2015}{zhao_heuristic_2015}
+Zhao, W., Chen, J.~J., Perkins, R., Liu, Z., Ge, W., Ding, Y. \harvardand\ Zou,
+  W.  \harvardyearleft 2015\harvardyearright , `A heuristic approach to
+  determine an appropriate number of topics in topic modeling', {\em BMC
+  Bioinformatics} {\bf 16}(13),~1--10.
+\newblock Number: 13 Publisher: BioMed Central.
+\newline\harvardurl{https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-16-S13-S8}
 
 \harvarditem{Řehůřek \harvardand\
   Sojka}{n.d.}{rehurek_gensimstatistical_nodate}

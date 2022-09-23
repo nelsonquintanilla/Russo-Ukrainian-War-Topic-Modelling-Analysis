@@ -11,45 +11,45 @@ Repeated entry---line 245 of file mybib.bib
  : @article{blei_probabilistic_2010
  :                                 ,
 I'm skipping whatever remains of this entry
-You've used 17 entries,
+You've used 21 entries,
             2909 wiz_defined-function locations,
-            737 strings with 8417 characters,
-and the built_in function-call counts, 85150 in all, are:
-= -- 13972
-> -- 1199
+            771 strings with 9759 characters,
+and the built_in function-call counts, 103610 in all, are:
+= -- 16955
+> -- 1494
 < -- 0
-+ -- 6794
-- -- 371
-* -- 7475
-:= -- 16834
-add.period$ -- 20
-call.type$ -- 17
-change.case$ -- 231
-chr.to.int$ -- 17
-cite$ -- 17
-duplicate$ -- 278
-empty$ -- 527
-format.name$ -- 430
-if$ -- 15338
++ -- 8233
+- -- 462
+* -- 9113
+:= -- 20507
+add.period$ -- 27
+call.type$ -- 21
+change.case$ -- 287
+chr.to.int$ -- 21
+cite$ -- 21
+duplicate$ -- 347
+empty$ -- 667
+format.name$ -- 542
+if$ -- 18657
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 14
-newline$ -- 65
-num.names$ -- 167
-pop$ -- 103
+missing$ -- 18
+newline$ -- 84
+num.names$ -- 208
+pop$ -- 113
 preamble$ -- 1
-purify$ -- 250
+purify$ -- 310
 quote$ -- 0
-skip$ -- 229
+skip$ -- 283
 stack$ -- 0
-substring$ -- 19855
-swap$ -- 56
-text.length$ -- 228
+substring$ -- 24050
+swap$ -- 70
+text.length$ -- 284
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 66
+type$ -- 82
 warning$ -- 0
-while$ -- 358
+while$ -- 451
 width$ -- 0
-write$ -- 233
+write$ -- 297
 (There were 2 error messages)

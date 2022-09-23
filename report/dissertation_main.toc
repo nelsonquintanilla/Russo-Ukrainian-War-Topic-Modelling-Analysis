@@ -17,16 +17,12 @@
 \contentsline {subsubsection}{\numberline {4.2.4}Lemmatisation}{5}{subsubsection.4.2.4}%
 \contentsline {subsubsection}{\numberline {4.2.5}Transforming the documents in a vectorised form (Bag of Words Representation)}{5}{subsubsection.4.2.5}%
 \contentsline {subsection}{\numberline {4.3}Model Training and Parameter Tunning}{5}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Training Multiple Models for different values of 'Number of Topics' Parameter}{5}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Choice of Stop Word List}{5}{subsubsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}Addition of Custom Words to the Stop Word List}{5}{subsubsection.4.3.3}%
-\contentsline {subsubsection}{\numberline {4.3.4}Change of function to train the model}{5}{subsubsection.4.3.4}%
 \contentsline {subsection}{\numberline {4.4}Model Evaluation and Selection}{6}{subsection.4.4}%
 \contentsline {subsubsection}{\numberline {4.4.1}Visualising topic models}{6}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}Using trained models on sample of documents}{6}{subsubsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.3}Model Perplexity and Coherence}{6}{subsubsection.4.4.3}%
-\contentsline {subsubsection}{\numberline {4.4.4}Coherence}{6}{subsubsection.4.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.5}Perplexity}{6}{subsubsection.4.4.5}%
+\contentsline {subsubsection}{\numberline {4.4.2}Model Perplexity and Coherence}{6}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Coherence}{6}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Perplexity}{6}{subsubsection.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.5}Using trained models on sample of documents}{6}{subsubsection.4.4.5}%
 \contentsline {subsubsection}{\numberline {4.4.6}Human Judgement}{6}{subsubsection.4.4.6}%
 \contentsline {subsubsection}{\numberline {4.4.7}Word intrusion}{6}{subsubsection.4.4.7}%
 \contentsline {subsubsection}{\numberline {4.4.8}Topic intrusion}{6}{subsubsection.4.4.8}%
@@ -46,6 +42,6 @@
 \contentsline {subsection}{\numberline {7.2}Subsection}{11}{subsection.7.2}%
 \contentsline {subsubsection}{\numberline {7.2.1}Subsubsection}{11}{subsubsection.7.2.1}%
 \contentsline {section}{References}{12}{section*.2}%
-\contentsline {section}{\numberline {8}Appendix One: Accompanying Archive and Instructions}{13}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Directory Structure}{13}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Running the Provided Code}{13}{subsection.8.2}%
+\contentsline {section}{\numberline {8}Appendix One: Accompanying Archive and Instructions}{14}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Directory Structure}{14}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Running the Provided Code}{14}{subsection.8.2}%
