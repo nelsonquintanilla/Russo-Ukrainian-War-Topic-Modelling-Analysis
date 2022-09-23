@@ -1,6 +1,6 @@
 %%%%This template was download from Canvas: MSc Projects/Modules/Latex/LatexDemoFiles.zip (https://canvas.bham.ac.uk/courses/56323/files/13146674?module_item_id=2600884)
 %%%%%%%%%%%%%%%%%%%%% RJT TeX Template %%%%%%%%%%%%%%%%%%%%%
-\documentclass[twoside,11pt,a4paper]{article}
+\documentclass[twoside,12pt,a4paper]{article}
 
 %%%% BHAM PREAMBLE - SET THIS FIRST! %%%%
 \newcommand{\bhamstudentname}{Nelson Quintanilla Castro}
@@ -47,7 +47,7 @@
 \setlength{\headheight}{28pt} %fixes the warnings about headheight being too small
 \setlength{\headsep}{6pt}
 \pdfoutput=1 % we are running PDFLaTeX
-\usepackage[left=2.55cm,right=1.6cm,top=1.8cm,bottom=1.8cm]{geometry}
+\usepackage[left=3.65cm,right=2.7cm,top=4cm,bottom=4cm]{geometry}
 \usepackage{titling}	
 \setlength{\droptitle}{-2.75cm}   % This is your set screw\\
 \usepackage{titlesec}
@@ -152,12 +152,10 @@ Supervisor: \bhamsupervisor
 \end{itemize}
 \addcontentsline{toc}{section}{Table of Abbreviations}
 
-\clearpage
 % List of Figures
 \addcontentsline{toc}{section}{List of Figures}
 \listoffigures
 
-\clearpage
 % List of Tables
 \addcontentsline{toc}{section}{List of Tables}
 \listoftables
@@ -217,7 +215,7 @@ In this section we explain the steps we took in order to build and prepare our d
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.7]{method_1.png}
+\includegraphics[scale=0.6]{method_1.png}
 \caption{\textit{Diagram that summarises steps taken during the development of our work.}}
 \label{fig:method_1}
 \end{figure}
@@ -280,11 +278,11 @@ We assessed again the metrics in addition to the associated words for each of th
 
 Lastly, we assessed in a similar manner, removed the words: country, year, day; and ran our model a fifth time.
 
-For each of the runs in the process previously described we also did several other runs to tune the remaining parameters of the model by trial and error. When the results were better, we continued with the next iteration of runs. In the end, we selected the 3 best models from the last run. From these 3 models, we are going to find out which one is the best one utilising human judgement metrics.
+For each of the runs in the process previously described we also did several other runs to tune the remaining parameters of the model by trial and error. When the results were better, we continued with the next iteration of runs. In the end, we selected the 3 best models from the last run. From these 3 models, we are going to find out which one is the best one utilising human judgement metrics.\\
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{lda_multicore.png}
+\includegraphics[scale=0.45]{lda_multicore.png}
 \caption{\textit{LdaMulticore function from Gensim to train or LDA model.}}
 \label{fig:lda_multicore}
 \end{figure}
@@ -317,7 +315,11 @@ Both experiments were made in a similar fashion to \citep{nikolenko_topic_2017, 
 
 \clearpage
 \section{Results}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\\
+In Figure~\ref{fig:6_topics}, Figure~\ref{fig:8_topics}, and Figure~\ref{fig:10_topics}
+
+In Figure~\ref{fig:charts_models}
+
+In the Table~\ref{table:forms_results} we have the results of the experiments corresponding to the human judgement tasks.\\
 
 \begin{table}[h!]
 \centering
@@ -338,22 +340,41 @@ Topic Intrusion & Model 2 & 17 & 30 & 0.567 \\
 \label{table:forms_results}
 \end{table}
 
+\hfill \break
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{6_topics.png}
+\caption{\textit{Model with 6 number of topics from run 5. Each topic contains the 10 words with the highest probability within that topic.}}
+\label{fig:6_topics}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{8_topics.png}
+\caption{\textit{Model with 8 number of topics from run 5. Each topic contains the 10 words with the highest probability within that topic.}}
+\label{fig:8_topics}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{10_topics.png}
+\caption{\textit{Model with 10 number of topics from run 5. Each topic contains the 10 words with the highest probability within that topic.}}
+\label{fig:10_topics}
+\end{figure}
+
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{charts_models.png}
-\caption{\textit{Charts}}
+\caption{\textit{Plots of coherence and perplexity for the models generated on each run during the parameter tuning process.}}
 \label{fig:charts_models}
 \end{figure}
 
-\subsection{Dataset}
+\hfill \break
+It can be observed that the word intrusion metric was not very decisive amongst the three models. All of the models scored low. On the other hand, Model 2 and Model 1 have a score significantly higher than the score for Model 3.
 
-\subsection{LDA model parameters}
+Taking into account the results from the human judgement task in addition to the analysis given by the coherence score and perplexity of our models, it can be concluded that the best model for the purposes of obtaining a general overview of our dataset through the topics is Model 2 which corresponds to a model with 8 number of topics.
 
-\subsection{Experimental comparison between coherence and perplexity}
-\subsubsection{Coherence}
-\subsubsection{Dataset}
-
-\subsection{Experimental comparison using human judgement}
+In the following section we are going to discuss further the implications of selecting this model and how we can interpret the topics and what do they tell us about the current situation between Russia and Ukrania.
 
 \clearpage
 \section{Discussion}

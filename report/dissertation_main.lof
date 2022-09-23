@@ -1,5 +1,8 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces \textit {Diagram that summarises steps taken during the development of our work.}}}{4}{figure.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces \textit {LdaMulticore function from Gensim to train or LDA model.}}}{6}{figure.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces \textit {Visualising topics and their 10 highest probable keywords for a model generated with 6 number of topics}}}{7}{figure.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces \textit {Word intrusion task (left): the users are asked to select what of the words do not belong with the rest of the words. Topic intrusion task (right): the users are asked to read a news article and later is presented with 3 topics represented with their highest probable words, of which 1 of the topics does not belong to the document.}}}{8}{figure.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces \textit {Charts}}}{10}{figure.5}%
+\contentsline {figure}{\numberline {1}{\ignorespaces \textit {Diagram that summarises steps taken during the development of our work.}}}{5}{figure.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces \textit {LdaMulticore function from Gensim to train or LDA model.}}}{9}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces \textit {Visualising topics and their 10 highest probable keywords for a model generated with 6 number of topics}}}{10}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces \textit {Word intrusion task (left): the users are asked to select what of the words do not belong with the rest of the words. Topic intrusion task (right): the users are asked to read a news article and later is presented with 3 topics represented with their highest probable words, of which 1 of the topics does not belong to the document.}}}{11}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces \textit {Model with 6 number of topics from run 5. Each topic contains the 10 words with the highest probability within that topic.}}}{12}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces \textit {Model with 8 number of topics from run 5. Each topic contains the 10 words with the highest probability within that topic.}}}{13}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces \textit {Model with 10 number of topics from run 5. Each topic contains the 10 words with the highest probability within that topic.}}}{14}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces \textit {Plots of coherence and perplexity for the models generated on each run during the parameter tuning process.}}}{15}{figure.8}%
