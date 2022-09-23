@@ -172,20 +172,13 @@ Supervisor: \bhamsupervisor
 \section{Overview}
 
 \subsection{Abstract}
-what? background/context of research:
 Topic Modelling is one of the most effective techniques used in the field of natural language processing for the discovery of latent information within a given corpus. The main focus of this work is aimed at using Latent Dirichlet Allocation, which is one of the most popular topic modelling methods.
 
-why? purpose of the research:
 The purpose of this work is to use an LDA based topic modelling approach to capture the main themes or topics that can be found on news articles from The Guardian digital newspaper that are exclusively related to the ongoing Russian invasion of Ukraine. Furthermore, an interpretation of the topics obtained and its latent significance for the current state of the situation and its future is desired.
 
-HOw,The research design:
 We would be using Gensim, which is a well known Python library that provides fast, efficient, and a scalable implementation of the LDA algorithm. In order to train our model first we are going to extract our data, and manipulate it in a pre-processing step needed before feeding the data to our model. Then we are going to train multiple models with different values of number of topics and further parameter tuning. Subsequently, we will evaluate and decide what model is best for our purpose and we will interpret the results.
 
-What? major analysis and findings:
-
-
-what? conclusion and recommendations:
-This work shows that LDA 
+This work shows that: preprocessing is a fundamental step when implementing LDA based topic modelling to obtain good results; considerably large dataset also leads to good results; the process of tuning the parameters of our model could get computationally demanding if the number of topics chosen is too large; and lastly, LDA is a great tool to analyse large datasets and find the main topics contained within them. Furthermore, it is possible to give an interpretation of the obtained topics and its related words with the highest probabilities. 
 
 \subsection{Acknowledgements}
 This work could not have been possible without the academic support from Dr Mohammed Bahja and Dr Felipe Orihuela-Espina.
@@ -217,14 +210,14 @@ The structure of this paper is as follows. In section 3 we examine the most rece
 \clearpage
 \section{Literature Review}
 \subsection{Subsection}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Many researchers have used LDA based topic modelling in order to analyse datasets with different tematics.
 
 \subsection{Background}
 \subsubsection{Topic Modelling}
 Topic models are computer algorithms that uncover hidden patterns of word occurrence by analysing the distribution of words in a corpus of documents. The output is a list of themes composed of clusters of words that co-occur in these documents in accordance with specific patterns \citep{jacobi_quantitative_2016}. 
 
 \subsubsection{Latent Dirichlet Allocation}
-Latent Dirichlet Allocation is 
+Latent Dirichlet Allocation is a hierarchical probabilistic model used to divide a collection of documents into their salient topics, where a "topic" for LDA is a probability distribution over a vocabulary \citep{blei_probabilistic_2012}.
 
 The Figure~\ref{fig:lda} represents the intuition behind the LDA algorithm. We suppose that some number of "themes," or word distributions, exist for the entire corpus (far left).
 It is believed that each document is generated as follows. First, select a distribution over the subjects (the histogram on the right). Then, for each word, select a topic assignment (the coloured coins) and the matching topic word. These subjects and topic allocations are illustrative; they are not based on actual data \citep{blei_probabilistic_2012}.
@@ -435,8 +428,6 @@ Topic 6 contains the words: putin, soviet, world, like, time, think, right, time
 
 Topic 7 contains the words: eu, sanction, putin, government, uk, european, abramovich, minister, include, party. There are words that indicate a more general consequence for the whole continent of Europe. Politicis is included as well in words like Putin, government, minister, and party. On the other hand, it can also be inferred that Russia is being sanctioned or punished in some way by Europe as a mean to try to persuade them to stop the war.
 
-Considering the pipeline we followed to train an LDA and then the analysis over the results to select the model that presented topics that best represented the dataset, we can...
-
 \clearpage
 \section{Conclusion}
 Firstly, it is worth mentioning that the pre-processing step, although is not part of the training of the model, it is essential to get good results. As such, it should be given its deserved importance when implementing an LDA algorithm. During our experimentation we observed that our results varied on quality if we applied some steps of the preprocessing stage on a slightly different way. For instance, using a different list of standardised stop words, removing the most common words that were generating noise in our results; or filtering news that did not share any similarities with the main topics of the rest of the dataset. Some additional steps for future research we recommend to try are generating bigrams and trigrams from the tokenised dataset, change the approach for lemmatisation of the tokenised dataset, or increase the size of the dataset. 
@@ -458,7 +449,7 @@ After tuning our model and choosing the best one in terms of topic interpretabil
 \subsection{Directory Structure}
 The repository can be found under the branch feature/lda-model-pycharm: \href{https://git-teaching.cs.bham.ac.uk/mod-msc-proj-2021/nfq160/-/tree/feature/lda-model-pycharm}{https://git-teaching.cs.bham.ac.uk/mod-msc-proj-2021/nfq160/-/tree/feature/lda-model-pycharm}.
 
-The code files are under the directory "dissertation". This report files are under the directory "report". Furthermore, there is a txt file named "link to forms" which contains the url to the forms that were used for the human judgement experimentation.
+The code files are under the directory "dissertation". This report files are under the directory "report". Furthermore, there is a txt file named "link to forms" which contains the url to the forms that were used for the human judgement experimentation. The generated html files to visualise the topics using pyLDAvis for each of the models generated in each run mentioned in this work can be found under dissertation/run x (where x is the number of the run).
 
 \clearpage
 \end{document}
