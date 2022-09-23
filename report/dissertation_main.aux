@@ -60,67 +60,74 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}Lemmatisation}{5}{subsubsection.4.2.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.5}Transforming the documents in a vectorised form (Bag of Words Representation)}{5}{subsubsection.4.2.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Model Training and Parameter Tunning}{5}{subsection.4.3}\protected@file@percent }
+\citation{li_seeded-btm_2019,ferner_automated_2020,albalawi_using_2020,towne_measuring_2016}
+\citation{ray_review_2019}
+\citation{nikolenko_topic_2017}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textit  {LdaMulticore function from Gensim to train or LDA model.}}}{6}{figure.2}\protected@file@percent }
 \newlabel{fig:lda_multicore}{{2}{6}{\textit {LdaMulticore function from Gensim to train or LDA model.}}{figure.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Model Evaluation and Selection}{6}{subsection.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.1}Visualising topic models}{6}{subsubsection.4.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.2}Model Perplexity and Coherence}{6}{subsubsection.4.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.3}Coherence}{6}{subsubsection.4.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.4}Perplexity}{6}{subsubsection.4.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.5}Using trained models on sample of documents}{6}{subsubsection.4.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.6}Human Judgement}{6}{subsubsection.4.4.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.7}Word intrusion}{6}{subsubsection.4.4.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.8}Topic intrusion}{6}{subsubsection.4.4.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Topics Interpretation and Visualisation}{7}{subsection.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{8}{section.5}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textit  {Results: word intrusion and topic intrusion experiments}}}{8}{table.1}\protected@file@percent }
-\newlabel{table:forms_results}{{1}{8}{\textit {Results: word intrusion and topic intrusion experiments}}{table.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textit  {Results}}}{8}{figure.3}\protected@file@percent }
-\newlabel{fig:forms_results}{{3}{8}{\textit {Results}}{figure.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Dataset}{8}{subsection.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}LDA model parameters}{8}{subsection.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Experimental comparison between coherence and perplexity}{8}{subsection.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1}Coherence}{8}{subsubsection.5.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}Dataset}{8}{subsubsection.5.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Experimental comparison using human judgement}{8}{subsection.5.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textit  {Charts}}}{9}{figure.4}\protected@file@percent }
-\newlabel{fig:charts_models}{{4}{9}{\textit {Charts}}{figure.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{10}{section.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Subsection}{10}{subsection.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Subsubsection}{10}{subsubsection.6.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{11}{section.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Subsection}{11}{subsection.7.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Subsection}{11}{subsection.7.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.1}Subsubsection}{11}{subsubsection.7.2.1}\protected@file@percent }
+\citation{nikolenko_topic_2017}
+\citation{nikolenko_topic_2017}
+\citation{nikolenko_topic_2017,chang_reading_nodate}
+\citation{nikolenko_topic_2017}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textit  {Visualising topics and their 10 highest probable keywords for a model generated with 6 number of topics}}}{7}{figure.3}\protected@file@percent }
+\newlabel{fig:visualise_topics}{{3}{7}{\textit {Visualising topics and their 10 highest probable keywords for a model generated with 6 number of topics}}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textit  {Word intrusion task (left): the users are asked to select what of the words do not belong with the rest of the words. Topic intrusion task (right): the users are asked to read a news article and later is presented with 3 topics represented with their highest probable words, of which 1 of the topics does not belong to the document.}}}{8}{figure.4}\protected@file@percent }
+\newlabel{fig:forms_results}{{4}{8}{\textit {Word intrusion task (left): the users are asked to select what of the words do not belong with the rest of the words. Topic intrusion task (right): the users are asked to read a news article and later is presented with 3 topics represented with their highest probable words, of which 1 of the topics does not belong to the document.}}{figure.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Results}{9}{section.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textit  {Results: word intrusion and topic intrusion experiments}}}{9}{table.1}\protected@file@percent }
+\newlabel{table:forms_results}{{1}{9}{\textit {Results: word intrusion and topic intrusion experiments}}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Dataset}{9}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}LDA model parameters}{9}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Experimental comparison between coherence and perplexity}{9}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1}Coherence}{9}{subsubsection.5.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}Dataset}{9}{subsubsection.5.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Experimental comparison using human judgement}{9}{subsection.5.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textit  {Charts}}}{10}{figure.5}\protected@file@percent }
+\newlabel{fig:charts_models}{{5}{10}{\textit {Charts}}{figure.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{11}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Subsection}{11}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Subsubsection}{11}{subsubsection.6.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{12}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Subsection}{12}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Subsection}{12}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.1}Subsubsection}{12}{subsubsection.7.2.1}\protected@file@percent }
 \bibstyle{agsm}
 \bibdata{mybib}
-\bibcite{asmussen_smart_2019}{{1}{2019}{{Asmussen \&\ Møller}}{{}}}
-\bibcite{bird_natural_nodate}{{2}{n.d.}{{Bird}}{{}}}
-\bibcite{blei_probabilistic_2010}{{3}{2010}{{Blei et~al.}}{{Blei, Carin \&\ Dunson}}}
-\bibcite{blei_probabilistic_2012}{{4}{2012}{{Blei}}{{}}}
-\bibcite{blei_latent_nodate}{{5}{n.d.}{{Blei}}{{}}}
-\bibcite{blei_correlated_2007}{{6}{2007}{{Blei \&\ Lafferty}}{{}}}
-\bibcite{caldara_effect_2022}{{7}{2022}{{Caldara et~al.}}{{Caldara, Conlisk, Iacoviello \&\ Penn}}}
-\bibcite{spacy2}{{8}{2017}{{Honnibal \&\ Montani}}{{}}}
-\bibcite{jacobi_quantitative_2016}{{9}{2016}{{Jacobi et~al.}}{{Jacobi, van Atteveldt \&\ Welbers}}}
-\bibcite{jelodar_latent_2019}{{10}{2019}{{Jelodar et~al.}}{{Jelodar, Wang, Yuan, Feng, Jiang, Li \&\ Zhao}}}
-\bibcite{matsa_western_2018}{{11}{2018}{{Matsa et~al.}}{{Matsa, Silver, Shearer \&\ Walker}}}
-\bibcite{McCallumMALLET}{{12}{2002}{{McCallum}}{{}}}
-\bibcite{pedregosa_scikit-learn_nodate}{{13}{n.d.}{{Pedregosa et~al.}}{{Pedregosa, Varoquaux, Gramfort, Michel, Thirion, Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos \&\ Cournapeau}}}
-\bibcite{rajaraman_mining_2011}{{14}{2011}{{Rajaraman \&\ Ullman}}{{}}}
-\bibcite{2009-topic-modeling-social-sciences}{{15}{2009}{{Ramage et~al.}}{{Ramage, Rosen, Chuang, Manning \&\ McFarland}}}
-\bibcite{Rehurek10softwareframework}{{16}{2010}{{Rehurek \&\ Sojka}}{{}}}
-\bibcite{sievert_ldavis_2014}{{17}{2014}{{Sievert \&\ Shirley}}{{}}}
-\@writefile{toc}{\contentsline {section}{References}{12}{section*.2}\protected@file@percent }
-\bibcite{noauthor_theguardian_nodate}{{18}{n.d.}{{\em  theguardian / open platform - documentation / overview}}{{}}}
-\bibcite{xu_probabilistic_2016}{{19}{2016}{{Xu \&\ Raschid}}{{}}}
-\bibcite{zhao_heuristic_2015}{{20}{2015}{{Zhao et~al.}}{{Zhao, Chen, Perkins, Liu, Ge, Ding \&\ Zou}}}
-\bibcite{rehurek_gensimstatistical_nodate}{{21}{n.d.}{{Řehůřek \&\ Sojka}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Appendix One: Accompanying Archive and Instructions}{14}{section.8}\protected@file@percent }
-\newlabel{section:appendix}{{8}{14}{Appendix One: Accompanying Archive and Instructions}{section.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Directory Structure}{14}{subsection.8.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Running the Provided Code}{14}{subsection.8.2}\protected@file@percent }
-\newlabel{LastPage}{{}{14}{}{page.14}{}}
-\xdef\lastpage@lastpage{14}
-\xdef\lastpage@lastpageHy{14}
-\gdef \@abspage@last{20}
+\bibcite{albalawi_using_2020}{{1}{2020}{{Albalawi et~al.}}{{Albalawi, Yeap \&\ Benyoucef}}}
+\bibcite{asmussen_smart_2019}{{2}{2019}{{Asmussen \&\ Møller}}{{}}}
+\bibcite{bird_natural_nodate}{{3}{n.d.}{{Bird}}{{}}}
+\bibcite{blei_probabilistic_2010}{{4}{2010}{{Blei et~al.}}{{Blei, Carin \&\ Dunson}}}
+\bibcite{blei_probabilistic_2012}{{5}{2012}{{Blei}}{{}}}
+\bibcite{blei_latent_nodate}{{6}{n.d.}{{Blei}}{{}}}
+\bibcite{blei_correlated_2007}{{7}{2007}{{Blei \&\ Lafferty}}{{}}}
+\bibcite{caldara_effect_2022}{{8}{2022}{{Caldara et~al.}}{{Caldara, Conlisk, Iacoviello \&\ Penn}}}
+\bibcite{chang_reading_nodate}{{9}{n.d.}{{Chang et~al.}}{{Chang, Boyd-Graber, Gerrish, Wang \&\ Blei}}}
+\bibcite{ferner_automated_2020}{{10}{2020}{{Ferner et~al.}}{{Ferner, Havas, Birnbacher, Wegenkittl \&\ Resch}}}
+\bibcite{spacy2}{{11}{2017}{{Honnibal \&\ Montani}}{{}}}
+\bibcite{jacobi_quantitative_2016}{{12}{2016}{{Jacobi et~al.}}{{Jacobi, van Atteveldt \&\ Welbers}}}
+\bibcite{jelodar_latent_2019}{{13}{2019}{{Jelodar et~al.}}{{Jelodar, Wang, Yuan, Feng, Jiang, Li \&\ Zhao}}}
+\bibcite{li_seeded-btm_2019}{{14}{2019}{{Li et~al.}}{{Li, Chow \&\ Zhang}}}
+\bibcite{matsa_western_2018}{{15}{2018}{{Matsa et~al.}}{{Matsa, Silver, Shearer \&\ Walker}}}
+\bibcite{McCallumMALLET}{{16}{2002}{{McCallum}}{{}}}
+\bibcite{nikolenko_topic_2017}{{17}{2017}{{Nikolenko et~al.}}{{Nikolenko, Koltcov \&\ Koltsova}}}
+\@writefile{toc}{\contentsline {section}{References}{13}{section*.2}\protected@file@percent }
+\bibcite{pedregosa_scikit-learn_nodate}{{18}{n.d.}{{Pedregosa et~al.}}{{Pedregosa, Varoquaux, Gramfort, Michel, Thirion, Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos \&\ Cournapeau}}}
+\bibcite{rajaraman_mining_2011}{{19}{2011}{{Rajaraman \&\ Ullman}}{{}}}
+\bibcite{2009-topic-modeling-social-sciences}{{20}{2009}{{Ramage et~al.}}{{Ramage, Rosen, Chuang, Manning \&\ McFarland}}}
+\bibcite{ray_review_2019}{{21}{2019}{{Ray et~al.}}{{Ray, Ahmad \&\ Kumar}}}
+\bibcite{Rehurek10softwareframework}{{22}{2010}{{Rehurek \&\ Sojka}}{{}}}
+\bibcite{sievert_ldavis_2014}{{23}{2014}{{Sievert \&\ Shirley}}{{}}}
+\bibcite{noauthor_theguardian_nodate}{{24}{n.d.}{{\em  theguardian / open platform - documentation / overview}}{{}}}
+\bibcite{towne_measuring_2016}{{25}{2016}{{Towne et~al.}}{{Towne, Rosé \&\ Herbsleb}}}
+\bibcite{xu_probabilistic_2016}{{26}{2016}{{Xu \&\ Raschid}}{{}}}
+\bibcite{zhao_heuristic_2015}{{27}{2015}{{Zhao et~al.}}{{Zhao, Chen, Perkins, Liu, Ge, Ding \&\ Zou}}}
+\bibcite{rehurek_gensimstatistical_nodate}{{28}{n.d.}{{Řehůřek \&\ Sojka}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Appendix One: Accompanying Archive and Instructions}{15}{section.8}\protected@file@percent }
+\newlabel{section:appendix}{{8}{15}{Appendix One: Accompanying Archive and Instructions}{section.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Directory Structure}{15}{subsection.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Running the Provided Code}{15}{subsection.8.2}\protected@file@percent }
+\newlabel{LastPage}{{}{15}{}{page.15}{}}
+\xdef\lastpage@lastpage{15}
+\xdef\lastpage@lastpageHy{15}
+\gdef \@abspage@last{21}

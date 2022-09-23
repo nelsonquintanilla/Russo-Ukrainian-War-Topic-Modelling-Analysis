@@ -1,5 +1,13 @@
 \begin{thebibliography}{xx}
 
+\harvarditem[Albalawi et~al.]{Albalawi, Yeap \harvardand\
+  Benyoucef}{2020}{albalawi_using_2020}
+Albalawi, R., Yeap, T.~H. \harvardand\ Benyoucef, M.  \harvardyearleft
+  2020\harvardyearright , `Using {Topic} {Modeling} {Methods} for
+  {Short}-{Text} {Data}: {A} {Comparative} {Analysis}', {\em Frontiers in
+  Artificial Intelligence} {\bf 3}.
+\newline\harvardurl{https://www.frontiersin.org/articles/10.3389/frai.2020.00042}
+
 \harvarditem{Asmussen \harvardand\ Møller}{2019}{asmussen_smart_2019}
 Asmussen, C.~B. \harvardand\ Møller, C.  \harvardyearleft
   2019\harvardyearright , `Smart literature review: a practical topic modelling
@@ -42,6 +50,21 @@ Caldara, D., Conlisk, S., Iacoviello, M. \harvardand\ Penn, M.
   {Ukraine} on {Global} {Activity} and {Inflation}'.
 \newline\harvardurl{https://www.federalreserve.gov/econres/notes/feds-notes/the-effect-of-the-war-in-ukraine-on-global-activity-and-inflation-20220527.html}
 
+\harvarditem[Chang et~al.]{Chang, Boyd-Graber, Gerrish, Wang \harvardand\
+  Blei}{n.d.}{chang_reading_nodate}
+Chang, J., Boyd-Graber, J., Gerrish, S., Wang, C. \harvardand\ Blei, D.~M.
+  \harvardyearleft n.d.\harvardyearright , `Reading {Tea} {Leaves}: {How}
+  {Humans} {Interpret} {Topic} {Models}',  p.~10.
+
+\harvarditem[Ferner et~al.]{Ferner, Havas, Birnbacher, Wegenkittl \harvardand\
+  Resch}{2020}{ferner_automated_2020}
+Ferner, C., Havas, C., Birnbacher, E., Wegenkittl, S. \harvardand\ Resch, B.
+  \harvardyearleft 2020\harvardyearright , `Automated {Seeded} {Latent}
+  {Dirichlet} {Allocation} for {Social} {Media} {Based} {Event} {Detection} and
+  {Mapping}', {\em Information} {\bf 11}(8),~376.
+\newblock Number: 8 Publisher: Multidisciplinary Digital Publishing Institute.
+\newline\harvardurl{https://www.mdpi.com/2078-2489/11/8/376}
+
 \harvarditem{Honnibal \harvardand\ Montani}{2017}{spacy2}
 Honnibal, M. \harvardand\ Montani, I.  \harvardyearleft 2017\harvardyearright ,
   {spaCy 2}: Natural language understanding with {B}loom embeddings,
@@ -64,6 +87,15 @@ Jelodar, H., Wang, Y., Yuan, C., Feng, X., Jiang, X., Li, Y. \harvardand\ Zhao,
   Tools and Applications} {\bf 78}(11),~15169--15211.
 \newline\harvardurl{http://link.springer.com/10.1007/s11042-018-6894-4}
 
+\harvarditem[Li et~al.]{Li, Chow \harvardand\ Zhang}{2019}{li_seeded-btm_2019}
+Li, N., Chow, C.-Y. \harvardand\ Zhang, J.-D.  \harvardyearleft
+  2019\harvardyearright , Seeded-{BTM}: {Enabling} {Biterm} {Topic} {Model}
+  with {Seeds} for {Product} {Aspect} {Mining}, {\em in} `2019 {IEEE} 21st
+  {International} {Conference} on {High} {Performance} {Computing} and
+  {Communications}; {IEEE} 17th {International} {Conference} on {Smart} {City};
+  {IEEE} 5th {International} {Conference} on {Data} {Science} and {Systems}
+  ({HPCC}/{SmartCity}/{DSS})', pp.~2751--2758.
+
 \harvarditem[Matsa et~al.]{Matsa, Silver, Shearer \harvardand\
   Walker}{2018}{matsa_western_2018}
 Matsa, K.~E., Silver, L., Shearer, E. \harvardand\ Walker, M.  \harvardyearleft
@@ -76,6 +108,14 @@ Matsa, K.~E., Silver, L., Shearer, E. \harvardand\ Walker, M.  \harvardyearleft
 McCallum, A.~K.  \harvardyearleft 2002\harvardyearright , Mallet: A machine
   learning for language toolkit.
 \newblock http://www.cs.umass.edu/~mccallum/mallet.
+
+\harvarditem[Nikolenko et~al.]{Nikolenko, Koltcov \harvardand\
+  Koltsova}{2017}{nikolenko_topic_2017}
+Nikolenko, S.~I., Koltcov, S. \harvardand\ Koltsova, O.  \harvardyearleft
+  2017\harvardyearright , `Topic modelling for qualitative studies', {\em
+  Journal of Information Science} {\bf 43}(1),~88--102.
+\newblock Publisher: SAGE Publications Ltd.
+\newline\harvardurl{https://doi.org/10.1177/0165551515617393}
 
 \harvarditem[Pedregosa et~al.]{Pedregosa, Varoquaux, Gramfort, Michel, Thirion,
   Grisel, Blondel, Prettenhofer, Weiss, Dubourg, Vanderplas, Passos
@@ -98,6 +138,14 @@ Ramage, D., Rosen, E., Chuang, J., Manning, C.~D. \harvardand\ McFarland, D.~A.
   sciences, {\em in} `Workshop on Applications for Topic Models, NIPS'.
 \newline\harvardurl{http://vis.stanford.edu/papers/topic-modeling-social-sciences}
 
+\harvarditem[Ray et~al.]{Ray, Ahmad \harvardand\ Kumar}{2019}{ray_review_2019}
+Ray, S.~K., Ahmad, A. \harvardand\ Kumar, C.~A.  \harvardyearleft
+  2019\harvardyearright , `Review and {Implementation} of {Topic} {Modeling} in
+  {Hindi}', {\em Applied Artificial Intelligence} {\bf 33}(11),~979--1007.
+\newblock Publisher: Taylor \& Francis \_eprint:
+  https://doi.org/10.1080/08839514.2019.1661576.
+\newline\harvardurl{https://doi.org/10.1080/08839514.2019.1661576}
+
 \harvarditem{Rehurek \harvardand\ Sojka}{2010}{Rehurek10softwareframework}
 Rehurek, R. \harvardand\ Sojka, P.  \harvardyearleft 2010\harvardyearright ,
   Software framework for topic modelling with large corpora, {\em in} `IN
@@ -117,6 +165,14 @@ Sievert, C. \harvardand\ Shirley, K.  \harvardyearleft 2014\harvardyearright ,
 {\em theguardian / open platform - documentation / overview}  \harvardyearleft
   n.d.\harvardyearright .
 \newline\harvardurl{https://open-platform.theguardian.com/documentation/}
+
+\harvarditem[Towne et~al.]{Towne, Rosé \harvardand\
+  Herbsleb}{2016}{towne_measuring_2016}
+Towne, W.~B., Rosé, C.~P. \harvardand\ Herbsleb, J.~D.  \harvardyearleft
+  2016\harvardyearright , `Measuring {Similarity} {Similarly}: {LDA} and
+  {Human} {Perception}', {\em ACM Transactions on Intelligent Systems and
+  Technology} {\bf 8}(1),~7:1--7:28.
+\newline\harvardurl{https://doi.org/10.1145/2890510}
 
 \harvarditem{Xu \harvardand\ Raschid}{2016}{xu_probabilistic_2016}
 Xu, Z. \harvardand\ Raschid, L.  \harvardyearleft 2016\harvardyearright ,

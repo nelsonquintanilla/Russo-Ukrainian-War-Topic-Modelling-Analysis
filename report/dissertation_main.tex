@@ -268,47 +268,52 @@ Perplexity is a metric for evaluating language models, where a low score denotes
 
 Reducing the perplexity score is equivalent to increasing the chance of all articles belonging to a topic. The criteria for picking the optimal number of topics is to strike a balance between a manageable number of topics and the lowest possible level of perplexity. The optimal amount of topics can vary substantially depending on the purpose of the analysis. As a general guideline, fewer topics are utilised for a general overview, while more topics are used for a more detailed look \citep{asmussen_smart_2019}. In our case, we geared our experimentation towards obtaining a general overview.
 
-COHERENCE...
+Coherence score is also extensively used in topic model experiments as an assessment tool \citep{li_seeded-btm_2019, ferner_automated_2020, albalawi_using_2020, towne_measuring_2016} and it indicates the degree of semantic similarity of high-scoring terms in the text and helps to differentiate the semantic interpretation of themes based on statistical inference \citep{ray_review_2019}.  
 
 Having mentioned that, once we generated our corpus or Bag of Words representation of our dataset and our dictionary (a dictionary object that contains every single word on the entire dataset without duplicates), we created a function to generate many models at once with a different value of number of topics.
 
-The first run we did was for models with 2, 8, 14, 20, 26, 32, and 38 number of topics. As we will explain further, we did several runs with different number of topics. At this point we computed the coherence and perplexity for each of the models generated and as it can be observed in figure~\ref{charts_models}. We assessed the calculated perplexity and coherence and decided to do a second run for models with 2, 4, 6, 8, 10, 12, and 14 number of topics. 
+The first run we did was for models with 2, 8, 14, 20, 26, 32, and 38 number of topics. As we will explain further, we did several runs with different number of topics. At this point we computed the coherence score and perplexity for each of the models generated and as it can be observed in figure~\ref{charts_models}. We assessed the calculated perplexity and coherence and decided to do a second run for models with 2, 4, 6, 8, 10, 12, and 14 number of topics. 
 
-We assessed the coherence and perplexity values, as well as the associated words with the highest probability for each of the topics of the generated models and based on that we started adding custom words to our list of stop words. The purpose of this is to avoid getting some of the words repeated in many topics (this is the case for words that occur in the majority of the documents). Therefore, we removed the following words: Ukraine, Ukrainian, Russia, Russian; and ran our model a third time. 
+We assessed the coherence and perplexity values, as well as the associated words with the highest probability for each of the topics of the generated models as it can be seen on Figure~\ref{fig:visualise_topics}, and based on that we started adding custom words to our list of stop words. The purpose of this is to avoid getting some of the words repeated in many topics (this is the case for words that occur in the majority of the documents). Therefore, we removed the following words: Ukraine, Ukrainian, Russia, Russian; and ran our model a third time. 
 
 We assessed again the metrics in addition to the associated words for each of the topics of the model generated and this time we removed the following words: war, people, city; and ran our model a fourth time.
 
 Lastly, we assessed in a similar manner, removed the words: country, year, day; and ran our model a fifth time.
 
-For each of the runs in the process previously described we also did several other runs to tune the remaining parameters of the model by trial and error. When the results were better, we continued with the next iteration of runs.
+For each of the runs in the process previously described we also did several other runs to tune the remaining parameters of the model by trial and error. When the results were better, we continued with the next iteration of runs. In the end, we selected the 3 best models from the last run. From these 3 models, we are going to find out which one is the best one utilising human judgement metrics.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.5]{lda_multicore.png}
+\includegraphics[scale=0.4]{lda_multicore.png}
 \caption{\textit{LdaMulticore function from Gensim to train or LDA model.}}
 \label{fig:lda_multicore}
 \end{figure}
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{visualise_topics.png}
+\caption{\textit{Visualising topics and their 10 highest probable keywords for a model generated with 6 number of topics}}
+\label{fig:visualise_topics}
+\end{figure}
+
 \subsection{Model Evaluation and Selection}
+To further evaluate our models we used human judgement metrics as well. We employ two tasks to build a formal environment in which humans can evaluate the two components of a topic model's latent space. The first element is the composition of the topics. We construct a task to determine whether a topic has semantic coherence that is human-identifiable. This activity is known as word intrusion, as participants must recognise a fictitious word that has been put into a topic. The second assignment evaluates the validity of the relationship between a document and a topic. This task is known as topic incursion because the subject must identify a topic that the model did not correlate with the document \citep{nikolenko_topic_2017}.
 
-\subsubsection{Visualising topic models}
-\subsubsection{Model Perplexity and Coherence}
-\subsubsection{Coherence}
-\subsubsection{Perplexity}
+In Figure~\ref{fig:forms_results} it can be observed the human tasks we provided for 10 users to answer. The purpose of these tasks was to select the best model amongst the three best models we picked in the last step. For each model, in total, each user responded to 5 word intrusion challenges and 3 topic intrusion challenges. The url to the questionary can be found in the repository included in Section~\ref{section:appendix}. Responses are no longer accepted but you can see the results.
 
+To create the questionnaire, we used the 3 models in 3 news articles. For the word intrusion task, six words are presented to the individual in a random order.
+The user's objective is to identify the word that does not belong with the others, also known as the intruder. Five of the six words correspond to the highest probable words from a topic but the sixth word is an intruder \citep{nikolenko_topic_2017}..
 
-\subsubsection{Using trained models on sample of documents}
+The topic intrusion challenge examines if a topic model's breakdown of documents into a variety of subjects corresponds to human evaluations of the document's content \citep{nikolenko_topic_2017}. 
 
-\subsubsection{Human Judgement}
+Both experiments were made in a similar fashion to \citep{nikolenko_topic_2017, chang_reading_nodate}. Word and topic intruders were selected at random from terms and topics not present in the topic and text, respectively, similar to \citep{nikolenko_topic_2017}.
 
-\subsubsection{Word intrusion}
-
-\subsubsection{Topic intrusion}
-
-
-
-\clearpage
-\subsection{Topics Interpretation and Visualisation}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{forms_results.png}
+\caption{\textit{Word intrusion task (left): the users are asked to select what of the words do not belong with the rest of the words. Topic intrusion task (right): the users are asked to read a news article and later is presented with 3 topics represented with their highest probable words, of which 1 of the topics does not belong to the document.}}
+\label{fig:forms_results}
+\end{figure}
 
 \clearpage
 \section{Results}
@@ -332,13 +337,6 @@ Topic Intrusion & Model 2 & 17 & 30 & 0.567 \\
 \caption{\textit{Results: word intrusion and topic intrusion experiments}}
 \label{table:forms_results}
 \end{table}
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.4]{forms_results.png}
-\caption{\textit{Results}}
-\label{fig:forms_results}
-\end{figure}
 
 \begin{figure}[h]
 \centering
