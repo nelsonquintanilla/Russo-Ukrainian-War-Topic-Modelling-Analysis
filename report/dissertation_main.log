@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.5)  23 SEP 2022 05:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.5)  23 SEP 2022 06:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -598,12 +598,12 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 93.
 \c@lstlisting=\count326
-<crest.jpg, id=130, 501.875pt x 600.2425pt>
+<crest.jpg, id=118, 501.875pt x 600.2425pt>
 File: crest.jpg Graphic file (type jpg)
 <use crest.jpg>
 Package pdftex.def Info: crest.jpg  used on input line 102.
 (pdftex.def)             Requested size: 90.3375pt x 108.03899pt.
-<uni.jpg, id=131, 2007.5pt x 473.77pt>
+<uni.jpg, id=119, 2007.5pt x 473.77pt>
 File: uni.jpg Graphic file (type jpg)
 <use uni.jpg>
 Package pdftex.def Info: uni.jpg  used on input line 104.
@@ -675,7 +675,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
-<method_1.png, id=256, 641.39626pt x 95.30606pt>
+<method_1.png, id=241, 641.39626pt x 95.30606pt>
 File: method_1.png Graphic file (type png)
 <use method_1.png>
 Package pdftex.def Info: method_1.png  used on input line 218.
@@ -699,7 +699,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 281--282
 
  []
 
-<lda_multicore.png, id=350, 464.73625pt x 485.815pt>
+<lda_multicore.png, id=335, 464.73625pt x 485.815pt>
 File: lda_multicore.png Graphic file (type png)
 <use lda_multicore.png>
 Package pdftex.def Info: lda_multicore.png  used on input line 285.
@@ -707,7 +707,7 @@ Package pdftex.def Info: lda_multicore.png  used on input line 285.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<visualise_topics.png, id=352, 872.25874pt x 581.17125pt>
+<visualise_topics.png, id=337, 872.25874pt x 581.17125pt>
 File: visualise_topics.png Graphic file (type png)
 <use visualise_topics.png>
 Package pdftex.def Info: visualise_topics.png  used on input line 292.
@@ -721,7 +721,7 @@ Overfull \hbox (2.92499pt too wide) in paragraph at lines 307--308
 hang et al.[] []n.d.[], []Nikolenko
  []
 
-<forms_results.png, id=378, 1157.32375pt x 604.2575pt>
+<forms_results.png, id=363, 1157.32375pt x 604.2575pt>
 File: forms_results.png Graphic file (type png)
 <use forms_results.png>
 Package pdftex.def Info: forms_results.png  used on input line 311.
@@ -758,12 +758,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 322--323
 
  []
 
-<6_topics.png, id=406, 891.33pt x 573.14125pt>
+<6_topics.png, id=391, 891.33pt x 573.14125pt>
 File: 6_topics.png Graphic file (type png)
 <use 6_topics.png>
 Package pdftex.def Info: 6_topics.png  used on input line 346.
 (pdftex.def)             Requested size: 356.52568pt x 229.25243pt.
-<8_topics.png, id=407, 742.775pt x 683.55376pt>
+<8_topics.png, id=392, 742.775pt x 683.55376pt>
 File: 8_topics.png Graphic file (type png)
 <use 8_topics.png>
 Package pdftex.def Info: 8_topics.png  used on input line 353.
@@ -771,7 +771,7 @@ Package pdftex.def Info: 8_topics.png  used on input line 353.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<10_topics.png, id=408, 610.28pt x 675.52374pt>
+<10_topics.png, id=393, 610.28pt x 675.52374pt>
 File: 10_topics.png Graphic file (type png)
 <use 10_topics.png>
 Package pdftex.def Info: 10_topics.png  used on input line 360.
@@ -779,7 +779,7 @@ Package pdftex.def Info: 10_topics.png  used on input line 360.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<charts_models.png, id=409, 516.84pt x 1096.095pt>
+<charts_models.png, id=394, 516.84pt x 1096.095pt>
 File: charts_models.png Graphic file (type png)
 <use charts_models.png>
 Package pdftex.def Info: charts_models.png  used on input line 367.
@@ -787,20 +787,23 @@ Package pdftex.def Info: charts_models.png  used on input line 367.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12
+
+Underfull \vbox (badness 1648) has occurred while \output is active []
+
+ [12
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.376 
+l.374 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.376 
+l.374 
        <./6_topics.png>] [13
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
@@ -888,13 +891,13 @@ AED: lastpage setting LastPage
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `dissertation_main.out' has not changed.
-(rerunfilecheck)             Checksum: DC9E757927D3EB7A80038B289EB070C4;4847.
+(rerunfilecheck)             Checksum: 321B83301C659B16279B9E9412E00910;4541.
  ) 
 Here is how much of TeX's memory you used:
- 14644 strings out of 478268
- 228179 string characters out of 5846348
- 536209 words of memory out of 5000000
- 32518 multiletter control sequences out of 15000+600000
+ 14638 strings out of 478268
+ 228079 string characters out of 5846348
+ 535203 words of memory out of 5000000
+ 32515 multiletter control sequences out of 15000+600000
  482716 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,12n,75p,928b,482s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -909,10 +912,10 @@ ocal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/loca
 l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on dissertation_main.pdf (25 pages, 3167136 bytes).
+Output written on dissertation_main.pdf (25 pages, 3166680 bytes).
 PDF statistics:
- 532 PDF objects out of 1000 (max. 8388607)
- 462 compressed objects within 5 object streams
- 90 named destinations out of 1000 (max. 500000)
- 307 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 517 PDF objects out of 1000 (max. 8388607)
+ 447 compressed objects within 5 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 283 words of extra memory for PDF output out of 10000 (max. 10000000)
 

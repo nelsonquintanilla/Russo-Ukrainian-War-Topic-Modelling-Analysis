@@ -20,12 +20,9 @@
 \contentsline {subsection}{\numberline {4.4}Model Evaluation and Selection}{8}{subsection.4.4}%
 \contentsline {section}{\numberline {5}Results}{12}{section.5}%
 \contentsline {section}{\numberline {6}Discussion}{16}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Subsection}{16}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Subsubsection}{16}{subsubsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1}Topics Interpretation}{16}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Challenges}{16}{subsubsection.6.1.1}%
 \contentsline {section}{\numberline {7}Conclusion}{17}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Subsection}{17}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Subsection}{17}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}Subsubsection}{17}{subsubsection.7.2.1}%
 \contentsline {section}{References}{18}{section*.2}%
 \contentsline {section}{\numberline {8}Appendix One: Accompanying Archive and Instructions}{21}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Directory Structure}{21}{subsection.8.1}%
