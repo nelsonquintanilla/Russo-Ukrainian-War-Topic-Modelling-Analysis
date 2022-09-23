@@ -376,6 +376,15 @@ Taking into account the results from the human judgement task in addition to the
 
 In the following section we are going to discuss further the implications of selecting this model and how we can interpret the topics and what do they tell us about the current situation between Russia and Ukrania.
 
+Additionally, to visualise the topics in an interactive way, we used pyLDAvis which is a Python library for the interactive display of topic models \citep{sievert_ldavis_2014}. In the Figure~\ref{fig:pyldavis} you can observe the visualisation of the topics for the model 2 with 8 number of topics.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{pyldavis.png}
+\caption{\textit{Visualisation of the topics for the model 2 which corresponds to a model with 8 number of topics. Currently showing the 30 most relevant words for topic 1.}}
+\label{fig:pyldavis}
+\end{figure}
+
 \clearpage
 \section{Discussion}
 \subsection{Topics Interpretation}
@@ -399,10 +408,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 \section{Appendix One: Accompanying Archive and Instructions}
 \label{section:appendix}
 \subsection{Directory Structure}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The repository can be found under the branch feature/lda-model-pycharm: \href{https://git-teaching.cs.bham.ac.uk/mod-msc-proj-2021/nfq160/-/tree/feature/lda-model-pycharm}{https://git-teaching.cs.bham.ac.uk/mod-msc-proj-2021/nfq160/-/tree/feature/lda-model-pycharm}.
 
-\subsection{Running the Provided Code}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The code files are under the directory "dissertation". This report files are under the directory "report". Furthermore, there is a txt file named "link to forms" which contains the url to the forms that were used for the human judgement experimentation.
 
 \clearpage
 \end{document}

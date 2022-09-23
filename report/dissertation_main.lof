@@ -6,3 +6,4 @@
 \contentsline {figure}{\numberline {6}{\ignorespaces \textit {Model with 8 number of topics from run 5. Each topic contains the 10 words with the highest probability within that topic.}}}{13}{figure.6}%
 \contentsline {figure}{\numberline {7}{\ignorespaces \textit {Model with 10 number of topics from run 5. Each topic contains the 10 words with the highest probability within that topic.}}}{14}{figure.7}%
 \contentsline {figure}{\numberline {8}{\ignorespaces \textit {Plots of coherence and perplexity for the models generated on each run during the parameter tuning process.}}}{15}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces \textit {Visualisation of the topics for the model 2 which corresponds to a model with 8 number of topics. Currently showing the 30 most relevant words for topic 1.}}}{16}{figure.9}%

@@ -19,11 +19,10 @@
 \contentsline {subsection}{\numberline {4.3}Model Training and Parameter Tunning}{7}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Model Evaluation and Selection}{8}{subsection.4.4}%
 \contentsline {section}{\numberline {5}Results}{12}{section.5}%
-\contentsline {section}{\numberline {6}Discussion}{16}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Topics Interpretation}{16}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Challenges}{16}{subsubsection.6.1.1}%
-\contentsline {section}{\numberline {7}Conclusion}{17}{section.7}%
-\contentsline {section}{References}{18}{section*.2}%
-\contentsline {section}{\numberline {8}Appendix One: Accompanying Archive and Instructions}{21}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Directory Structure}{21}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Running the Provided Code}{21}{subsection.8.2}%
+\contentsline {section}{\numberline {6}Discussion}{17}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Topics Interpretation}{17}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Challenges}{17}{subsubsection.6.1.1}%
+\contentsline {section}{\numberline {7}Conclusion}{18}{section.7}%
+\contentsline {section}{References}{19}{section*.2}%
+\contentsline {section}{\numberline {8}Appendix One: Accompanying Archive and Instructions}{22}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Directory Structure}{22}{subsection.8.1}%
