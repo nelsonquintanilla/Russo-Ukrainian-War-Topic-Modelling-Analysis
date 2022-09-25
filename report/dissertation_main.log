@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.5)  23 SEP 2022 11:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.5)  23 SEP 2022 11:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -598,12 +598,12 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 93.
 \c@lstlisting=\count326
-<crest.jpg, id=118, 501.875pt x 600.2425pt>
+<crest.jpg, id=114, 501.875pt x 600.2425pt>
 File: crest.jpg Graphic file (type jpg)
 <use crest.jpg>
 Package pdftex.def Info: crest.jpg  used on input line 102.
 (pdftex.def)             Requested size: 90.3375pt x 108.03899pt.
-<uni.jpg, id=119, 2007.5pt x 473.77pt>
+<uni.jpg, id=115, 2007.5pt x 473.77pt>
 File: uni.jpg Graphic file (type jpg)
 <use uni.jpg>
 Package pdftex.def Info: uni.jpg  used on input line 104.
@@ -669,18 +669,18 @@ l.163 \clearpage
 ] [2
 
 ] [3]
-Overfull \hbox (1.05705pt too wide) in paragraph at lines 213--214
+Overfull \hbox (1.05705pt too wide) in paragraph at lines 212--213
 \OT1/cmr/m/n/12 Many re-searchers have used LDA based topic mod-elling in or-de
 r to anal-yse datasets
  []
 
-<lda.png, id=250, 1142.2675pt x 633.36626pt>
+<lda.png, id=247, 1142.2675pt x 633.36626pt>
 File: lda.png Graphic file (type png)
 <use lda.png>
-Package pdftex.def Info: lda.png  used on input line 227.
+Package pdftex.def Info: lda.png  used on input line 226.
 (pdftex.def)             Requested size: 456.89891pt x 253.34201pt.
 
-Overfull \hbox (40.06575pt too wide) in paragraph at lines 227--228
+Overfull \hbox (40.06575pt too wide) in paragraph at lines 226--227
  [][] 
  []
 
@@ -694,16 +694,16 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.232 \clearpage
+l.231 \clearpage
                  <./lda.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
-<method_1.png, id=267, 641.39626pt x 95.30606pt>
+<method_1.png, id=265, 641.39626pt x 95.30606pt>
 File: method_1.png Graphic file (type png)
 <use method_1.png>
-Package pdftex.def Info: method_1.png  used on input line 238.
+Package pdftex.def Info: method_1.png  used on input line 237.
 (pdftex.def)             Requested size: 384.84071pt x 57.18407pt.
 [6
 
@@ -712,51 +712,51 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.253 F
+l.252 F
        ollowing is a detailed description of the processes we took when comp...
  <./method_1.png>] [7] [8]
 
-LaTeX Warning: Reference `charts_models' on page 9 undefined on input line 293.
+LaTeX Warning: Reference `charts_models' on page 9 undefined on input line 292.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--302
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
 
  []
 
-<lda_multicore.png, id=360, 464.73625pt x 485.815pt>
+<lda_multicore.png, id=357, 464.73625pt x 485.815pt>
 File: lda_multicore.png Graphic file (type png)
 <use lda_multicore.png>
-Package pdftex.def Info: lda_multicore.png  used on input line 305.
+Package pdftex.def Info: lda_multicore.png  used on input line 304.
 (pdftex.def)             Requested size: 209.12938pt x 218.61473pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<visualise_topics.png, id=361, 872.25874pt x 581.17125pt>
+<visualise_topics.png, id=358, 872.25874pt x 581.17125pt>
 File: visualise_topics.png Graphic file (type png)
 <use visualise_topics.png>
-Package pdftex.def Info: visualise_topics.png  used on input line 312.
+Package pdftex.def Info: visualise_topics.png  used on input line 311.
 (pdftex.def)             Requested size: 348.89731pt x 232.46437pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [9]
-Overfull \hbox (2.92499pt too wide) in paragraph at lines 327--328
+Overfull \hbox (2.92499pt too wide) in paragraph at lines 326--327
 []\OT1/cmr/m/n/12 Both ex-per-i-ments were made in a sim-i-lar fash-ion to ([]C
 hang et al.[] []n.d.[], []Nikolenko
  []
 
-<forms_results.png, id=388, 1157.32375pt x 604.2575pt>
+<forms_results.png, id=385, 1157.32375pt x 604.2575pt>
 File: forms_results.png Graphic file (type png)
 <use forms_results.png>
-Package pdftex.def Info: forms_results.png  used on input line 331.
+Package pdftex.def Info: forms_results.png  used on input line 330.
 (pdftex.def)             Requested size: 405.06938pt x 211.49329pt.
 [10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.334 \end{figure}
+l.333 \end{figure}
                    <./lda_multicore.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -766,43 +766,43 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.336 \clearpage
+l.335 \clearpage
                  <./visualise_topics.png>] [12
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.336 \clearpage
+l.335 \clearpage
                  <./forms_results.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 342--343
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
  []
 
-<6_topics.png, id=415, 891.33pt x 573.14125pt>
+<6_topics.png, id=412, 891.33pt x 573.14125pt>
 File: 6_topics.png Graphic file (type png)
 <use 6_topics.png>
-Package pdftex.def Info: 6_topics.png  used on input line 366.
+Package pdftex.def Info: 6_topics.png  used on input line 365.
 (pdftex.def)             Requested size: 356.52568pt x 229.25243pt.
-<8_topics.png, id=416, 742.775pt x 683.55376pt>
+<8_topics.png, id=413, 742.775pt x 683.55376pt>
 File: 8_topics.png Graphic file (type png)
 <use 8_topics.png>
-Package pdftex.def Info: 8_topics.png  used on input line 373.
+Package pdftex.def Info: 8_topics.png  used on input line 372.
 (pdftex.def)             Requested size: 371.38658pt x 341.77605pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<10_topics.png, id=417, 610.28pt x 675.52374pt>
+<10_topics.png, id=414, 610.28pt x 675.52374pt>
 File: 10_topics.png Graphic file (type png)
 <use 10_topics.png>
-Package pdftex.def Info: 10_topics.png  used on input line 380.
+Package pdftex.def Info: 10_topics.png  used on input line 379.
 (pdftex.def)             Requested size: 305.13925pt x 337.76105pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<charts_models.png, id=418, 516.84pt x 1096.095pt>
+<charts_models.png, id=415, 516.84pt x 1096.095pt>
 File: charts_models.png Graphic file (type png)
 <use charts_models.png>
-Package pdftex.def Info: charts_models.png  used on input line 387.
+Package pdftex.def Info: charts_models.png  used on input line 386.
 (pdftex.def)             Requested size: 258.41936pt x 548.04616pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -817,18 +817,18 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.394 
+l.393 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.394 
+l.393 
        <./6_topics.png>]
-<pyldavis.png, id=429, 1204.5pt x 761.84625pt>
+<pyldavis.png, id=426, 1204.5pt x 761.84625pt>
 File: pyldavis.png Graphic file (type png)
 <use pyldavis.png>
-Package pdftex.def Info: pyldavis.png  used on input line 403.
+Package pdftex.def Info: pyldavis.png  used on input line 402.
 (pdftex.def)             Requested size: 361.35278pt x 228.55563pt.
 
 
@@ -839,25 +839,25 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.408 \clearpage
+l.407 \clearpage
                  <./8_topics.png>] [15
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.408 \clearpage
+l.407 \clearpage
                  <./10_topics.png>] [16
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.408 \clearpage
+l.407 \clearpage
                  <./charts_models.png>] [17
 pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.408 \clearpage
+l.407 \clearpage
                  <./pyldavis.png>] [18
 
 ] [19] [20
@@ -919,13 +919,13 @@ com/articles/10.1186/1471-
  []
 
 ) [23]
-Overfull \hbox (22.28589pt too wide) in paragraph at lines 450--451
+Overfull \hbox (22.28589pt too wide) in paragraph at lines 449--450
 \OT1/cmr/m/n/12 The repos-i-tory can be found un-der the branch feature/lda-mod
 el-pycharm: []https://git-
  []
 
 
-Overfull \hbox (30.11914pt too wide) in paragraph at lines 450--451
+Overfull \hbox (30.11914pt too wide) in paragraph at lines 449--450
 \OT1/cmr/m/n/12 teaching.cs.bham.ac.uk/mod-msc-proj-2021/nfq160/-/tree/feature/
 lda-model-pycharm[]. 
  []
@@ -939,13 +939,13 @@ AED: lastpage setting LastPage
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `dissertation_main.out' has not changed.
-(rerunfilecheck)             Checksum: 4B5BA335E646D3D8D13F51F146A47D91;4586.
+(rerunfilecheck)             Checksum: 2635392FE4E42A384FDF529EE4490074;4478.
  ) 
 Here is how much of TeX's memory you used:
- 14659 strings out of 478268
- 228345 string characters out of 5846348
+ 14657 strings out of 478268
+ 228315 string characters out of 5846348
  535472 words of memory out of 5000000
- 32529 multiletter control sequences out of 15000+600000
+ 32528 multiletter control sequences out of 15000+600000
  482716 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  61i,12n,75p,928b,482s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -960,10 +960,10 @@ ocal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/loca
 l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on dissertation_main.pdf (28 pages, 4901012 bytes).
+Output written on dissertation_main.pdf (28 pages, 4901218 bytes).
 PDF statistics:
- 561 PDF objects out of 1000 (max. 8388607)
- 484 compressed objects within 5 object streams
- 92 named destinations out of 1000 (max. 500000)
- 293 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 558 PDF objects out of 1000 (max. 8388607)
+ 481 compressed objects within 5 object streams
+ 91 named destinations out of 1000 (max. 500000)
+ 285 words of extra memory for PDF output out of 10000 (max. 10000000)
 
